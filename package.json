@@ -2,9 +2,13 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
+    "test": "jest",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject"
+  },
+  "jest": {
+    "preset": "jest-expo"
   },
   "dependencies": {
     "appcenter": "1.12.2",
@@ -15,7 +19,9 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "^5.0.0",
+    "jest-expo": "32.0.0",
+    "jest": "24.1.0"
   },
   "private": true
 }
