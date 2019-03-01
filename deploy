@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+
+set -e
+
+npm install
+
+npx expo login -u baez97 -p pO97informatico
+
+expo publish --release-channel production --non-interactive
+
+expo build:android --release-channel production --no-publish 
+
+curl -o app.apk "$(expo url:apk --non-interactive)"
+
+# MAGIC LINE!!
+# fastlane supply --track 'production' --json_key '/Users/josemanuelbaezsoriano/Desktop/Manolin/api-7461674513776927488-585593-cafc1e033502.json' --package_name "com.app.manolin" --apk "app.apk" --skip_upload_metadata --skip_upload_images --skip_upload_screenshots

@@ -1,6 +1,10 @@
 {
   "expo": {
     "name": "pipelineApp",
+    "description": "this is an app for testing CD in Play Store",
+    "android": {
+        "package": "com.app.manolin"
+    },
     "slug": "pipelineApp",
     "privacy": "public",
     "sdkVersion": "32.0.0",
