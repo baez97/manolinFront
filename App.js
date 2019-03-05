@@ -27,7 +27,7 @@ export default class App extends React.Component {
       console.log('Rendering first');
       return (
         <View style={styles.container}>
-          <Text>Hello friend, that's lame</Text>
+          <Text>This APK should be uploadable</Text>
           <Button onPress={this.handlePress.bind(this)}
                   title="HANDLE!"></Button>
         </View>
