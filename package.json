@@ -15,11 +15,12 @@
     "appcenter-analytics": "1.12.2",
     "appcenter-crashes": "1.12.2",
     "expo": "^32.0.0",
-    "expo-cli": "^2.11.6",
+    "expo-cli": "^2.11.9",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-elements": "^1.1.0",
-    "react-native-linear-gradient": "^2.5.3"
+    "react-native-linear-gradient": "^2.5.3",
+    "react-navigation": "^3.4.1"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
