@@ -4,6 +4,8 @@ import { Input } from 'react-native-elements';
 import { LinearGradient, Font } from 'expo';
 import styles from '../styles/loginBoxStyle';
 
+const BACKEND_IP = "http://192.168.43.205"
+
 
 export default class LoginBox extends React.Component {
 
@@ -21,7 +23,7 @@ export default class LoginBox extends React.Component {
   }
 
   loginPressed = async () => {
-    fetch('http://192.168.1.35:5000/auth/login', {
+    fetch(BACKEND_IP + ':5000/auth/login', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -37,7 +39,7 @@ export default class LoginBox extends React.Component {
         this.setState({
           token: responseJson.token
         });
-        return fetch('http://192.168.1.35:5000/auth/me', {
+        return fetch(BACKEND_IP + ':5000/auth/me', {
           method: 'POST',
           headers: {
             'x-access-token': this.state.token
@@ -58,7 +60,6 @@ export default class LoginBox extends React.Component {
   }
 
   render() {
-
     if (this.state.hello) {
       return (
         <View style={styles.container}>
