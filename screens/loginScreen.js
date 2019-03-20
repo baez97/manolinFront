@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, KeyboardAv
 import { Input } from 'react-native-elements';
 import { LinearGradient, Font } from 'expo';
 import styles from '../styles/loginBoxStyle';
+import PrimaryButton from '../components/primaryButtonComponent';
+import RoundedInput from '../components/inputComponent';
 
 const BACKEND_IP = "http://192.168.43.205"
 
@@ -60,21 +62,21 @@ export default class LoginBox extends React.Component {
   }
 
   render() {
-    if (this.state.hello) {
-      return (
-        <View style={styles.container}>
-          <ScrollView>
-            <FlatList
-              data={this.state.hello.turnWithDates}
-              horizontal={true}
-              renderItem={({ item }) => {
-                return ( <Text> {item.turn} </Text> )
-              }}
-            />
-          </ScrollView>
-        </View>
-      )
-    }
+    // if (this.state.hello) {
+    //   return (
+    //     <View style={styles.container}>
+    //       <ScrollView>
+    //         <FlatList
+    //           data={this.state.hello.turnWithDates}
+    //           horizontal={true}
+    //           renderItem={({ item }) => {
+    //             return ( <Text> {item.turn} </Text> )
+    //           }}
+    //         />
+    //       </ScrollView>
+    //     </View>
+    //   )
+    // }
     if (this.state.fontLoaded) {
       return (
         <KeyboardAvoidingView style={styles.container} behavior="padding">
@@ -82,16 +84,16 @@ export default class LoginBox extends React.Component {
             start={[0, 0]}
             end={[1, 1]}
             style={styles.blueBox}>
-            <Text style={styles.label}>Usuario</Text>
-            <TextInput style={styles.userInput} onChangeText={(text) => this.setState({ username: text })}></TextInput>
-            <Text style={styles.label}>Contraseña</Text>
-            <TextInput style={styles.userInput} onChangeText={(text) => this.setState({ password: text })}
-              secureTextEntry={true}></TextInput>
-            <TouchableOpacity onPress={() => { this.loginPressed() }}>
-              <LinearGradient style={styles.loginButton} colors={['#0470dc', '#23538a']} start={[0, 0]} end={[1, 1]}>
-                {this.state.fontLoaded ? (<Text style={styles.buttonText}>Iniciar sesión</Text>) : null}
-              </LinearGradient>
-            </TouchableOpacity>
+            <RoundedInput text="Usuario" 
+              secureTextEntry={false} 
+              onChangeFunction={ (inputText) => { this.setState({ username: inputText }) } }/>
+            <RoundedInput text="Contraseña" 
+              secureTextEntry={true} 
+              onChangeFunction={ (inputText) => { this.setState({ password: inputText }) } }/>
+            <PrimaryButton 
+              text="Iniciar sesión"
+              onPressFunction={() => {this.loginPressed()}}>
+            </PrimaryButton>
           </LinearGradient>
         </KeyboardAvoidingView>
       )
