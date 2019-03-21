@@ -6,6 +6,7 @@ export default StyleSheet.create({
         backgroundColor: '#bee6ef',
         alignItems: 'center',
         justifyContent: 'center',
+        paddingTop: 20
     },
 
     userInputContainer: {
