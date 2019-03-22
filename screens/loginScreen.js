@@ -6,6 +6,7 @@ import styles from '../styles/loginBoxStyle';
 import PrimaryButton from '../components/primaryButtonComponent';
 import RoundedInput from '../components/inputComponent';
 import { SCLAlert, SCLAlertButton } from 'react-native-scl-alert';
+import deviceStorage from '../components/deviceStorage';
 
 const BACKEND_IP = "https://manolin-backend.herokuapp.com";
 // const BACKEND_IP = "http://192.168.43.205:5000";
@@ -45,6 +46,23 @@ export default class LoginScreen extends React.Component {
   }
 
   async componentDidMount() {
+    // await deviceStorage.removeItems();
+
+    deviceStorage.loadJWT()
+    .then((token, username) => {
+      if ( token ) {
+        this.props.navigation.navigate("HomeScreen", {
+          username : username, 
+          token    : token
+        });
+      } else {
+        console.log("Could not find the token");
+      }
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+
     await Font.loadAsync({
       'montserrat-extra-bold': require('../assets/fonts/Montserrat-ExtraBold.otf'),
     });
@@ -67,37 +85,53 @@ export default class LoginScreen extends React.Component {
         password: this.state.password
       }),
     })
-      .then((response) => response.json())
-      .then((responseJson) => {
-        if ( responseJson.userError ) {
-          this.showError("Usuario incorrecto", "La usuario que has introducido no es correcto");
-          throw "The username is not correct";
-        } else if ( responseJson.passwordError ) {
-          this.showError("Contraseña incorrecta", "La contraseña que has introducido no es correcta");
-          throw "The password is not correct";
-        }
+    .then((response) => response.json())
+    .then((responseJson) => {
+      if ( responseJson.userError ) {
+        this.showError("Usuario incorrecto", "La usuario que has introducido no es correcto");
+        throw "The username is not correct";
+      } else if ( responseJson.passwordError ) {
+        this.showError("Contraseña incorrecta", "La contraseña que has introducido no es correcta");
+        throw "The password is not correct";
+      }
 
-        this.setState({
-          token: responseJson.token
-        });
-        return fetch(BACKEND_IP + '/auth/me', {
-          method: 'POST',
-          headers: {
-            'x-access-token': this.state.token
-          },
-          body: JSON.stringify({
-            username: this.state.username
-          })
-        })
-      })
-      .then((response) => response.json())
-      .then((responseJSON) => {
-        this.setState({ hello: responseJSON });
-        this.props.navigation.navigate("HomeScreen", {username: this.state.username});
-      })
-      .catch((error) => {
-        this.setState({ error: true });
-      })
+      this.setState({
+        token: responseJson.token
+      });
+
+      return deviceStorage.saveJWT(responseJson.token, this.state.username);
+    })
+    .then( () => {
+      this.props.navigation.navigate("HomeScreen", {
+        username: this.state.username, 
+        token: this.state.token
+      });
+    })
+    .catch( (err) => {
+      this.showError(err.message);
+    });
+
+      //   return fetch(BACKEND_IP + '/auth/me', {
+      //     method: 'POST',
+      //     headers: {
+      //       'x-access-token': this.state.token
+      //     },
+      //     body: JSON.stringify({
+      //       username: this.state.username
+      //     })
+      //   })
+      // })
+      // .then((response) => response.json())
+      // .then((responseJSON) => {
+      //   this.setState({ hello: responseJSON });
+      //   this.props.navigation.navigate("HomeScreen", {
+      //     username: this.state.username, 
+      //     token: this.state.token
+      //   });
+      // })
+      // .catch((error) => {
+      //   this.setState({ error: true });
+      // })
   }
 
   testInput() {

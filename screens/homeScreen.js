@@ -1,17 +1,52 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, FlatList } from 'react-native';
 
+const BACKEND_IP = "https://manolin-backend.herokuapp.com";
+
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      userLoaded: false
+    }
   }
 
+  async componentDidMount() {
+    const token = this.props.navigation.getParam("token");
+    fetch(BACKEND_IP + '/auth/me', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'x-access-token': token
+      } 
+    })
+    .then((response) => response.json())
+    .then((user) => {
+      this.setState({
+        user: user,
+        userLoaded: true
+      });
+    });
+  }
+
+
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>{this.props.navigation.getParam("username", "---")}</Text>
-      </View>
-    )
+    if ( ! this.state.userLoaded ) {
+      return (
+        <View style={styles.container}>
+          <Text>{this.props.navigation.getParam("username", "---")}</Text>
+        </View>
+      )
+    } else {
+      return (
+        <View style={styles.container}>
+          <Text>Mi turno</Text>
+          <Text>{this.state.user.name}</Text>
+          <Text>{this.state.user.password}</Text>
+        </View>
+      )
+    }
   }
   // render() {
   //   return (
