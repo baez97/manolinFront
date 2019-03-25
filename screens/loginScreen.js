@@ -45,6 +45,8 @@ export default class LoginScreen extends React.Component {
             return;
         }
 
+        var savedToken;
+
         fetch(BACKEND_IP + '/auth/login', {
             method: 'POST',
             headers: {
@@ -74,8 +76,10 @@ export default class LoginScreen extends React.Component {
                 throw "The password is not correct";
             }
 
+            token = responseJson.token;
+
             // Everything was correct, so save the token in the device
-            return deviceStorage.saveJWT(responseJson.token, 
+            return deviceStorage.saveJWT(token, 
                     this.state.username);
         })
 
@@ -85,7 +89,7 @@ export default class LoginScreen extends React.Component {
             // the user presses the "BACK" button, the application will
             // exit instead of going back to the login screen. This is done
             // in the goToHomeScreen custom method.
-            this.goToHomeScreen();
+            this.goToHomeScreen(token);
         })
 
         .catch( err => {
@@ -95,9 +99,12 @@ export default class LoginScreen extends React.Component {
     }
 
     checkToken() {
-        deviceStorage.loadJWT()
+        var savedToken;
+
+        deviceStorage.loadJWT()        
         .then( token => {
             if ( token ) {
+                savedToken = token;
                 return fetch(BACKEND_IP + '/auth/me', {
                     method: 'POST',
                     headers: {
@@ -115,7 +122,7 @@ export default class LoginScreen extends React.Component {
 
         .then(responseJSON => {
             if (responseJSON.name != undefined) {
-                this.goToHomeScreen();
+                this.goToHomeScreen(savedToken);
             }
         })
 
@@ -124,11 +131,16 @@ export default class LoginScreen extends React.Component {
         });
     }
 
-    goToHomeScreen() {
+    goToHomeScreen(savedToken) {
         const action = StackActions.reset({
             index: 0,
             actions: [
-                NavigationActions.navigate({ routeName: "HomeScreen" })
+                NavigationActions.navigate({
+                    routeName : "HomeScreen", 
+                    params    : {
+                        token: savedToken
+                    }
+                })
             ]
         });
 
@@ -212,7 +224,7 @@ export default class LoginScreen extends React.Component {
         }
     }
 
-    showError(title, message) {
+    showError({title, message}) {
         this.setState({
             error        : true,
             errorType    : "danger",
@@ -221,7 +233,7 @@ export default class LoginScreen extends React.Component {
         });
     }
 
-    showWarning(title, message) {
+    showWarning({title, message}) {
         this.setState({
             error        : true,
             errorType    : "warning",
