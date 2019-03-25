@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, FlatList } from 'react-native';
 
-const BACKEND_IP = "https://manolin-backend.herokuapp.com";
+// const BACKEND_IP = "https://manolin-backend.herokuapp.com";
+const BACKEND_IP = "http://192.168.43.205:5000";
 
 export default class HomeScreen extends React.Component {
   constructor(props) {
