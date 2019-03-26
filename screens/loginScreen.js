@@ -12,6 +12,7 @@ import { StackActions, NavigationActions   } from 'react-navigation';
 
 
 // const BACKEND_IP = "https://manolin-backend.herokuapp.com";
+// const BACKEND_IP = "http://192.168.1.35:5000";
 const BACKEND_IP = "http://192.168.43.205:5000";
 const FONT_PATH  = "../assets/fonts/Montserrat-ExtraBold.otf";
 

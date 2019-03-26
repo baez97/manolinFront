@@ -1,7 +1,12 @@
 import React from 'react';
 import { LinearGradient } from 'expo';
-import { StyleSheet, Image, Text, View, Button, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, FlatList } from 'react-native';
+import { StyleSheet, Image, Text, View, TouchableOpacity, FlatList } from 'react-native';
+import GlobalButton from '../components/homeComponents/globalButton';
+import MidYellowButton from '../components/homeComponents/midYellowButton';
+import MidBlueButton from '../components/homeComponents/midBlueButton';
+import TurnDeck from '../components/homeComponents/turnDeck';
 // const BACKEND_IP = "https://manolin-backend.herokuapp.com";
+// const BACKEND_IP = "http://192.168.1.35:5000";
 const BACKEND_IP = "http://192.168.43.205:5000";
 
 export default class HomeScreen extends React.Component {
@@ -47,42 +52,20 @@ export default class HomeScreen extends React.Component {
         } else {
             return (
                 <View style={styles.container}>
-                    <Text style={styles.labelText}>Mi turno</Text>
-                    <TouchableOpacity onPress={() => { }}>
-                        <LinearGradient
-                            style={{ ...styles.primaryButton, ...styles.fullWidth }}
-                            colors={['#10bad2', '#0470dc']}
-                            start={[0.55, 0]}
-                            end={[0.65, 1]}>
-                            <Text style={styles.primaryButtonText}>
-                                VER TURNO GLOBAL
-                            </Text>
-                            <Image source={require('../assets/calendar.png')} style={styles.calendarImage}></Image>
-                        </LinearGradient>
-                    </TouchableOpacity>
+                    {/* <Text style={styles.labelText}>Mi turno</Text> */}
+
+                    <TurnDeck turnWithDates={this.state.user.turnWithDates}/>
+
+                    <GlobalButton text="VER TURNO GLOBAL" onPressFn={() => {
+                        console.log("PRESSED")
+                    }}/>
                     <View style={{ width: 400, flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <TouchableOpacity onPress={() => { }}>
-                            <LinearGradient
-                                style={{ ...styles.secondaryButton, ...styles.midWidth }}
-                                colors={['#ffcc33', '#f2994a']}
-                                start={[0.55, 0]}
-                                end={[0.65, 1]}>
-                                <Text style={{ ...styles.buttonText, color: '#3f2606' }}>
-                                    MIS CAMBIOS
-                            </Text>
-                            </LinearGradient>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => { }}>
-                            <LinearGradient
-                                style={{ ...styles.secondaryButton, ...styles.midWidth }}
-                                colors={['#10bad2', '#0470dc']}
-                                start={[0.55, 0]}
-                                end={[0.65, 1]}>
-                                <Text style={styles.buttonText}>
-                                    OPCIONES
-                            </Text>
-                            </LinearGradient>
-                        </TouchableOpacity>
+                        <MidYellowButton text="MIS CAMBIOS" onPressFn={() => {
+                            console.log("PRESSED");
+                        }}/>
+                        <MidBlueButton text="CONTACTOS" onPressFn={()=>{
+                            console.log("PRESSED!");
+                        }}/>
                     </View>
 
                     <Text style={styles.labelText}>Peticiones de cambio</Text>
@@ -91,21 +74,6 @@ export default class HomeScreen extends React.Component {
             )
         }
     }
-    // render() {
-    //   return (
-    //     <View style={styles.container}>
-    //       <ScrollView>
-    //         <FlatList
-    //           data={this.state.hello.turnWithDates}
-    //           horizontal={true}
-    //           renderItem={({ item }) => {
-    //             return (<Text> {item.turn} </Text>)
-    //           }}
-    //         />
-    //       </ScrollView>
-    //     </View>
-    //   )
-    // }
 }
 
 const styles = StyleSheet.create({
@@ -118,56 +86,6 @@ const styles = StyleSheet.create({
         paddingTop:10
     },
 
-    primaryButton: {
-        padding: 10,
-        borderRadius: 20,
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        // marginLeft: 40,
-        // marginRight: 40,
-        marginTop: 20,
-        // marginBottom: 20,
-        elevation: 15,
-        // alignItems: 'center',
-        // justifyContent: 'center',
-    },
-
-    secondaryButton: {
-        borderRadius: 20,
-        // marginLeft: 40,
-        // marginRight: 40,
-        marginTop: 25,
-        // marginBottom: 20,
-        elevation: 15,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-
-    fullWidth: {
-        width: 400,
-        height: 120
-    },
-
-    midWidth: {
-        width: 190,
-        height: 80
-    },
-
-    buttonText: {
-        fontFamily: 'montserrat-extra-bold',
-        fontSize: 20,
-        color: 'white',
-        textAlign: 'left'
-    },
-
-    primaryButtonText: {
-        fontFamily: 'montserrat-extra-bold',
-        fontSize: 21,
-        color: 'white',
-        textAlign: 'left',
-        marginTop: 10,
-    },
-
     labelText: {
         fontFamily: 'montserrat-extra-bold',
         fontSize: 22,
@@ -176,10 +94,4 @@ const styles = StyleSheet.create({
         width: 390,
         marginTop: 30
     },
-
-    calendarImage: {
-        height: 100,
-        width: 100,
-        marginTop: 0
-    }
 });
