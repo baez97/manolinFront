@@ -9,9 +9,11 @@ describe('Device Storage module testing', () => {
         it ("Returns an error when AsyncStorage fails", async done => {
 
             // FORCING AN ERROR IN ASYNC STORAGE
-            AsyncStorage.setItem.mockReturnValueOnce(new Promise((res, rej) => {
-                rej({message: "THIS IS AN ERROR"});
-            }));
+            AsyncStorage.setItem.mockReturnValueOnce(
+                new Promise((res, rej) => {
+                    rej({message: "THIS IS AN ERROR"});
+                })
+            );
             
             // DECLARING MOCK CALLBACK FUNCTIONS
             const expectedMessage = "THIS IS AN ERROR"
@@ -66,9 +68,11 @@ describe('Device Storage module testing', () => {
         it("Returns an error when Async Storage fails", async done => {
 
             // FORCING AN ERROR IN ASYNC STORAGE
-            AsyncStorage.getItem.mockReturnValueOnce(new Promise((res, rej) => {
-                rej({message: "THIS IS AN ERROR"});
-            }));
+            AsyncStorage.getItem.mockReturnValueOnce(
+                new Promise((res, rej) => {
+                    rej({message: "THIS IS AN ERROR"});
+                })
+            );
 
             // DECLARING MOCK CALLBACK FUNCTIONS
             const expectedMessage = "THIS IS AN ERROR"            
@@ -97,9 +101,11 @@ describe('Device Storage module testing', () => {
         it("Returns false when the token was not found", async done => {
 
             // FORCING THE TOKEN NO TO BE FOUND
-            AsyncStorage.getItem.mockReturnValueOnce(new Promise((res, rej) => {
-                res(null);
-            }));
+            AsyncStorage.getItem.mockReturnValueOnce(
+                new Promise((res, rej) => {
+                    res(null);
+                })
+            );
             
             // DECLARING MOCK CALLBACK FUNCTIONS
             const resolveFn = jest.fn( token => {
@@ -154,9 +160,11 @@ describe('Device Storage module testing', () => {
         it("Returns an error when AsyncStorage fails", async done => {
 
             // FORCING AN ERROR IN ASYNC STORAGE
-            AsyncStorage.setItem.mockReturnValueOnce(new Promise((res, rej) => {
-                rej({message: "THIS IS AN ERROR"});
-            }));
+            AsyncStorage.setItem.mockReturnValueOnce(
+                new Promise((res, rej) => {
+                    rej({message: "THIS IS AN ERROR"});
+                })
+            );
 
             // DECLARING MOCK CALLBACK FUNCTIONS
             const expectedMessage = "THIS IS AN ERROR"
