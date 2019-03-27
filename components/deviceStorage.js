@@ -5,8 +5,6 @@ const deviceStorage = {
         return new Promise((resolve, reject) => {
             AsyncStorage.setItem('id_token', token)
             .then(() => {
-                console.log("Saving the token");
-                console.log(token);
                 resolve();
             })
             .catch((err) => {
@@ -27,8 +25,6 @@ const deviceStorage = {
             AsyncStorage.getItem('id_token')
             .then((token) => {
                 if ( token !== null ) {
-                    console.log("Getting the token");
-                    console.log(token);
                     resolve(token);
                 } else {
                     resolve(false);
@@ -40,15 +36,17 @@ const deviceStorage = {
         })
     },
 
-    async removeItems() {
-        AsyncStorage.removeItem('id_token')
-        .then( () => AsyncStorage.removeItem('username') )
-        .then( () => {
-            console.log("REMOVED!");
+    async removeJWT() {
+        return new Promise((resolve, reject) => {
+            AsyncStorage.removeItem('id_token')
+            .then( () => AsyncStorage.removeItem('username') )
+            .then( () => {
+                resolve();
+            })
+            .catch( (err) => {
+                reject(err);
+            });
         })
-        .catch( (err) => {
-            console.log(err.message);
-        });
     }
 };
 

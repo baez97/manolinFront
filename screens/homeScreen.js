@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     labelText: {
         fontFamily: 'montserrat-extra-bold',
         fontSize: 22,
-        color: '#332554',
+        color: '#3b2868',
         textAlign: 'left',
         width: 390,
         marginTop: 30

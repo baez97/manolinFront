@@ -38,13 +38,13 @@ export default class TurnDeck extends React.Component {
     }
 
     handleViewableItemsChanged({ viewableItems, changed }) {
-        var max = 0;
-        viewableItems.forEach(i => {
-            if (i.item.month > max) {
-                max = i.item.month;
-            }
-        });
-        this.setState({ currentMonthIndex: max - 1 });
+
+        if ( viewableItems!=undefined && viewableItems.length != 0 ) {
+            leftMonth  = viewableItems[0].item.month -1;
+            rightMonth = viewableItems[viewableItems.length -1].item.month -1;
+            if ( leftMonth === rightMonth )
+                this.setState({ currentMonthIndex: leftMonth });
+        } 
     }
 
     viewabilityConfig = {

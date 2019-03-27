@@ -61,7 +61,7 @@ const todayObj = {
 const styles = StyleSheet.create({
     dayText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 17,
+        fontSize: 20,
         color: 'white',
         textAlign: 'center'
     },
