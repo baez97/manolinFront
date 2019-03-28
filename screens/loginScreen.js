@@ -1,7 +1,7 @@
 import React         from 'react';
 import styles        from '../styles/loginBoxStyle';
-import PrimaryButton from '../components/primaryButtonComponent';
-import RoundedInput  from '../components/inputComponent';
+import PrimaryButton from '../components/loginComponents/primaryButtonComponent';
+import RoundedInput  from '../components/loginComponents/inputComponent';
 import deviceStorage from '../components/deviceStorage';
 
 import { Text, View, KeyboardAvoidingView  } from 'react-native';

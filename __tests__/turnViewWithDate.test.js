@@ -8,6 +8,13 @@ jest.unmock('react')
 jest.unmock("react-test-renderer")
 jest.unmock('expo');
 
+const dateObj = new Date();
+const today = {
+    day   : dateObj.getDate(),
+    month : dateObj.getMonth() +1,
+    year  : dateObj.getFullYear()
+}
+
 it('TurnViewWithDate renders correctly', () => {
     const props = {
         day     : 1,
@@ -40,6 +47,29 @@ it('Weekends are painted in blue', () => {
     expect(color2).toBe(4285250006);
 });
 
+it('Today is painted in blue', () => {
+    const expectedColor = '#056ec9'
+
+    const props = {
+        day     : today.day,
+        month   : today.month,
+        year    : today.year,
+        turn    : 'M',
+        weekday : 2
+    }
+
+    const rendered = renderer.create(
+        <TurnViewWithDate turnObject={{...props}}/>
+    ).toJSON();
+
+    const dayCell   = rendered.children[1];
+    const dayText   = dayCell.children[0];
+    const textStyle = dayText.props.style;
+    const textColor = textStyle.color;
+
+    expect(textColor).toBe(expectedColor);
+})
+
 it('Ordinary days are painted in white', () => {
     const props = {
         day     : 1,
@@ -58,13 +88,6 @@ it('Ordinary days are painted in white', () => {
 });
 
 describe('Its methods:', () => {
-
-    const dateObj = new Date();
-    const today = {
-        day   : dateObj.getDate(),
-        month : dateObj.getMonth() +1,
-        year  : dateObj.getFullYear()
-    }
 
     describe('IsToday method', () => {
         it('Returns false if the year is not correct', () => {

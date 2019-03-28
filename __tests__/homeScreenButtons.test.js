@@ -11,20 +11,67 @@ jest.unmock('react')
 jest.unmock("react-test-renderer")
 jest.unmock('expo');
 
-it('GlobalButton renders correctly', () => {
-    const rendered = renderer.create(<GlobalButton />).toJSON();
-    expect(rendered).toMatchSnapshot();
+function simulatePress(renderedObject) {
+    renderedObject
+        .props
+        .onStartShouldSetResponder
+        .__reactBoundContext
+        .props
+        .onPress();
+}
+
+describe('GlobalButton', () => {
+    it('Renders correctly', () => {
+        const rendered = renderer.create(<GlobalButton />).toJSON();
+        expect(rendered).toMatchSnapshot();
+    });
+
+    it('OnPress method calls the onPressFn', () => {
+        const mockedFn = jest.fn(() => {});
+        const rendered = renderer.create(
+            <GlobalButton onPressFn={mockedFn}/>
+        ).toJSON();
+
+        simulatePress(rendered);
+
+        expect(mockedFn).toBeCalled();
+    });
 });
 
-it('MidBlueButton renders correctly', () => {
-    const rendered = renderer.create(<MidBlueButton />).toJSON();
-    expect(rendered).toMatchSnapshot();
+describe('MidBlueButton', () => {
+    it('Renders correctly', () => {
+        const rendered = renderer.create(<MidBlueButton />).toJSON();
+        expect(rendered).toMatchSnapshot();
+    });
+
+    it('OnPress method calls the onPressFn', () => {
+        const mockedFn = jest.fn(() => {});
+        const rendered = renderer.create(
+            <MidBlueButton onPressFn={mockedFn}/>
+        ).toJSON();
+
+        simulatePress(rendered);
+
+        expect(mockedFn).toBeCalled();
+    });
 });
 
-it('GlobalButton renders correctly', () => {
-    const rendered = renderer.create(<MidYellowButton />).toJSON();
-    expect(rendered).toMatchSnapshot();
-});
+describe('MidYellowButton', () => {
+    it('Renders correctly', () => {
+        const rendered = renderer.create(<MidYellowButton />).toJSON();
+        expect(rendered).toMatchSnapshot();
+    });
 
+    it('OnPress method calls the onPressFn', () => {
+        const mockedFn = jest.fn(() => {});
+        const rendered = renderer.create(
+            <MidYellowButton onPressFn={mockedFn}/>
+        ).toJSON();
+
+        simulatePress(rendered);
+
+        expect(mockedFn).toBeCalled();
+    });
+});
 
 
