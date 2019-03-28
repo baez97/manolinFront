@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Text, View, StyleSheet, Dimensions } from 'react-native';
+import { FlatList, Text, View, StyleSheet } from 'react-native';
 import TurnViewWithDate from './turnViewWithDate';
 
 export default class TurnDeck extends React.Component {

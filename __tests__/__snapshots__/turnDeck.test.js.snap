@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TurnDeck Renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#332554",
+        "fontFamily": "montserrat-extra-bold",
+        "fontSize": 22,
+        "marginTop": 30,
+        "textAlign": "left",
+        "width": 390,
+      }
+    }
+  >
+    Mi turno de Febrero
+  </Text>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "borderRadius": 20,
+        "elevation": 15,
+        "height": 90,
+        "marginTop": 10,
+        "overflow": "hidden",
+        "width": 400,
+      }
+    }
+  />
+</View>
+`;
