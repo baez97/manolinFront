@@ -11,7 +11,8 @@ export default class TurnDeck extends React.Component {
             currentDayIndex: indexes.dayIndex
         }
 
-        this.handleViewableItemsChanged = this.handleViewableItemsChanged.bind(this)
+        this.handleViewableItemsChanged = 
+            this.handleViewableItemsChanged.bind(this)
     }
 
     onLayout() {

@@ -5,9 +5,7 @@ import GlobalButton from '../components/homeComponents/globalButton';
 import MidYellowButton from '../components/homeComponents/midYellowButton';
 import MidBlueButton from '../components/homeComponents/midBlueButton';
 import TurnDeck from '../components/homeComponents/turnDeck';
-// const BACKEND_IP = "https://manolin-backend.herokuapp.com";
-// const BACKEND_IP = "http://192.168.1.35:5000";
-const BACKEND_IP = "http://192.168.43.205:5000";
+import { BACKEND_IP } from '../config';
 
 export default class HomeScreen extends React.Component {
     constructor(props) {
@@ -34,7 +32,7 @@ export default class HomeScreen extends React.Component {
                     userLoaded: true
                 });
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
     }
 
     getNavigationParam(key, defValue) {
