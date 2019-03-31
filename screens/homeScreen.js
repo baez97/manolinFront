@@ -11,13 +11,14 @@ export default class HomeScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userLoaded: false
+            userLoaded: false,
+            error: false
         }
     }
 
     async componentDidMount() {
         const token = this.getNavigationParam("token");
-        fetch(BACKEND_IP + '/auth/me', {
+        return fetch(BACKEND_IP + '/auth/me', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -32,16 +33,38 @@ export default class HomeScreen extends React.Component {
                     userLoaded: true
                 });
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                this.setState({
+                    error: true
+                })
+            });
     }
 
     getNavigationParam(key, defValue) {
         return this.props.navigation.getParam(key, defValue);
     }
 
+    globalButtonPressed() {
+        // NOT IMPLEMENTED YET!
+    }
+
+    myChangesButtonPressed() {
+        // NOT IMPLEMENTED YET!
+    }
+
+    contactsButtonPressed() {
+        // NOT IMPLEMENTED YET!
+    }
+
 
     render() {
-        if (!this.state.userLoaded) {
+        if ( this.state.error ) {
+            return ( 
+                <View style={styles.container}>
+                    <Text> Se ha producido un error </Text>
+                </View>
+            )
+        } else if ( !this.state.userLoaded ) {
             return (
                 <View style={styles.container}>
                     <Text> Cargando... </Text>
@@ -55,14 +78,14 @@ export default class HomeScreen extends React.Component {
                     <TurnDeck turnWithDates={this.state.user.turnWithDates}/>
 
                     <GlobalButton text="VER TURNO GLOBAL" onPressFn={() => {
-                        console.log("PRESSED")
+                        this.globalButtonPressed();
                     }}/>
                     <View style={{ width: 400, flexDirection: 'row', justifyContent: 'space-between' }}>
                         <MidYellowButton text="MIS CAMBIOS" onPressFn={() => {
-                            console.log("PRESSED");
+                            this.myChangesButtonPressed();
                         }}/>
                         <MidBlueButton text="CONTACTOS" onPressFn={()=>{
-                            console.log("PRESSED!");
+                            this.contactsButtonPressed();
                         }}/>
                     </View>
 

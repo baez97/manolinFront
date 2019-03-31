@@ -19,6 +19,25 @@ exports[`HomeScreen tests View Shows 'Cargando...' when the user is not loaded 1
 </View>
 `;
 
+exports[`HomeScreen tests View Shows 'Se ha producido un error...' when the fetch failed 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#bee6ef",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+      "paddingTop": 10,
+    }
+  }
+>
+  <Text>
+     Se ha producido un error 
+  </Text>
+</View>
+`;
+
 exports[`HomeScreen tests View Shows everything when the user is loaded 1`] = `
 <View
   style={

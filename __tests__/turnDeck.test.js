@@ -47,8 +47,8 @@ describe("TurnDeck", () => {
             const expectedMonth = 1;
             const { dayIndex, monthIndex } = turnDeckObj.getTodayIndex();
 
-            expect(dayIndex).toBe(expectedDay);
-            expect(monthIndex).toBe(expectedMonth);
+            expect( dayIndex   ).toBe( expectedDay   );
+            expect( monthIndex ).toBe( expectedMonth );
         });
 
         it('GetCurrentMonthIndex works correctly', () => {
