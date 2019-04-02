@@ -10,7 +10,8 @@ import { SCLAlert, SCLAlertButton          } from 'react-native-scl-alert';
 import { StackActions, NavigationActions   } from 'react-navigation';
 import { BACKEND_IP } from '../config';
 
-const FONT_PATH  = "../assets/fonts/Montserrat-ExtraBold.otf";
+const FONT_PATH_MAINTYPO  = "../assets/fonts/Montserrat-ExtraBold.otf";
+const FONT_PATH_NAMETYPO  = "../assets/fonts/big_noodle_titling.ttf";
 
 export default class LoginScreen extends React.Component {
 
@@ -27,7 +28,8 @@ export default class LoginScreen extends React.Component {
     async componentDidMount() {
         await this.checkToken();
         await Font.loadAsync({
-            'montserrat-extra-bold': require(FONT_PATH),
+            'montserrat-extra-bold' : require(FONT_PATH_MAINTYPO),
+            'big-noodle-titling'    : require(FONT_PATH_NAMETYPO),
         });
 
         this.setState({ fontLoaded: true });

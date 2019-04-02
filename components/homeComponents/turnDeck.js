@@ -8,15 +8,15 @@ export default class TurnDeck extends React.Component {
         var indexes = this.getTodayIndex();
         this.state = {
             currentMonthIndex: indexes.monthIndex,
-            currentDayIndex: indexes.dayIndex
+            currentDayIndex:   indexes.dayIndex
         }
-
         this.handleViewableItemsChanged = 
             this.handleViewableItemsChanged.bind(this)
     }
 
     onLayout() {
-        this.list.scrollToIndex({ index: this.state.currentDayIndex - 3})
+        this.list.scrollToIndex({ index: this.state.currentDayIndex - 5 })
+        // this.setState({ currentMonthIndex: this.getCurrentMonthIndex()  })
     }
 
     getItemLayout = (data, index) => (
@@ -39,12 +39,16 @@ export default class TurnDeck extends React.Component {
     }
 
     handleViewableItemsChanged({ viewableItems, changed }) {
-
+        const todayMonth = this.getCurrentMonthIndex();
         if ( viewableItems!=undefined && viewableItems.length != 0 ) {
             leftMonth  = viewableItems[0].item.month -1;
             rightMonth = viewableItems[viewableItems.length -1].item.month -1;
-            if ( leftMonth === rightMonth )
+            if ( leftMonth === rightMonth ) {
                 this.setState({ currentMonthIndex: leftMonth });
+            }
+
+            if ( rightMonth === todayMonth || leftMonth  === todayMonth )
+                this.setState({ currentMonthIndex: todayMonth })
         } 
     }
 
@@ -56,13 +60,16 @@ export default class TurnDeck extends React.Component {
         return (
             <View style={{ alignItems: 'center' }}>
                 { months[this.state.currentMonthIndex] != undefined ?
-                    ( <Text style={styles.monthText}>{`Mi turno de ${months[this.state.currentMonthIndex]}`}</Text>)
+                    ( <Text style={styles.monthText}>
+                        {`Mi turno de ${months[this.state.currentMonthIndex]}`}
+                      </Text>)
                     : ( <Text style={styles.monthText}>Mi turno</Text> )
                 }
                 <View style={styles.deck} onLayout={() => this.onLayout()}>
                     <FlatList
                         ref={el => this.list = el}
                         getItemLayout={this.getItemLayout}
+                        initialScrollIndex={this.getTodayIndex() -5}
                         data={this.props.turnWithDates}
                         renderItem={({ item }) => <TurnViewWithDate turnObject={item} />}
                         keyExtractor={item => `${item.day}+${item.month}+${item.year}`}
@@ -110,5 +117,16 @@ for (let i = 0; i < date.month; i++) {
 indexOfToday += date.day;
 
 const months = [
-    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre"
 ]

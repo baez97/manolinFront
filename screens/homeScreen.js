@@ -45,7 +45,10 @@ export default class HomeScreen extends React.Component {
     }
 
     globalButtonPressed() {
-        // NOT IMPLEMENTED YET!
+        this.props.navigation.navigate(
+            "GlobalScreen", 
+            {token: this.getNavigationParam("token")}
+        );
     }
 
     myChangesButtonPressed() {
@@ -73,8 +76,6 @@ export default class HomeScreen extends React.Component {
         } else {
             return (
                 <View style={styles.container}>
-                    {/* <Text style={styles.labelText}>Mi turno</Text> */}
-
                     <TurnDeck turnWithDates={this.state.user.turnWithDates}/>
 
                     <GlobalButton text="VER TURNO GLOBAL" onPressFn={() => {

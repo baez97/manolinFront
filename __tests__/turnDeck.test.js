@@ -78,7 +78,7 @@ describe("TurnDeck", () => {
             };
 
             // EXPECTED ARGUMENT
-            const expectedArg = { index: 53 };
+            const expectedArg = { index: 51 };
 
             // PERFORMING THE CALL TO THE TESTED FUNCTION
             turnDeckObj.onLayout();
@@ -124,19 +124,19 @@ describe("TurnDeck", () => {
                 const expectedOutput = previousMonth;
 
                 const viewableItems1 = [
-                    { item: { "day": 1, "month": 1, "year": 2019, "weekday": 2,
+                    { item: { "day": 1, "month": 5, "year": 2019, "weekday": 2,
                         "turn": "M" }},
-                    { item: { "day": 2, "month": 1, "year": 2019, "weekday": 3,
+                    { item: { "day": 2, "month": 5, "year": 2019, "weekday": 3,
                         "turn": "M" }},
-                    { item: { "day": 3, "month": 1, "year": 2019, "weekday": 4,
+                    { item: { "day": 3, "month": 5, "year": 2019, "weekday": 4,
                         "turn": "T" }},
-                    { item: { "day": 4, "month": 1, "year": 2019, "weekday": 5,
+                    { item: { "day": 4, "month": 5, "year": 2019, "weekday": 5,
                         "turn": "T" }},
-                    { item: { "day": 5, "month": 1, "year": 2019, "weekday": 6,
+                    { item: { "day": 5, "month": 5, "year": 2019, "weekday": 6,
                         "turn": "N" }},
-                    { item: { "day": 6, "month": 1, "year": 2019, "weekday": 7,
+                    { item: { "day": 6, "month": 5, "year": 2019, "weekday": 7,
                         "turn": "N" }},
-                    { item: { "day": 7, "month": 2, "year": 2019, "weekday": 1,
+                    { item: { "day": 7, "month": 6, "year": 2019, "weekday": 1,
                         "turn": "-" }},
                 ];
 
@@ -179,6 +179,64 @@ describe("TurnDeck", () => {
 
                 expect(turnDeckObj.setState).toBeCalled();
                 expect(turnDeckObj.setState).toBeCalledWith(expectedOutput);
+            });
+
+            it("Sets the month to the current month if it's visible on the left", () => {
+                const expectedOutput = {currentMonthIndex: 1};
+
+                const viewableItems2 = [
+                    { item: { "day": 1, "month": 1, "year": 2019, "weekday": 2,
+                        "turn": "M" }},
+                    { item: { "day": 2, "month": 2, "year": 2019, "weekday": 3,
+                        "turn": "M" }},
+                    { item: { "day": 3, "month": 2, "year": 2019, "weekday": 4,
+                        "turn": "T" }},
+                    { item: { "day": 4, "month": 2, "year": 2019, "weekday": 5,
+                        "turn": "T" }},
+                    { item: { "day": 5, "month": 2, "year": 2019, "weekday": 6,
+                        "turn": "N" }},
+                    { item: { "day": 6, "month": 2, "year": 2019, "weekday": 7,
+                        "turn": "N" }},
+                    { item: { "day": 7, "month": 2, "year": 2019, "weekday": 1,
+                        "turn": "-" }},
+                ];
+
+                turnDeckObj.handleViewableItemsChanged({ 
+                    viewableItems : viewableItems2, 
+                    changed       : undefined });
+                
+                const actualOutput = turnDeckObj.state.currentMonthIndex;
+
+                expect(turnDeckObj.setState).toBeCalled();
+            });
+
+            it("Sets the month to the current month if it's visible on the right", () => {
+                const expectedOutput = {currentMonthIndex: 1};
+
+                const viewableItems2 = [
+                    { item: { "day": 1, "month": 0, "year": 2019, "weekday": 2,
+                        "turn": "M" }},
+                    { item: { "day": 2, "month": 0, "year": 2019, "weekday": 3,
+                        "turn": "M" }},
+                    { item: { "day": 3, "month": 0, "year": 2019, "weekday": 4,
+                        "turn": "T" }},
+                    { item: { "day": 4, "month": 0, "year": 2019, "weekday": 5,
+                        "turn": "T" }},
+                    { item: { "day": 5, "month": 0, "year": 2019, "weekday": 6,
+                        "turn": "N" }},
+                    { item: { "day": 6, "month": 0, "year": 2019, "weekday": 7,
+                        "turn": "N" }},
+                    { item: { "day": 7, "month": 1, "year": 2019, "weekday": 1,
+                        "turn": "-" }},
+                ];
+
+                turnDeckObj.handleViewableItemsChanged({ 
+                    viewableItems : viewableItems2, 
+                    changed       : undefined });
+                
+                const actualOutput = turnDeckObj.state.currentMonthIndex;
+
+                expect(turnDeckObj.setState).toBeCalled();
             });
         });
     });

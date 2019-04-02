@@ -27,7 +27,7 @@ describe('GlobalButton', () => {
     });
 
     it('OnPress method calls the onPressFn', () => {
-        const mockedFn = jest.fn(() => {});
+        const mockedFn = jest.fn();
         const rendered = renderer.create(
             <GlobalButton onPressFn={mockedFn}/>
         ).toJSON();

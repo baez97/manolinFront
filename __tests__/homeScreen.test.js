@@ -32,8 +32,17 @@ describe("HomeScreen tests", () => {
         const h = new HomeScreen();
 
         it("globalButtonPressed function",    () => {
-            expect( h.globalButtonPressed   ).toBeDefined();
-            expect( h.globalButtonPressed() ).toBeUndefined();
+            const mockedFn = jest.fn();
+            h.props = {
+                navigation: {
+                    navigate: mockedFn,
+                    getParam: () => {}
+                }
+            }
+
+            h.globalButtonPressed();
+            expect(mockedFn).toBeCalled();
+
         });
 
         it("myChangesButtonPressed function", () => {
