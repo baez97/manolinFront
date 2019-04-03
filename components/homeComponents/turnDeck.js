@@ -1,45 +1,31 @@
 import React from 'react';
 import { FlatList, Text, View, StyleSheet } from 'react-native';
 import TurnViewWithDate from './turnViewWithDate';
+import DateUtils from '../dateUtils';
+
+const dateUtils = new DateUtils();
 
 export default class TurnDeck extends React.Component {
     constructor(props) {
         super(props);
-        var indexes = this.getTodayIndex();
         this.state = {
-            currentMonthIndex: indexes.monthIndex,
-            currentDayIndex:   indexes.dayIndex
+            currentMonthIndex: dateUtils.today.month,
+            currentDayIndex:   dateUtils.indexOfToday
         }
         this.handleViewableItemsChanged = 
             this.handleViewableItemsChanged.bind(this)
     }
 
     onLayout() {
-        this.list.scrollToIndex({ index: this.state.currentDayIndex - 5 })
-        // this.setState({ currentMonthIndex: this.getCurrentMonthIndex()  })
+        this.list.scrollToIndex({ index: this.state.currentDayIndex - 1 })
     }
 
     getItemLayout = (data, index) => (
         { length: 55, offset: 55 * index, index }
     );
 
-    getCurrentMonthIndex() {
-        return new Date().getMonth();
-    }
-
-    getTodayIndex() {
-        var currentMonthIndex = this.getCurrentMonthIndex();
-        var indexOfToday = 0;
-        for (let i = 0; i < currentMonthIndex; i++) {
-            indexOfToday += daysPerMonth[i];
-        }
-        indexOfToday += new Date().getDate() - 1;
-
-        return { dayIndex: indexOfToday, monthIndex: currentMonthIndex }
-    }
-
     handleViewableItemsChanged({ viewableItems, changed }) {
-        const todayMonth = this.getCurrentMonthIndex();
+        const todayMonth = dateUtils.today.month;
         if ( viewableItems!=undefined && viewableItems.length != 0 ) {
             leftMonth  = viewableItems[0].item.month -1;
             rightMonth = viewableItems[viewableItems.length -1].item.month -1;
@@ -59,9 +45,9 @@ export default class TurnDeck extends React.Component {
     render() {
         return (
             <View style={{ alignItems: 'center' }}>
-                { months[this.state.currentMonthIndex] != undefined ?
+                { dateUtils.months[this.state.currentMonthIndex] != undefined ?
                     ( <Text style={styles.monthText}>
-                        {`Mi turno de ${months[this.state.currentMonthIndex]}`}
+                        {`Mi turno de ${dateUtils.months[this.state.currentMonthIndex]}`}
                       </Text>)
                     : ( <Text style={styles.monthText}>Mi turno</Text> )
                 }
@@ -69,7 +55,7 @@ export default class TurnDeck extends React.Component {
                     <FlatList
                         ref={el => this.list = el}
                         getItemLayout={this.getItemLayout}
-                        initialScrollIndex={this.getTodayIndex() -5}
+                        initialScrollIndex={dateUtils.indexOfToday -5}
                         data={this.props.turnWithDates}
                         renderItem={({ item }) => <TurnViewWithDate turnObject={item} />}
                         keyExtractor={item => `${item.day}+${item.month}+${item.year}`}
@@ -102,31 +88,3 @@ const styles = StyleSheet.create({
         marginTop: 30
     }
 });
-
-const dateObj = new Date();
-const daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-const date = {
-    day: dateObj.getDate(),
-    month: dateObj.getMonth()
-};
-
-var indexOfToday = 0;
-for (let i = 0; i < date.month; i++) {
-    indexOfToday += daysPerMonth[i];
-}
-indexOfToday += date.day;
-
-const months = [
-    "Enero",
-    "Febrero",
-    "Marzo",
-    "Abril",
-    "Mayo",
-    "Junio",
-    "Julio",
-    "Agosto",
-    "Septiembre",
-    "Octubre",
-    "Noviembre",
-    "Diciembre"
-]

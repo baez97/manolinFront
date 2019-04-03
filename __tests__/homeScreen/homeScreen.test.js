@@ -10,6 +10,8 @@ jest.unmock("react-native")
 jest.unmock('react')
 jest.unmock("react-test-renderer")
 jest.unmock('expo');
+jest.mock('../../components/dateUtils')
+
 
 // Simulating the Date so we can indicate the expected
 // output

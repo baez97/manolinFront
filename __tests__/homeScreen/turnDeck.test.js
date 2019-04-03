@@ -1,13 +1,3 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import TurnDeck from '../../components/homeComponents/turnDeck';
-import mockedNurse from '../../mockedData/mockedNurse';
-
-jest.unmock("react-native")
-jest.unmock('react')
-jest.unmock("react-test-renderer")
-jest.unmock('expo');
-
 // Simulating the Date so we can indicate the expected
 // output
 const fixedDate = new Date('2019-02-26T09:39:59');
@@ -18,6 +8,17 @@ Date = class extends Date {
         return fixedDate;
     }
 };
+
+import React from 'react';
+import renderer from 'react-test-renderer';
+import TurnDeck from '../../components/homeComponents/turnDeck';
+import mockedNurse from '../../mockedData/mockedNurse';
+
+jest.mock('../../components/dateUtils')
+jest.unmock("react-native")
+jest.unmock('react')
+jest.unmock("react-test-renderer")
+jest.unmock('expo');
 
 const simulateRenderItem = function(rendered, item) {
     rendered
@@ -42,22 +43,6 @@ describe("TurnDeck", () => {
     describe('Methods', () => {
         const turnDeckObj = new TurnDeck({ turnWithDates: mockedNurse.turnWithDates });
 
-        it('GetTodayIndex works correctly', () => {
-            const expectedDay   = 56;
-            const expectedMonth = 1;
-            const { dayIndex, monthIndex } = turnDeckObj.getTodayIndex();
-
-            expect( dayIndex   ).toBe( expectedDay   );
-            expect( monthIndex ).toBe( expectedMonth );
-        });
-
-        it('GetCurrentMonthIndex works correctly', () => {
-            const expectedOutput = 1;
-            const actualOutput   = turnDeckObj.getCurrentMonthIndex();
-
-            expect(actualOutput).toBe(expectedOutput);
-        });
-
         it('GetItemLayout returns the expected object', () => {
             const expectedOutput = {
                 length : 55,
@@ -78,7 +63,7 @@ describe("TurnDeck", () => {
             };
 
             // EXPECTED ARGUMENT
-            const expectedArg = { index: 51 };
+            const expectedArg = { index: 55 };
 
             // PERFORMING THE CALL TO THE TESTED FUNCTION
             turnDeckObj.onLayout();
@@ -274,7 +259,6 @@ describe("TurnDeck", () => {
             );
 
             // MOCKING THE FUNCTION
-            // console.log(rendered.root._fiber.stateNode.list._reactInternalFiber.index);
             rendered.root._fiber.stateNode.list.scrollToIndex = mockedFn;
             
             // FINDING THE CORRESPONDING VIEW
@@ -286,8 +270,6 @@ describe("TurnDeck", () => {
         });
 
         it("Renders each item of the list correctly", () => {
-            const mockedFn = jest.fn(() => {});
-
 
             // RENDERING
             const rendered = renderer.create(
@@ -295,10 +277,11 @@ describe("TurnDeck", () => {
             );
 
             // MOCKING THE FUNCTION
+            const mockedFn = jest.fn(() => {});
+            React.createElement = mockedFn;
             
             // FINDING THE CORRESPONDING VIEW
             const secondChildren = rendered.toJSON().children[1];
-            React.createElement = mockedFn;
             const item = {
                 day: 1,
                 month: 1,
@@ -308,8 +291,6 @@ describe("TurnDeck", () => {
             }
 
             // SIMULATE ONLAYOUT
-
-            // .pendingProps.renderItem
             simulateRenderItem(rendered, item);
             expect(mockedFn).toBeCalled();
         });

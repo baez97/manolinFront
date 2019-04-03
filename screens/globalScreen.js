@@ -7,7 +7,6 @@ import TurnTable from '../components/globalComponents/turnTable'
 export default class GlobalScreen extends React.Component {
     constructor(props) {
         super(props);
-        var indexes = this.getTodayIndex();
         this.state = {
             usersLoaded: false,
             error: false,
@@ -42,23 +41,6 @@ export default class GlobalScreen extends React.Component {
     getNavigationParam(key) {
         return this.props.navigation.getParam(key);
     }
-
-    getTodayIndex() {
-        var currentMonthIndex = this.getCurrentMonthIndex();
-        var indexOfToday = 0;
-        for (let i = 0; i < currentMonthIndex; i++) {
-            indexOfToday += daysPerMonth[i];
-        }
-        indexOfToday += new Date().getDate() - 1;
-
-        return { dayIndex: indexOfToday, monthIndex: currentMonthIndex }
-    }
-
-    getCurrentMonthIndex() {
-        return new Date().getMonth();
-    }
-
-    
 
     render() {
         if ( this.state.error ) {
@@ -118,19 +100,6 @@ const styles = StyleSheet.create({
         marginTop: 30
     }
 });
-
-const dateObj = new Date();
-const daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-const date = {
-    day: dateObj.getDate(),
-    month: dateObj.getMonth()
-};
-
-var indexOfToday = 0;
-for (let i = 0; i < date.month; i++) {
-    indexOfToday += daysPerMonth[i];
-}
-indexOfToday += date.day;
 
 const months = [
     "Enero",

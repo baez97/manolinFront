@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TurnTable Rendering Renders correctly 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "borderRadius": 20,
+      "elevation": 15,
+      "height": 530,
+      "overflow": "hidden",
+      "width": 300,
+    }
+  }
+/>
+`;
+
+exports[`TurnTable Rendering Renders each item correctly 1`] = `
+<Component
+  style={
+    Object {
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <TurnColumn
+    turnObjs={
+      Array [
+        Object {
+          "day": 1,
+          "month": 1,
+          "turn": "M",
+          "weekday": 2,
+          "year": 2019,
+        },
+        Object {
+          "day": 1,
+          "month": 1,
+          "turn": "M",
+          "weekday": 2,
+          "year": 2019,
+        },
+        Object {
+          "day": 1,
+          "month": 1,
+          "turn": "M",
+          "weekday": 2,
+          "year": 2019,
+        },
+        Object {
+          "day": 1,
+          "month": 1,
+          "turn": "M",
+          "weekday": 2,
+          "year": 2019,
+        },
+        Object {
+          "day": 1,
+          "month": 1,
+          "turn": "M",
+          "weekday": 2,
+          "year": 2019,
+        },
+        Object {
+          "day": 1,
+          "month": 1,
+          "turn": "M",
+          "weekday": 2,
+          "year": 2019,
+        },
+        Object {
+          "day": 1,
+          "month": 1,
+          "turn": "M",
+          "weekday": 2,
+          "year": 2019,
+        },
+        Object {
+          "day": 1,
+          "month": 1,
+          "turn": "M",
+          "weekday": 2,
+          "year": 2019,
+        },
+        Object {
+          "day": 1,
+          "month": 1,
+          "turn": "M",
+          "weekday": 2,
+          "year": 2019,
+        },
+        Object {
+          "day": 1,
+          "month": 1,
+          "turn": "M",
+          "weekday": 2,
+          "year": 2019,
+        },
+      ]
+    }
+  />
+</Component>
+`;
