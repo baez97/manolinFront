@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import TurnDeck from '../components/homeComponents/turnDeck';
-import mockedNurse from '../mockedData/mockedNurse';
+import TurnDeck from '../../components/homeComponents/turnDeck';
+import mockedNurse from '../../mockedData/mockedNurse';
 
 jest.unmock("react-native")
 jest.unmock('react')

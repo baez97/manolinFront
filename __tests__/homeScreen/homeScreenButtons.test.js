@@ -1,9 +1,9 @@
 // import { SCLAlert, SCLAlertButton } from 'react-native-scl-alert';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import GlobalButton from '../components/homeComponents/globalButton';
-import MidBlueButton from '../components/homeComponents/midBlueButton';
-import MidYellowButton  from '../components/homeComponents/midYellowButton';
+import GlobalButton from '../../components/homeComponents/globalButton';
+import MidBlueButton from '../../components/homeComponents/midBlueButton';
+import MidYellowButton  from '../../components/homeComponents/midYellowButton';
 
 
 jest.unmock("react-native")

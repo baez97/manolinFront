@@ -1,7 +1,7 @@
 // import { SCLAlert, SCLAlertButton } from 'react-native-scl-alert';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import TurnViewWithDate from '../components/homeComponents/turnViewWithDate';
+import TurnViewWithDate from '../../components/homeComponents/turnViewWithDate';
 
 jest.unmock("react-native")
 jest.unmock('react')

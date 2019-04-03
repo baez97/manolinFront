@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import PrimaryButton from '../components/loginComponents/primaryButtonComponent';
-import RoundedInput from '../components/loginComponents/inputComponent';
+import PrimaryButton from '../../components/loginComponents/primaryButtonComponent';
+import RoundedInput from '../../components/loginComponents/inputComponent';
 
 jest.unmock("react-native")
 jest.unmock('react')

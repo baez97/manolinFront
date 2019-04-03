@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import HomeScreen from '../screens/homeScreen';
+import HomeScreen from '../../screens/homeScreen';
 import fetchMock from 'fetch-mock';
-import mockedNurse from '../mockedData/mockedNurse';
+import mockedNurse from '../../mockedData/mockedNurse';
 import { exportAllDeclaration } from '@babel/types';
-import { BACKEND_IP } from '../config';
+import { BACKEND_IP } from '../../config';
 
 jest.unmock("react-native")
 jest.unmock('react')
