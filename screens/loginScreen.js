@@ -26,11 +26,11 @@ export default class LoginScreen extends React.Component {
     }
 
     async componentDidMount() {
-        await this.checkToken();
         await Font.loadAsync({
             'montserrat-extra-bold' : require(FONT_PATH_MAINTYPO),
             'big-noodle-titling'    : require(FONT_PATH_NAMETYPO),
         });
+        await this.checkToken();
 
         this.setState({ fontLoaded: true });
     }
@@ -45,7 +45,7 @@ export default class LoginScreen extends React.Component {
 
         var savedToken;
 
-        fetch(BACKEND_IP + '/auth/login', {
+        this.fetchToAPI(BACKEND_IP + '/auth/login', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -96,14 +96,14 @@ export default class LoginScreen extends React.Component {
         });
     }
 
-    checkToken() {
+    async checkToken() {
         var savedToken;
 
         deviceStorage.loadJWT()        
         .then( token => {
             if ( token ) {
                 savedToken = token;
-                return fetch(BACKEND_IP + '/auth/me', {
+                return this.fetchToAPI(BACKEND_IP + '/auth/me', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
@@ -125,8 +125,14 @@ export default class LoginScreen extends React.Component {
         })
 
         .catch((err) => {
-            console.log(err.message);
+            // Nothing should happen if this method fails,
+            // simply continue the execution as if the token
+            // was not found
         });
+    }
+
+    fetchToAPI(ipString, options) {
+        return fetch(ipString, options);
     }
 
     goToHomeScreen(savedToken) {

@@ -26,8 +26,6 @@ function generateMockedTurns( day=25, month=2, year=2019, weekday=1 ) {
     return turnObjsCollection;
 }
 
-console.log(generateMockedTurns());
-
 describe('TurnColumn', () => {
 
     describe('Methods', () => {
