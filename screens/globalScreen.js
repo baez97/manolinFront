@@ -45,13 +45,17 @@ export default class GlobalScreen extends React.Component {
     render() {
         if ( this.state.error ) {
             return (
-                <Text> Se ha producido un error </Text>
+                <View style={styles.container}>
+                    <Text> Se ha producido un error </Text>
+                </View>
             )
         }
 
         if ( ! this.state.usersLoaded ) {
             return ( 
-                <Text> Cargando... </Text>
+                <View style={styles.container}>
+                    <Text> Cargando... </Text>
+                </View>
             )
         }
 

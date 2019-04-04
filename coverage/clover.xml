@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1554288912577" clover="3.2.0">
-  <project timestamp="1554288912577" name="All files">
-    <metrics statements="151" coveredstatements="135" conditionals="50" coveredconditionals="40" methods="70" coveredmethods="66" elements="271" coveredelements="241" complexity="0" loc="151" ncloc="151" packages="8" files="16" classes="16"/>
+<coverage generated="1554370531712" clover="3.2.0">
+  <project timestamp="1554370531713" name="All files">
+    <metrics statements="169" coveredstatements="169" conditionals="56" coveredconditionals="56" methods="79" coveredmethods="79" elements="304" coveredelements="304" complexity="0" loc="169" ncloc="169" packages="8" files="17" classes="17"/>
     <package name="pipelineApp">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="config.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/config.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
       </file>
     </package>
     <package name="pipelineApp.assets">
@@ -20,16 +20,16 @@
       <metrics statements="26" coveredstatements="26" conditionals="4" coveredconditionals="4" methods="15" coveredmethods="15"/>
       <file name="dateUtils.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/components/dateUtils.js">
         <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="29" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
         <line num="30" count="2" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="38" count="4" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
         <line num="39" count="4" type="stmt"/>
-        <line num="40" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="41" count="6" type="stmt"/>
-        <line num="43" count="4" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="41" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="6" type="stmt"/>
+        <line num="44" count="4" type="stmt"/>
       </file>
       <file name="deviceStorage.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/components/deviceStorage.js">
         <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="13" coveredmethods="13"/>
@@ -52,51 +52,53 @@
       </file>
     </package>
     <package name="pipelineApp.components.globalComponents">
-      <metrics statements="51" coveredstatements="35" conditionals="20" coveredconditionals="10" methods="17" coveredmethods="13"/>
+      <metrics statements="53" coveredstatements="53" conditionals="20" coveredconditionals="20" methods="18" coveredmethods="18"/>
       <file name="nameColumn.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/components/globalComponents/nameColumn.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="33" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="37" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="19" count="12" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="19" count="16" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
       </file>
       <file name="turnColumn.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/components/globalComponents/turnColumn.js">
-        <metrics statements="20" coveredstatements="4" conditionals="10" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
-        <line num="63" count="1" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
+        <metrics statements="22" coveredstatements="22" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="5"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="14" count="48" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="47" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="18" count="35" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="23" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="32" count="44" type="stmt"/>
+        <line num="33" count="44" type="stmt"/>
+        <line num="39" count="4" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="71" count="3" type="stmt"/>
+        <line num="72" count="3" type="stmt"/>
+        <line num="78" count="3" type="stmt"/>
       </file>
       <file name="turnTable.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/components/globalComponents/turnTable.js">
         <metrics statements="24" coveredstatements="24" conditionals="10" coveredconditionals="10" methods="8" coveredmethods="8"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
-        <line num="31" count="5" type="stmt"/>
+        <line num="31" count="13" type="stmt"/>
         <line num="35" count="6" type="cond" truecount="4" falsecount="0"/>
         <line num="36" count="4" type="stmt"/>
         <line num="37" count="4" type="stmt"/>
@@ -108,10 +110,10 @@
         <line num="46" count="4" type="cond" truecount="4" falsecount="0"/>
         <line num="47" count="1" type="stmt"/>
         <line num="57" count="1" type="stmt"/>
-        <line num="76" count="1" type="stmt"/>
-        <line num="79" count="1" type="stmt"/>
-        <line num="86" count="13" type="stmt"/>
-        <line num="93" count="1" type="stmt"/>
+        <line num="76" count="3" type="stmt"/>
+        <line num="79" count="3" type="stmt"/>
+        <line num="86" count="39" type="stmt"/>
+        <line num="93" count="2" type="stmt"/>
       </file>
     </package>
     <package name="pipelineApp.components.homeComponents">
@@ -198,11 +200,30 @@
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="mockedNurse.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/mockedData/mockedNurse.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
       </file>
     </package>
     <package name="pipelineApp.screens">
-      <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="13" coveredmethods="13"/>
+      <metrics statements="34" coveredstatements="34" conditionals="10" coveredconditionals="10" methods="21" coveredmethods="21"/>
+      <file name="globalScreen.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/screens/globalScreen.js">
+        <metrics statements="16" coveredstatements="16" conditionals="6" coveredconditionals="6" methods="8" coveredmethods="8"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="42" count="7" type="stmt"/>
+        <line num="46" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="4" type="stmt"/>
+        <line num="54" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="55" count="5" type="stmt"/>
+        <line num="62" count="3" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="108" count="1" type="stmt"/>
+      </file>
       <file name="homeScreen.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/screens/homeScreen.js">
         <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="13" coveredmethods="13"/>
         <line num="12" count="9" type="stmt"/>

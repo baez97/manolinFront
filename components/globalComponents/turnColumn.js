@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo';
+import DateUtils from '../dateUtils';
+const  dateUtils = new DateUtils();
 
 export default class TurnColumn extends React.Component {
     constructor(props) {
@@ -22,8 +24,8 @@ export default class TurnColumn extends React.Component {
         return this.state.weekday > 5;
     }
 
-    render() {
-        const { day, weekday } = this.props.turnObjs[0];
+    getTurnsView() {
+        const { day } = this.props.turnObjs[0];
         var turnsView = [];
 
         for ( let i = 0; i < this.props.turnObjs.length; i++ ) {
@@ -33,6 +35,12 @@ export default class TurnColumn extends React.Component {
                 { turn }
             </Text>)
         }
+
+        return turnsView;
+    }
+
+    render() {
+        const turnsView = this.getTurnsView();
 
         return (
             <View style={{width: 50}}>
@@ -58,12 +66,13 @@ export default class TurnColumn extends React.Component {
     }
 }
 
-const weekDays = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
-const dateObj = new Date();
+// const weekDays = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
+
+const { day, month, year } = dateUtils.today;
 const todayObj = {
-    day: dateObj.getDate(),
-    month: dateObj.getMonth() +1,
-    year: dateObj.getFullYear()
+    day   : day,
+    month : month +1,
+    year  : year
 }
 
 const styles = StyleSheet.create({
@@ -105,7 +114,5 @@ const styles = StyleSheet.create({
         borderRightColor: '#c5c9cc',
         borderRightWidth: 0.5,
         borderLeftColor: '#c5c9cc',
-        // borderLeftWidth: 0.5,
-        // justifyContent: 'center'
     }
 });

@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GlobalScreen tests View Shows 'Cargando...' when the turns are not loaded 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#bee6ef",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+      "paddingTop": 10,
+    }
+  }
+>
+  <Text>
+     Cargando... 
+  </Text>
+</View>
+`;
+
+exports[`GlobalScreen tests View Shows 'Se ha producido un error...' when the fetch failed 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#bee6ef",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+      "paddingTop": 10,
+    }
+  }
+>
+  <Text>
+     Se ha producido un error 
+  </Text>
+</View>
+`;
+
+exports[`GlobalScreen tests View Shows everything when the turns are loaded 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#bee6ef",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+      "paddingTop": 10,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#332554",
+        "fontFamily": "montserrat-extra-bold",
+        "fontSize": 22,
+        "marginTop": 30,
+        "textAlign": "left",
+        "width": 390,
+      }
+    }
+  >
+    Turno de Febrero
+  </Text>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginTop": 10,
+        "width": 400,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginRight": 20,
+          "marginTop": 45,
+        }
+      }
+    />
+    <View
+      onLayout={[Function]}
+      style={
+        Object {
+          "borderRadius": 20,
+          "elevation": 15,
+          "height": 530,
+          "overflow": "hidden",
+          "width": 300,
+        }
+      }
+    />
+  </View>
+</View>
+`;

@@ -1,14 +1,3 @@
-// Simulating the Date so we can indicate the expected
-// output
-const fixedDate = new Date('2019-02-26T09:39:59');
-
-Date = class extends Date {
-    constructor() {
-        super();
-        return fixedDate;
-    }
-};
-
 import React from 'react';
 import renderer from 'react-test-renderer';
 import TurnDeck from '../../components/homeComponents/turnDeck';

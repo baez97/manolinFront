@@ -29,7 +29,8 @@ class DateUtils {
 
     today = {
         day   : this.dateObj.getDate(),
-        month : this.dateObj.getMonth()
+        month : this.dateObj.getMonth(),
+        year  : this.dateObj.getFullYear()
     };
 
     getIndexOfToday() {
