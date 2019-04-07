@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo';
 
 export default class TurnViewWithDate extends React.Component {
@@ -25,7 +25,8 @@ export default class TurnViewWithDate extends React.Component {
     render() {
         const { day, month, year, turn, weekday } = this.props.turnObject;
         return (
-            <View style={{width: 55}}>
+            <TouchableOpacity style={{width: 55}}
+                onLongPress={() => console.log(`LONG PRESS => ${day}-${month}-${year}`)}>
                 <LinearGradient
                     colors={['#0c9ed6', '#0470dc']}
                     style={ styles.dayBar }
@@ -45,7 +46,7 @@ export default class TurnViewWithDate extends React.Component {
                         { turn }
                     </Text>
                  </LinearGradient>
-            </View>
+            </TouchableOpacity>
         )
     }
 }
