@@ -14,6 +14,16 @@ class DateUtils {
         "Diciembre"
     ]
 
+    weekdays = [
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Jueves",
+        "Viernes",
+        "Sábado",
+        "Domingo"
+    ]
+
     dateObj = new Date()
 
     daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];

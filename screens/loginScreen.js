@@ -92,7 +92,10 @@ export default class LoginScreen extends React.Component {
 
         .catch( err => {
             // Any login error will be shown to the user with an Alert.
-            this.showError(err.message);
+            this.showError({
+                title: "Ha habido un error",
+                message: err.message
+            });
         });
     }
 

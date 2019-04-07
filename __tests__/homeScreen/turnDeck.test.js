@@ -270,7 +270,6 @@ describe("TurnDeck", () => {
             React.createElement = mockedFn;
             
             // FINDING THE CORRESPONDING VIEW
-            const secondChildren = rendered.toJSON().children[1];
             const item = {
                 day: 1,
                 month: 1,

@@ -1,10 +1,11 @@
 import React from 'react';
 import { LinearGradient } from 'expo';
 import { StyleSheet, Image, Text, View, TouchableOpacity, FlatList } from 'react-native';
-import GlobalButton from '../components/homeComponents/globalButton';
+import GlobalButton    from '../components/homeComponents/globalButton';
 import MidYellowButton from '../components/homeComponents/midYellowButton';
-import MidBlueButton from '../components/homeComponents/midBlueButton';
-import TurnDeck from '../components/homeComponents/turnDeck';
+import MidBlueButton   from '../components/homeComponents/midBlueButton';
+import TurnDeck        from '../components/homeComponents/turnDeck';
+import ChangesQueue    from '../components/homeComponents/changes/changesQueue';
 import { BACKEND_IP } from '../config';
 
 export default class HomeScreen extends React.Component {
@@ -91,6 +92,7 @@ export default class HomeScreen extends React.Component {
                     </View>
 
                     <Text style={styles.labelText}>Peticiones de cambio</Text>
+                    <ChangesQueue token={this.getNavigationParam("token")}/>
 
                 </View>
             )

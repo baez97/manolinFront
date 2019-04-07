@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChangeView View Matches the Snapshot 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "elevation": 15,
+      "opacity": 1,
+    }
+  }
+>
+  <ExponentLinearGradient
+    colors={
+      Array [
+        4287123141,
+        4281607599,
+      ]
+    }
+    endPoint={
+      Array [
+        0.8,
+        1,
+      ]
+    }
+    startPoint={
+      Array [
+        0.7,
+        0,
+      ]
+    }
+    style={
+      Object {
+        "alignItems": "center",
+        "borderRadius": 20,
+        "elevation": 15,
+        "flexDirection": "row",
+        "height": 100,
+        "justifyContent": "space-between",
+        "marginTop": 20,
+        "padding": 20,
+        "paddingLeft": 30,
+        "paddingRight": 40,
+        "width": 400,
+      }
+    }
+  >
+    <View>
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 21,
+            "textAlign": "left",
+          }
+        }
+      >
+        Lunes 5 de Febrero
+      </Text>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 200,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#cfbcf9",
+              "fontFamily": "montserrat-extra-bold",
+              "fontSize": 18,
+              "marginTop": 8,
+              "textAlign": "left",
+            }
+          }
+        >
+          Ana
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#cfbcf9",
+              "fontFamily": "montserrat-extra-bold",
+              "fontSize": 18,
+              "marginTop": 8,
+              "textAlign": "left",
+            }
+          }
+        >
+          Cambio
+        </Text>
+      </View>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontFamily": "montserrat-extra-bold",
+          "fontSize": 60,
+          "marginTop": -5,
+          "textAlign": "center",
+        }
+      }
+    >
+      T
+    </Text>
+  </ExponentLinearGradient>
+</View>
+`;

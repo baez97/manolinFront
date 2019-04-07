@@ -44,7 +44,7 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         }
       }
     >
-      26
+      1
     </Text>
   </ExponentLinearGradient>
   <ExponentLinearGradient
@@ -266,7 +266,7 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         }
       }
     >
-      26
+      25
     </Text>
   </ExponentLinearGradient>
   <ExponentLinearGradient

@@ -25,7 +25,6 @@ export default class TurnColumn extends React.Component {
     }
 
     getTurnsView() {
-        const { day } = this.props.turnObjs[0];
         var turnsView = [];
 
         for ( let i = 0; i < this.props.turnObjs.length; i++ ) {
@@ -41,6 +40,7 @@ export default class TurnColumn extends React.Component {
 
     render() {
         const turnsView = this.getTurnsView();
+        const { day } = this.props.turnObjs[0];
 
         return (
             <View style={{width: 50}}>
