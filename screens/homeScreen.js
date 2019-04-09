@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import Modal           from 'react-native-modal';
+import { StyleSheet, Text, View } from 'react-native';
+import SocketIOClient from 'socket.io-client';
 
 import GlobalButton    from '../components/homeComponents/buttons/globalButton';
 import MidYellowButton from '../components/homeComponents/buttons/midYellowButton';
@@ -25,6 +25,8 @@ export default class HomeScreen extends React.Component {
         this.selectTurn   = this.selectTurn.bind(this);
         this.toggleModal  = this.toggleModal.bind(this);
         this.addChange    = this.addChange.bind(this);
+        this.socket       = SocketIOClient("http://192.168.1.41:5000");
+        this.socket.emit('helloWorld', 'Hi server');
     }
 
     async componentDidMount() {
