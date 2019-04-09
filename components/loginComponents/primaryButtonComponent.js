@@ -1,6 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet, Text } from 'react-native';
 import { LinearGradient } from 'expo';
+import LayoutStyle from '../../styles/layoutStyle';
 
 export default class PrimaryButton extends React.Component{
 
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
 
   buttonText: {
     fontFamily: 'montserrat-extra-bold',
-    fontSize: 20,
+    fontSize: LayoutStyle.smallFontSize,
     color: 'white',
     textAlign: 'center'
   }

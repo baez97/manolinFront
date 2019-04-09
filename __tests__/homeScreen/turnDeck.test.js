@@ -34,8 +34,8 @@ describe("TurnDeck", () => {
 
         it('GetItemLayout returns the expected object', () => {
             const expectedOutput = {
-                length : 55,
-                offset : 110,
+                length : 97.5,
+                offset : 195,
                 index  : 2
             }
 

@@ -7,6 +7,7 @@ import mockedNurse from '../../mockedData/mockedNurse';
 import { BACKEND_IP } from '../../config';
 
 jest.mock('../../components/homeComponents/changes/changesQueue');
+jest.mock('../../components/homeComponents/askChangeModal');
 jest.unmock("react-native")
 jest.unmock('react')
 jest.unmock("react-test-renderer")
@@ -32,28 +33,43 @@ Date = class extends Date {
 describe("HomeScreen tests", () => {
 
     describe("Functions", () => {
-        const h = new HomeScreen();
 
-        it("globalButtonPressed function",    () => {
+        it("globalButtonPressed function", () => {
             const mockedFn = jest.fn();
-            h.props = {
+            const props = {
                 navigation: {
                     navigate: mockedFn,
                     getParam: () => {}
                 }
             }
+            const h = new HomeScreen({navigation: props.navigation});
 
             h.globalButtonPressed();
             expect(mockedFn).toBeCalled();
-
         });
 
         it("myChangesButtonPressed function", () => {
+            const mockedFn = jest.fn();
+            const props = {
+                navigation: {
+                    navigate: mockedFn,
+                    getParam: () => {}
+                }
+            }
+            const h = new HomeScreen({navigation: props.navigation});
             expect( h.myChangesButtonPressed   ).toBeDefined();
             expect( h.myChangesButtonPressed() ).toBeUndefined();
         });
         
         it("contactsButtonPressed function",  () => {
+            const mockedFn = jest.fn();
+            const props = {
+                navigation: {
+                    navigate: mockedFn,
+                    getParam: () => {}
+                }
+            }
+            const h = new HomeScreen({navigation: props.navigation});
             expect( h.contactsButtonPressed   ).toBeDefined();
             expect( h.contactsButtonPressed() ).toBeUndefined();
         });
@@ -229,8 +245,16 @@ describe("HomeScreen tests", () => {
         });
 
         it("Shows 'Cargando...' when the user is not loaded", () => {
+
+            const mockedToken = "VALUE";
+
+            const navigation = {
+                getParam: jest.fn( key => mockedToken ),
+                navigate: jest.fn( name => {} )
+            }
+
             const rendered = renderer.create(
-                <HomeScreen />
+                <HomeScreen navigation={navigation}/>
             ).toJSON();
 
             const loadingView = rendered.children[0];

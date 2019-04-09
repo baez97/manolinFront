@@ -21,6 +21,24 @@ describe("DateUtils", () => {
             expect( actualIndex ).toBe(expectedIndex);
         });
 
+        it("GetDateString works fine", () => {
+            const mockedChange = {
+                owner: "Ana",
+                day: 5,
+                month: 2,
+                year: 2019,
+                weekday: 1,
+                turn: "M",
+                type: "change"
+            };
+
+            const expectedOutput =
+                "Lunes 5 de Febrero";
+
+            const actualOutput = dateUtils.getDateString(mockedChange);
+            expect( actualOutput ).toBe(expectedOutput);
+        });
+
         describe("GetMonthOfDayIndex", () => {
             it("Works fine when the day is at the middle of a month", () => {
                 const expectedMonth = 1;

@@ -13,10 +13,10 @@ exports[`TurnDeck Renders correctly 1`] = `
       Object {
         "color": "#332554",
         "fontFamily": "montserrat-extra-bold",
-        "fontSize": 22,
+        "fontSize": 38.95833442608516,
         "marginTop": 30,
         "textAlign": "left",
-        "width": 390,
+        "width": 712.5,
       }
     }
   >
@@ -26,12 +26,12 @@ exports[`TurnDeck Renders correctly 1`] = `
     onLayout={[Function]}
     style={
       Object {
-        "borderRadius": 20,
+        "borderRadius": 35.5,
         "elevation": 15,
-        "height": 90,
+        "height": 159.5,
         "marginTop": 10,
         "overflow": "hidden",
-        "width": 400,
+        "width": 712.5,
       }
     }
   />

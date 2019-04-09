@@ -1,6 +1,9 @@
 import React from 'react';
 import { LinearGradient } from 'expo';
 import { StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
+import { widthPercentageToDP  as wp, 
+         heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import LayoutStyle from '../../../styles/layoutStyle';
 
 export default class GlobalButton extends React.Component {
     constructor(props) {
@@ -18,7 +21,10 @@ export default class GlobalButton extends React.Component {
                 <Text style={styles.buttonText}>
                     {this.props.text}
                 </Text>
-                <Image source={require('../../assets/calendar.png')} style={styles.calendarImage}></Image>
+                <Image 
+                    source={require('../../../assets/calendar.png')} 
+                    style={styles.calendarImage}
+                    resizeMode="contain"/>
             </LinearGradient>
         </TouchableOpacity>)
     }
@@ -26,26 +32,29 @@ export default class GlobalButton extends React.Component {
 
 const styles = StyleSheet.create({
     globalButton: {
-        padding: 10,
-        borderRadius: 20,
+        paddingTop: LayoutStyle.verticalUnits10,
+        // paddingBottom: LayoutStyle.verticalUnits10,
+        paddingLeft: LayoutStyle.horizontalUnits10,
+        paddingRight: LayoutStyle.horizontalUnits10,
+        borderRadius: LayoutStyle.borderRadius,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        marginTop: 20,
+        marginTop: LayoutStyle.verticalUnits10*2,
         elevation: 15,
-        width: 400,
-        height: 120
+        width: LayoutStyle.maxWidth,
+        height: LayoutStyle.globalHeight
     },
 
     buttonText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 21,
+        fontSize: LayoutStyle.primaryFontSize,
         color: 'white',
         textAlign: 'left',
-        marginTop: 10,
+        marginTop: LayoutStyle.verticalUnits10,
     },
 
     calendarImage: {
-        height: 100,
-        width: 100,
+        height: LayoutStyle.imageHeight,
+        width: LayoutStyle.imageWidth
     }
 });

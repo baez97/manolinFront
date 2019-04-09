@@ -39,8 +39,8 @@ describe('TurnTable', () => {
 
         it('GetItemLayout returns the expected object', () => {
             const expectedOutput = {
-                length : 50,
-                offset : 100,
+                length : 88.5,
+                offset : 177,
                 index  : 2
             }
 

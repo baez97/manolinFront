@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet} from 'react-native'
-
+import LayoutStyle from '../../styles/layoutStyle'
 
 export default class NameColumn extends React.Component {
     constructor(props) {
@@ -12,10 +12,10 @@ export default class NameColumn extends React.Component {
 
     render() {
         return (
-            <View style={{marginTop: 45, marginRight: 20}}>
+            <View style={styles.container}>
                 <FlatList
                     data={this.state.names}
-                    renderItem={({ item }) => <Text style={styles.nameText}>{item}</Text>}
+                    renderItem={({item}) => <Text style={styles.nameText}>{item}</Text>}
                     keyExtractor={item => item}>
                 </FlatList>
             </View>
@@ -26,7 +26,12 @@ export default class NameColumn extends React.Component {
 const styles = StyleSheet.create({
     nameText: {
         fontFamily: 'big-noodle-titling',
-        fontSize: 30,
-        paddingBottom: 15,
+        fontSize: LayoutStyle.bigFontSize,
+        paddingBottom: LayoutStyle.verticalUnits10 * 1.5,
+    },
+
+    container: {
+        marginTop: LayoutStyle.verticalUnits10*4.5, 
+        marginRight: LayoutStyle.horizontalUnits10*2
     }
 })

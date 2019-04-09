@@ -3,6 +3,7 @@ import { Text, View, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo';
 import DateUtils from '../dateUtils';
 const  dateUtils = new DateUtils();
+import LayoutStyles from '../../styles/layoutStyle'
 
 export default class TurnColumn extends React.Component {
     constructor(props) {
@@ -43,7 +44,7 @@ export default class TurnColumn extends React.Component {
         const { day } = this.props.turnObjs[0];
 
         return (
-            <View style={{width: 50}}>
+            <View style={{width: LayoutStyles.turnColWidth}}>
                 <LinearGradient
                     colors={['#0c9ed6', '#0470dc']}
                     style={ styles.dayBar }
@@ -78,13 +79,13 @@ const todayObj = {
 const styles = StyleSheet.create({
     dayText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 20,
+        fontSize: LayoutStyles.smallFontSize,
         color: 'white',
         textAlign: 'center'
     },
 
     dayBar: {
-        height: 30, 
+        height: LayoutStyles.verticalUnits10*3, 
         justifyContent: 'center'
     },
 
@@ -94,23 +95,26 @@ const styles = StyleSheet.create({
 
     turnText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 23,
+        fontSize: LayoutStyles.hugeFontSize,
         color: 'black',
         textAlign: 'center',
-        paddingBottom: 16
+        paddingBottom: LayoutStyles.verticalUnits10*1.6
     },
 
     todayTurnText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 23,
+        fontSize: LayoutStyles.hugeFontSize,
         color: 'black',
         textAlign: 'center',
         color: '#056ec9',
-        paddingBottom: 16
+        paddingBottom: LayoutStyles.verticalUnits10*1.6
     },
 
     turnBar: {
-        padding:10,
+        paddingTop:LayoutStyles.verticalUnits10,
+        paddingBottom:LayoutStyles.verticalUnits10,
+        paddingRight:LayoutStyles.horizontalUnits10,
+        paddingLeft:LayoutStyles.horizontalUnits10,
         borderRightColor: '#c5c9cc',
         borderRightWidth: 0.5,
         borderLeftColor: '#c5c9cc',

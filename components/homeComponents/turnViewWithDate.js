@@ -1,11 +1,13 @@
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo';
+import LayoutStyle from '../../styles/layoutStyle';
 
 export default class TurnViewWithDate extends React.Component {
     constructor(props) {
         super(props);
         this.state = {...this.props.turnObject};
+        this.dayPressed = this.dayPressed.bind(this);
     }
 
     isToday() {
@@ -22,11 +24,15 @@ export default class TurnViewWithDate extends React.Component {
         return this.state.weekday > 5;
     }
 
+    dayPressed() {
+        this.props.selectTurn({...this.state});
+    } 
+
     render() {
-        const { day, month, year, turn, weekday } = this.props.turnObject;
+        const { day, turn, weekday } = this.props.turnObject;
         return (
-            <TouchableOpacity style={{width: 55}}
-                onLongPress={() => console.log(`LONG PRESS => ${day}-${month}-${year}`)}>
+            <TouchableOpacity style={{width: LayoutStyle.turnWidth}}
+                onLongPress={this.dayPressed}>
                 <LinearGradient
                     colors={['#0c9ed6', '#0470dc']}
                     style={ styles.dayBar }
@@ -62,13 +68,13 @@ const todayObj = {
 const styles = StyleSheet.create({
     dayText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 20,
+        fontSize: LayoutStyle.smallFontSize,
         color: 'white',
         textAlign: 'center'
     },
 
     dayBar: {
-        height: 30, 
+        height: LayoutStyle.dayHeight, 
         justifyContent: 'center'
     },
 
@@ -78,14 +84,14 @@ const styles = StyleSheet.create({
 
     turnText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 23,
+        fontSize: LayoutStyle.hugeFontSize,
         color: 'black',
         textAlign: 'center'
     },
 
     todayTurnText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 23,
+        fontSize: LayoutStyle.hugeFontSize,
         color: 'black',
         textAlign: 'center',
         color: '#056ec9'
@@ -95,7 +101,7 @@ const styles = StyleSheet.create({
         padding:10,
         borderRightColor: '#c5c9cc',
         borderRightWidth: 0.5,
-        height: 60,
+        height: LayoutStyle.turnHeight,
         justifyContent: 'center'
     }
 });

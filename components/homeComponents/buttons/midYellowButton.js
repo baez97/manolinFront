@@ -1,8 +1,10 @@
 import React from 'react';
 import { LinearGradient } from 'expo';
 import { StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
+import LayoutStyle from '../../../styles/layoutStyle';
 
-export default class MidBlueButton extends React.Component {
+
+export default class MidYellowButton extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -11,8 +13,8 @@ export default class MidBlueButton extends React.Component {
         return (
         <TouchableOpacity onPress={this.props.onPressFn}>
             <LinearGradient
-                style={styles.midBlueButton}
-                colors={['#10bad2', '#0470dc']}
+                style={styles.midYellowButton}
+                colors={['#ffcc33', '#f2994a']}
                 start={[0.55, 0]}
                 end={[0.65, 1]}>
                 <Text style={styles.buttonText}>
@@ -24,20 +26,20 @@ export default class MidBlueButton extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    midBlueButton: {
+    midYellowButton: {
         borderRadius: 20,
         marginTop: 20,
         elevation: 15,
         alignItems: 'center',
         justifyContent: 'center',
-        width: 190,
-        height: 80
+        width: LayoutStyle.mediumWidth,
+        height: LayoutStyle.mediumHeight
     },
 
     buttonText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 20,
-        color: 'white',
+        fontSize: LayoutStyle.smallFontSize,
+        color: '#3f2606',
         textAlign: 'left'
     },
 });

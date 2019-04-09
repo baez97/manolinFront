@@ -170,6 +170,26 @@ describe('Its methods:', () => {
             expect( rendered.isWeekend() ).toBe(true);
         });
     });
+
+    describe("dayPressed method", () => {
+        it("Calls to selectTurn method of props", () => {
+            const mockedFn = jest.fn();
+            const props = {
+                turnObject: {
+                    day     : 1,
+                    month   : 1,
+                    year    : 2019,
+                    turn    : 'M',
+                    weekday : 6
+                },
+                selectTurn: mockedFn
+            }
+            const rendered = new TurnViewWithDate(props);
+            rendered.dayPressed();
+
+            expect( mockedFn ).toBeCalled();
+        })
+    })
 });
 
 

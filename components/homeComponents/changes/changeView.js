@@ -3,19 +3,12 @@ import React from 'react';
 import { LinearGradient } from 'expo';
 import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 import DateUtils from '../../dateUtils';
-const { weekdays, months } = new DateUtils();
+const dateUtils = new DateUtils();
+import LayoutStyle from '../../../styles/layoutStyle';
 
 export default class ChangeView extends React.Component {
     constructor(props) {
         super(props);
-    }
-
-    getDateString(change) {
-        const { day, month, weekday } = change;
-        const weekdayString = weekdays[weekday -1];
-        const monthString   = months[month -1];
-
-        return `${weekdayString} ${day} de ${monthString}`;
     }
 
     getType(change) {
@@ -39,7 +32,7 @@ export default class ChangeView extends React.Component {
                     end={[0.8, 1]}>
                         <View>
                             <Text style={styles.primaryText}>
-                                {this.getDateString(change)}
+                                { dateUtils.getDateString(change) }
                             </Text>
                             <View style={styles.changeDataContainer}>
                                 <Text style={styles.secondaryText}>
@@ -51,7 +44,7 @@ export default class ChangeView extends React.Component {
                             </View>
                         </View>
                         <Text style={styles.turnText}>
-                            T
+                            { change.turn }
                         </Text>
                 </LinearGradient>
             </TouchableOpacity>)
@@ -64,50 +57,56 @@ const styles = StyleSheet.create({
     },
 
     changeBox: {
-        padding: 20,
+        paddingTop:    LayoutStyle.verticalUnits10*2,
+        paddingBottom: LayoutStyle.verticalUnits10*2,
+        paddingRight:  LayoutStyle.horizontalUnits10*2,
+        paddingLeft:   LayoutStyle.horizontalUnits10*2,
         borderRadius: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: 20,
-        paddingLeft:  30,
-        paddingRight: 40,
-        elevation: 15,
-        width: 400,
-        height: 100
+        marginTop: LayoutStyle.verticalUnits10,
+        marginLeft: LayoutStyle.horizontalUnits10,
+        marginRight: LayoutStyle.horizontalUnits10,
+        marginBottom: 0,
+        paddingLeft:  LayoutStyle.horizontalUnits10*3,
+        paddingRight: LayoutStyle.horizontalUnits10*4,
+        elevation: 10,
+        width: LayoutStyle.maxWidth,
+        height: LayoutStyle.imageHeight
     },
 
     changeDataContainer: {
         flexDirection: 'row',
-        width: 200,
+        width: LayoutStyle.mediumWidth,
         justifyContent: 'space-between'
     },
 
     turnText: {
         marginTop: -5,
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 60,
+        fontSize: LayoutStyle.largeFontSize,
         color: 'white',
         textAlign: 'center',
     },
 
     primaryText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 21,
+        fontSize: LayoutStyle.primaryFontSize,
         color: 'white',
         textAlign: 'left',
     },
 
     secondaryText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 18,
+        fontSize: LayoutStyle.tinyFontSize,
         color: '#cfbcf9',
         textAlign: 'left',
         marginTop: 8
     },
 
-    changeImage: {
-        height: 100,
-        width: 100,
-    }
+    // changeImage: {
+    //     height: 100,
+    //     width: 100,
+    // }
 })

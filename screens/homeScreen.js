@@ -1,44 +1,108 @@
 import React from 'react';
-import { LinearGradient } from 'expo';
-import { StyleSheet, Image, Text, View, TouchableOpacity, FlatList } from 'react-native';
-import GlobalButton    from '../components/homeComponents/globalButton';
-import MidYellowButton from '../components/homeComponents/midYellowButton';
-import MidBlueButton   from '../components/homeComponents/midBlueButton';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Modal           from 'react-native-modal';
+
+import GlobalButton    from '../components/homeComponents/buttons/globalButton';
+import MidYellowButton from '../components/homeComponents/buttons/midYellowButton';
+import MidBlueButton   from '../components/homeComponents/buttons/midBlueButton';
 import TurnDeck        from '../components/homeComponents/turnDeck';
 import ChangesQueue    from '../components/homeComponents/changes/changesQueue';
-import { BACKEND_IP } from '../config';
+import AskChangeModal  from '../components/homeComponents/askChangeModal'
+import { BACKEND_IP }  from '../config';
+import layoutStyle from '../styles/layoutStyle';
+
 
 export default class HomeScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             userLoaded: false,
-            error: false
+            error: false,
+            isModalVisible: false,
         }
+        this.token        = this.getNavigationParam("token");
+        this.selectedTurn = {};
+        this.selectTurn   = this.selectTurn.bind(this);
+        this.toggleModal  = this.toggleModal.bind(this);
+        this.addChange    = this.addChange.bind(this);
     }
 
     async componentDidMount() {
-        const token = this.getNavigationParam("token");
-        return fetch(BACKEND_IP + '/auth/me', {
+        return this.fetchToAPI('/auth/me', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
-                'x-access-token': token
+                'x-access-token': this.token
             }
         })
-            .then(response => response.json())
-            .then(user => {
-                this.setState({
-                    user: user,
-                    userLoaded: true
-                });
-            })
-            .catch(err => {
-                this.setState({
-                    error: true
-                })
+        .then(response => response.json())
+        .then(user => {
+            this.setState({
+                user: user,
+                userLoaded: true
             });
+        })
+        .catch(err => {
+            this.setState({
+                error: true
+            })
+        });
+    }
+
+    fetchToAPI(urlString, options) {
+        return fetch(BACKEND_IP + urlString, options);
+    }
+
+    addChange({day, weekday, month, year, turn}, typeString) {
+        const change = {
+            day,
+            weekday,
+            month,
+            year,
+            turn,
+            owner: this.state.user.name,
+            type: typeString,
+            accepted: false,
+            purposes: [],
+        }
+
+        this.fetchToAPI("/central/insertChange",
+            {
+                method: 'POST',
+                body: JSON.stringify({
+                    change: change
+                }),
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    'x-access-token': this.token
+                }
+            }
+        )
+        .then( () => {
+            this.toggleModal();
+            this.showConfirmation();
+        })
+        .catch( err => {
+            console.log(err);
+        })
+    }
+
+    showConfirmation() {
+        console.log("CONFIRMED!");
+        this.forceUpdate();
+    }
+
+    toggleModal() {
+        this.setState({ 
+            isModalVisible: !this.state.isModalVisible 
+        });
+    }
+
+    selectTurn(turn) {
+        this.selectedTurn = turn;
+        this.toggleModal();
     }
 
     getNavigationParam(key, defValue) {
@@ -48,16 +112,16 @@ export default class HomeScreen extends React.Component {
     globalButtonPressed() {
         this.props.navigation.navigate(
             "GlobalScreen", 
-            {token: this.getNavigationParam("token")}
+            {token: this.token}
         );
     }
 
     myChangesButtonPressed() {
-        // NOT IMPLEMENTED YET!
+        // NOT IMPLEMENTED YET
     }
 
     contactsButtonPressed() {
-        // NOT IMPLEMENTED YET!
+        // NOT IMPLEMENTED YET
     }
 
 
@@ -77,12 +141,12 @@ export default class HomeScreen extends React.Component {
         } else {
             return (
                 <View style={styles.container}>
-                    <TurnDeck turnWithDates={this.state.user.turnWithDates}/>
+                    <TurnDeck selectTurn={this.selectTurn} turnWithDates={this.state.user.turnWithDates}/>
 
                     <GlobalButton text="VER TURNO GLOBAL" onPressFn={() => {
                         this.globalButtonPressed();
                     }}/>
-                    <View style={{ width: 400, flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <View style={{ width: layoutStyle.maxWidth, flexDirection: 'row', justifyContent: 'space-between' }}>
                         <MidYellowButton text="MIS CAMBIOS" onPressFn={() => {
                             this.myChangesButtonPressed();
                         }}/>
@@ -92,8 +156,12 @@ export default class HomeScreen extends React.Component {
                     </View>
 
                     <Text style={styles.labelText}>Peticiones de cambio</Text>
-                    <ChangesQueue token={this.getNavigationParam("token")}/>
-
+                    <ChangesQueue token={this.token}/>
+                    <AskChangeModal 
+                        selectedTurn   = { this.selectedTurn }
+                        toggleModal    = { this.toggleModal  }
+                        isModalVisible = { this.state.isModalVisible }
+                        addChange      = { this.addChange    }/>
                 </View>
             )
         }
@@ -112,10 +180,10 @@ const styles = StyleSheet.create({
 
     labelText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 22,
+        fontSize: layoutStyle.primaryFontSize,
         color: '#3b2868',
         textAlign: 'left',
-        width: 390,
+        width: layoutStyle.maxWidth,
         marginTop: 30
     },
 });

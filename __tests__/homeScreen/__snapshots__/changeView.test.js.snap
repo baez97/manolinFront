@@ -40,15 +40,19 @@ exports[`ChangeView View Matches the Snapshot 1`] = `
       Object {
         "alignItems": "center",
         "borderRadius": 20,
-        "elevation": 15,
+        "elevation": 10,
         "flexDirection": "row",
-        "height": 100,
+        "height": 177,
         "justifyContent": "space-between",
-        "marginTop": 20,
-        "padding": 20,
-        "paddingLeft": 30,
-        "paddingRight": 40,
-        "width": 400,
+        "marginBottom": 0,
+        "marginLeft": 17.5,
+        "marginRight": 17.5,
+        "marginTop": 17.5,
+        "paddingBottom": 35,
+        "paddingLeft": 52.5,
+        "paddingRight": 70,
+        "paddingTop": 35,
+        "width": 712.5,
       }
     }
   >
@@ -58,7 +62,7 @@ exports[`ChangeView View Matches the Snapshot 1`] = `
           Object {
             "color": "white",
             "fontFamily": "montserrat-extra-bold",
-            "fontSize": 21,
+            "fontSize": 38.95833442608516,
             "textAlign": "left",
           }
         }
@@ -70,7 +74,7 @@ exports[`ChangeView View Matches the Snapshot 1`] = `
           Object {
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "width": 200,
+            "width": 336.5,
           }
         }
       >
@@ -79,7 +83,7 @@ exports[`ChangeView View Matches the Snapshot 1`] = `
             Object {
               "color": "#cfbcf9",
               "fontFamily": "montserrat-extra-bold",
-              "fontSize": 18,
+              "fontSize": 31.87500089407465,
               "marginTop": 8,
               "textAlign": "left",
             }
@@ -92,7 +96,7 @@ exports[`ChangeView View Matches the Snapshot 1`] = `
             Object {
               "color": "#cfbcf9",
               "fontFamily": "montserrat-extra-bold",
-              "fontSize": 18,
+              "fontSize": 31.87500089407465,
               "marginTop": 8,
               "textAlign": "left",
             }
@@ -107,13 +111,13 @@ exports[`ChangeView View Matches the Snapshot 1`] = `
         Object {
           "color": "white",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 60,
+          "fontSize": 106.25000298018863,
           "marginTop": -5,
           "textAlign": "center",
         }
       }
     >
-      T
+      M
     </Text>
   </ExponentLinearGradient>
 </View>

@@ -52,7 +52,7 @@ exports[`PrimaryButton Renders correctly 1`] = `
         Object {
           "color": "white",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 20,
+          "fontSize": 35.416667660079604,
           "textAlign": "center",
         }
       }
@@ -68,10 +68,10 @@ exports[`Rounded Input Renders correctly 1`] = `
       Object {
         "color": "white",
         "fontFamily": "montserrat-extra-bold",
-        "fontSize": 20,
-        "marginBottom": 10,
-        "marginLeft": 10,
-        "marginTop": 20,
+        "fontSize": 35.416667660079604,
+        "marginBottom": 17.5,
+        "marginLeft": 17.5,
+        "marginTop": 35,
       }
     }
   />
@@ -81,12 +81,15 @@ exports[`Rounded Input Renders correctly 1`] = `
     style={
       Object {
         "backgroundColor": "white",
-        "borderRadius": 20,
+        "borderRadius": 35.5,
         "color": "black",
         "fontFamily": "montserrat-extra-bold",
-        "fontSize": 20,
-        "padding": 20,
-        "width": 360,
+        "fontSize": 35.416667660079604,
+        "paddingBottom": 35,
+        "paddingLeft": 35,
+        "paddingRight": 35,
+        "paddingTop": 35,
+        "width": 637.5,
       }
     }
     underlineColorAndroid="transparent"

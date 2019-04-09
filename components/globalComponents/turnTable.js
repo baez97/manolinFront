@@ -4,6 +4,7 @@ import TurnColumn from './turnColumn';
 const indexesCal = [...Array(365).keys()];
 
 import DateUtils from '../dateUtils';
+import layoutStyle from '../../styles/layoutStyle';
 const dateUtils = new DateUtils();
 
 
@@ -28,7 +29,9 @@ export default class TurnTable extends React.Component {
     }
 
     getItemLayout = (data, index) => (
-        { length: 50, offset: 50 * index, index }
+        { length: layoutStyle.turnColWidth, 
+          offset: layoutStyle.turnColWidth * index, 
+          index }
     );
 
     handleViewableItemsChanged({ viewableItems, changed }) {
@@ -92,9 +95,8 @@ export default class TurnTable extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        width: 300,
-        height: 530,
-        borderRadius: 20,
+        width: layoutStyle.turnTableWidth,
+        borderRadius: layoutStyle.borderRadius,
         overflow: 'hidden',
         elevation: 15
     }

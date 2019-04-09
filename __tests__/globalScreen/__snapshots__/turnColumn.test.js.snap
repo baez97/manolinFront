@@ -4,7 +4,7 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
 <View
   style={
     Object {
-      "width": 50,
+      "width": 88.5,
     }
   }
 >
@@ -29,7 +29,7 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
     }
     style={
       Object {
-        "height": 30,
+        "height": 52.5,
         "justifyContent": "center",
       }
     }
@@ -39,7 +39,7 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         Object {
           "color": "white",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 20,
+          "fontSize": 35.416667660079604,
           "textAlign": "center",
         }
       }
@@ -71,7 +71,10 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         "borderLeftColor": "#c5c9cc",
         "borderRightColor": "#c5c9cc",
         "borderRightWidth": 0.5,
-        "padding": 10,
+        "paddingBottom": 17.5,
+        "paddingLeft": 17.5,
+        "paddingRight": 17.5,
+        "paddingTop": 17.5,
       }
     }
   >
@@ -80,8 +83,8 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -93,8 +96,8 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -106,8 +109,8 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -119,8 +122,8 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -132,8 +135,8 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -145,8 +148,8 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -158,8 +161,8 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -171,8 +174,8 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -184,8 +187,8 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -197,8 +200,8 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -210,8 +213,8 @@ exports[`TurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -226,7 +229,7 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
 <View
   style={
     Object {
-      "width": 50,
+      "width": 88.5,
     }
   }
 >
@@ -251,7 +254,7 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
     }
     style={
       Object {
-        "height": 30,
+        "height": 52.5,
         "justifyContent": "center",
       }
     }
@@ -261,7 +264,7 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         Object {
           "color": "white",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 20,
+          "fontSize": 35.416667660079604,
           "textAlign": "center",
         }
       }
@@ -293,7 +296,10 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         "borderLeftColor": "#c5c9cc",
         "borderRightColor": "#c5c9cc",
         "borderRightWidth": 0.5,
-        "padding": 10,
+        "paddingBottom": 17.5,
+        "paddingLeft": 17.5,
+        "paddingRight": 17.5,
+        "paddingTop": 17.5,
       }
     }
   >
@@ -302,8 +308,8 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -315,8 +321,8 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -328,8 +334,8 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -341,8 +347,8 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -354,8 +360,8 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -367,8 +373,8 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -380,8 +386,8 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -393,8 +399,8 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -406,8 +412,8 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -419,8 +425,8 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -432,8 +438,8 @@ exports[`TurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -448,7 +454,7 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
 <View
   style={
     Object {
-      "width": 50,
+      "width": 88.5,
     }
   }
 >
@@ -473,7 +479,7 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
     }
     style={
       Object {
-        "height": 30,
+        "height": 52.5,
         "justifyContent": "center",
       }
     }
@@ -483,7 +489,7 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         Object {
           "color": "white",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 20,
+          "fontSize": 35.416667660079604,
           "textAlign": "center",
         }
       }
@@ -515,7 +521,10 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         "borderLeftColor": "#c5c9cc",
         "borderRightColor": "#c5c9cc",
         "borderRightWidth": 0.5,
-        "padding": 10,
+        "paddingBottom": 17.5,
+        "paddingLeft": 17.5,
+        "paddingRight": 17.5,
+        "paddingTop": 17.5,
       }
     }
   >
@@ -524,8 +533,8 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         Object {
           "color": "#056ec9",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -537,8 +546,8 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         Object {
           "color": "#056ec9",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -550,8 +559,8 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         Object {
           "color": "#056ec9",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -563,8 +572,8 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         Object {
           "color": "#056ec9",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -576,8 +585,8 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         Object {
           "color": "#056ec9",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -589,8 +598,8 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         Object {
           "color": "#056ec9",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -602,8 +611,8 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         Object {
           "color": "#056ec9",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -615,8 +624,8 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         Object {
           "color": "#056ec9",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -628,8 +637,8 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         Object {
           "color": "#056ec9",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -641,8 +650,8 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         Object {
           "color": "#056ec9",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }
@@ -654,8 +663,8 @@ exports[`TurnColumn View Matches the Snapshot when it is today 1`] = `
         Object {
           "color": "#056ec9",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
-          "paddingBottom": 16,
+          "fontSize": 40.7291678090925,
+          "paddingBottom": 28,
           "textAlign": "center",
         }
       }

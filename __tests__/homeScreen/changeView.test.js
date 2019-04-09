@@ -10,23 +10,7 @@ jest.unmock("expo");
 describe("ChangeView", () => {
     describe("Functions", () => {
         const cV = new ChangeView();
-        it("GetDateString works fine", () => {
-            const mockedChange = {
-                owner: "Ana",
-                day: 5,
-                month: 2,
-                year: 2019,
-                weekday: 1,
-                turn: "M",
-                type: "change"
-            };
-
-            const expectedOutput =
-                "Lunes 5 de Febrero";
-
-            const actualOutput = cV.getDateString(mockedChange);
-            expect( actualOutput ).toBe(expectedOutput);
-        });
+        
 
         it("GetType returns Cambio when the type is change", () => {
             const mockedChange = {

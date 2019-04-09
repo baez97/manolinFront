@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlatList, Text, View, StyleSheet } from 'react-native';
+import LayoutStyle from '../../styles/layoutStyle';
 import TurnViewWithDate from './turnViewWithDate';
 import DateUtils from '../dateUtils';
 
@@ -21,7 +22,7 @@ export default class TurnDeck extends React.Component {
     }
 
     getItemLayout = (data, index) => (
-        { length: 55, offset: 55 * index, index }
+        { length: LayoutStyle.turnWidth, offset: LayoutStyle.turnWidth * index, index }
     );
 
     handleViewableItemsChanged({ viewableItems, changed }) {
@@ -57,7 +58,7 @@ export default class TurnDeck extends React.Component {
                         getItemLayout={this.getItemLayout}
                         initialScrollIndex={dateUtils.indexOfToday -5}
                         data={this.props.turnWithDates}
-                        renderItem={({ item }) => <TurnViewWithDate turnObject={item} />}
+                        renderItem={({ item }) => <TurnViewWithDate selectTurn={this.props.selectTurn} turnObject={item} />}
                         keyExtractor={item => `${item.day}+${item.month}+${item.year}`}
                         onViewableItemsChanged={this.handleViewableItemsChanged}
                         viewabilityConfig={this.viewabilityConfig}
@@ -71,20 +72,20 @@ export default class TurnDeck extends React.Component {
 
 const styles = StyleSheet.create({
     deck: {
-        borderRadius: 20,
+        borderRadius: LayoutStyle.borderRadius,
         overflow: 'hidden',
         elevation: 15,
-        width: 400,
-        height: 90,
+        width:  LayoutStyle.maxWidth,
+        height: LayoutStyle.deckHeight,
         marginTop: 10
     },
 
     monthText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 22,
+        fontSize: LayoutStyle.primaryFontSize,
         color: '#332554',
         textAlign: 'left',
-        width: 390,
+        width: LayoutStyle.maxWidth,
         marginTop: 30
     }
 });

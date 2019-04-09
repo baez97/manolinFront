@@ -4,6 +4,7 @@ import NameColumn from '../../components/globalComponents/nameColumn';
 import mockedNurse from '../../mockedData/mockedNurse';
 import { Text } from 'react-native';
 
+jest.mock("../../styles/layoutStyle")
 jest.unmock("react-native")
 jest.unmock('react')
 jest.unmock("react-test-renderer")

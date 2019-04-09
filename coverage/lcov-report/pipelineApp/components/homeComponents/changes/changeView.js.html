@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>15/15</span>
+        <span class='fraction'>11/11</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>15/15</span>
+        <span class='fraction'>11/11</span>
       </div>
     </div>
     <p class="quiet">
@@ -157,8 +157,7 @@
 <a name='L109'></a><a href='#L109'>109</a>
 <a name='L110'></a><a href='#L110'>110</a>
 <a name='L111'></a><a href='#L111'>111</a>
-<a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L112'></a><a href='#L112'>112</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,13 +166,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -219,6 +211,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -275,19 +273,12 @@
 import { LinearGradient } from 'expo';
 import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 import DateUtils from '../../dateUtils';
-const { weekdays, months } = new DateUtils();
+const dateUtils = new DateUtils();
+import LayoutStyle from '../../../styles/layoutStyle';
 &nbsp;
 export default class ChangeView extends React.Component {
     constructor(props) {
         super(props);
-    }
-&nbsp;
-    getDateString(change) {
-        const { day, month, weekday } = change;
-        const weekdayString = weekdays[weekday -1];
-        const monthString   = months[month -1];
-&nbsp;
-        return `${weekdayString} ${day} de ${monthString}`;
     }
 &nbsp;
     getType(change) {
@@ -311,7 +302,7 @@ export default class ChangeView extends React.Component {
                     end={[0.8, 1]}&gt;
                         &lt;View&gt;
                             &lt;Text style={styles.primaryText}&gt;
-                                {this.getDateString(change)}
+                                { dateUtils.getDateString(change) }
                             &lt;/Text&gt;
                             &lt;View style={styles.changeDataContainer}&gt;
                                 &lt;Text style={styles.secondaryText}&gt;
@@ -323,7 +314,7 @@ export default class ChangeView extends React.Component {
                             &lt;/View&gt;
                         &lt;/View&gt;
                         &lt;Text style={styles.turnText}&gt;
-                            T
+                            { change.turn }
                         &lt;/Text&gt;
                 &lt;/LinearGradient&gt;
             &lt;/TouchableOpacity&gt;)
@@ -336,59 +327,65 @@ const styles = StyleSheet.create({
     },
 &nbsp;
     changeBox: {
-        padding: 20,
+        paddingTop:    LayoutStyle.verticalUnits10*2,
+        paddingBottom: LayoutStyle.verticalUnits10*2,
+        paddingRight:  LayoutStyle.horizontalUnits10*2,
+        paddingLeft:   LayoutStyle.horizontalUnits10*2,
         borderRadius: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: 20,
-        paddingLeft:  30,
-        paddingRight: 40,
-        elevation: 15,
-        width: 400,
-        height: 100
+        marginTop: LayoutStyle.verticalUnits10,
+        marginLeft: LayoutStyle.horizontalUnits10,
+        marginRight: LayoutStyle.horizontalUnits10,
+        marginBottom: 0,
+        paddingLeft:  LayoutStyle.horizontalUnits10*3,
+        paddingRight: LayoutStyle.horizontalUnits10*4,
+        elevation: 10,
+        width: LayoutStyle.maxWidth,
+        height: LayoutStyle.imageHeight
     },
 &nbsp;
     changeDataContainer: {
         flexDirection: 'row',
-        width: 200,
+        width: LayoutStyle.mediumWidth,
         justifyContent: 'space-between'
     },
 &nbsp;
     turnText: {
         marginTop: -5,
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 60,
+        fontSize: LayoutStyle.largeFontSize,
         color: 'white',
         textAlign: 'center',
     },
 &nbsp;
     primaryText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 21,
+        fontSize: LayoutStyle.primaryFontSize,
         color: 'white',
         textAlign: 'left',
     },
 &nbsp;
     secondaryText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 18,
+        fontSize: LayoutStyle.tinyFontSize,
         color: '#cfbcf9',
         textAlign: 'left',
         marginTop: 8
     },
 &nbsp;
-    changeImage: {
-        height: 100,
-        width: 100,
-    }
+    // changeImage: {
+    //     height: 100,
+    //     width: 100,
+    // }
 })</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Apr 07 2019 18:17:15 GMT+0200 (hora de verano de Europa central)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Apr 09 2019 12:22:59 GMT+0200 (hora de verano de Europa central)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

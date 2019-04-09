@@ -5,11 +5,10 @@ exports[`TurnTable Rendering Renders correctly 1`] = `
   onLayout={[Function]}
   style={
     Object {
-      "borderRadius": 20,
+      "borderRadius": 35.5,
       "elevation": 15,
-      "height": 530,
       "overflow": "hidden",
-      "width": 300,
+      "width": 531.5,
     }
   }
 />

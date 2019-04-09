@@ -3,6 +3,7 @@ import { BACKEND_IP } from '../config';
 import { View, Text, StyleSheet } from 'react-native';
 import NameColumn from '../components/globalComponents/nameColumn'
 import TurnTable from '../components/globalComponents/turnTable'
+import layoutStyle from '../styles/layoutStyle';
 
 export default class GlobalScreen extends React.Component {
     constructor(props) {
@@ -84,24 +85,24 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'center',
         backgroundColor: '#bee6ef',
-        paddingTop:10,
+        paddingTop: layoutStyle.verticalUnits10,
         
     },
 
     tableContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
-        width: 400,
-        marginTop: 10
+        width: layoutStyle.maxWidth,
+        marginTop: layoutStyle.verticalUnits10
     },
 
     monthText: {
         fontFamily: 'montserrat-extra-bold',
-        fontSize: 22,
+        fontSize: layoutStyle.primaryFontSize,
         color: '#332554',
         textAlign: 'left',
-        width: 390,
-        marginTop: 30
+        width: layoutStyle.maxWidth,
+        marginTop: layoutStyle.verticalUnits10*3
     }
 });
 

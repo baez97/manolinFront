@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, FlatList } from 'react-native';
+import { Text, View, FlatList, StyleSheet } from 'react-native';
 import { BACKEND_IP } from '../../../config';
 import ChangeView from './changeView';
 
@@ -58,14 +58,14 @@ export default class ChangesQueue extends React.Component{
             return null
         } else {
             return (
-                <View style={{width: 420, justifyContent: 'center', alignItems: 'center'}}>
+                <View style={styles.container}>
                     <FlatList 
                         data={this.state.changes}
-                        style={{width: 420}}
+                        contentContainerStyle={{paddingBottom:20}}
                         renderItem={({item}) => 
-                            (<View style={{height: 400, alignItems:"center"}}>
+                            // (<View style={{alignItems:"center"}}>
                                 <ChangeView change={item}/>
-                            </View>)
+                            // </View>)
                         } 
                         keyExtractor={this.keyExtractor}
                         />
@@ -74,3 +74,13 @@ export default class ChangesQueue extends React.Component{
         } 
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        // width: 420,
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        marginTop: 5,
+    }
+})

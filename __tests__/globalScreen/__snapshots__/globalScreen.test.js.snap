@@ -9,7 +9,7 @@ exports[`GlobalScreen tests View Shows 'Cargando...' when the turns are not load
       "flex": 1,
       "flexDirection": "column",
       "justifyContent": "flex-start",
-      "paddingTop": 10,
+      "paddingTop": 17.5,
     }
   }
 >
@@ -28,7 +28,7 @@ exports[`GlobalScreen tests View Shows 'Se ha producido un error...' when the fe
       "flex": 1,
       "flexDirection": "column",
       "justifyContent": "flex-start",
-      "paddingTop": 10,
+      "paddingTop": 17.5,
     }
   }
 >
@@ -47,7 +47,7 @@ exports[`GlobalScreen tests View Shows everything when the turns are loaded 1`] 
       "flex": 1,
       "flexDirection": "column",
       "justifyContent": "flex-start",
-      "paddingTop": 10,
+      "paddingTop": 17.5,
     }
   }
 >
@@ -56,10 +56,10 @@ exports[`GlobalScreen tests View Shows everything when the turns are loaded 1`] 
       Object {
         "color": "#332554",
         "fontFamily": "montserrat-extra-bold",
-        "fontSize": 22,
-        "marginTop": 30,
+        "fontSize": 38.95833442608516,
+        "marginTop": 52.5,
         "textAlign": "left",
-        "width": 390,
+        "width": 712.5,
       }
     }
   >
@@ -70,16 +70,16 @@ exports[`GlobalScreen tests View Shows everything when the turns are loaded 1`] 
       Object {
         "flexDirection": "row",
         "justifyContent": "center",
-        "marginTop": 10,
-        "width": 400,
+        "marginTop": 17.5,
+        "width": 712.5,
       }
     }
   >
     <View
       style={
         Object {
-          "marginRight": 20,
-          "marginTop": 45,
+          "marginRight": 35,
+          "marginTop": 78.75,
         }
       }
     />
@@ -87,11 +87,10 @@ exports[`GlobalScreen tests View Shows everything when the turns are loaded 1`] 
       onLayout={[Function]}
       style={
         Object {
-          "borderRadius": 20,
+          "borderRadius": 35.5,
           "elevation": 15,
-          "height": 530,
           "overflow": "hidden",
-          "width": 300,
+          "width": 531.5,
         }
       }
     />

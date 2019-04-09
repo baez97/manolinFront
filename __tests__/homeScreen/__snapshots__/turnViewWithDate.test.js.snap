@@ -2,9 +2,18 @@
 
 exports[`TurnViewWithDate renders correctly 1`] = `
 <View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "width": 55,
+      "opacity": 1,
+      "width": 97.5,
     }
   }
 >
@@ -29,7 +38,7 @@ exports[`TurnViewWithDate renders correctly 1`] = `
     }
     style={
       Object {
-        "height": 30,
+        "height": 53,
         "justifyContent": "center",
       }
     }
@@ -39,7 +48,7 @@ exports[`TurnViewWithDate renders correctly 1`] = `
         Object {
           "color": "white",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 20,
+          "fontSize": 35.416667660079604,
           "textAlign": "center",
         }
       }
@@ -70,7 +79,7 @@ exports[`TurnViewWithDate renders correctly 1`] = `
       Object {
         "borderRightColor": "#c5c9cc",
         "borderRightWidth": 0.5,
-        "height": 60,
+        "height": 106.5,
         "justifyContent": "center",
         "padding": 10,
       }
@@ -81,7 +90,7 @@ exports[`TurnViewWithDate renders correctly 1`] = `
         Object {
           "color": "black",
           "fontFamily": "montserrat-extra-bold",
-          "fontSize": 23,
+          "fontSize": 40.7291678090925,
           "textAlign": "center",
         }
       }
