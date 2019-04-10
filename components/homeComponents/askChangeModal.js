@@ -10,10 +10,15 @@ export default class AskChangeModal extends React.Component {
     constructor(props) {
         super(props);
         this.askChangePressed = this.askChangePressed.bind(this);
+        this.askFreePressed = this.askFreePressed.bind(this);
     }
 
     askChangePressed() {
-        this.props.addChange(this.props.selectedTurn, "change");
+        this.props.addChange(this.props.selectedTurn);
+    }
+
+    askFreePressed() {
+        this.props.addFree(this.props.selectedTurn);
     }
 
     render() {
@@ -31,7 +36,7 @@ export default class AskChangeModal extends React.Component {
                             color     = "purple"
                             text      = "Pedir cambio"/>
                         <ModalButton 
-                            onPressFn = { this.props.toggleModal }
+                            onPressFn = { this.askFreePressed }
                             color     = "purple"
                             text      = "Pedir libre"/>
                         <ModalButton 

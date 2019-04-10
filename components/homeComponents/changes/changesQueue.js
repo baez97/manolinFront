@@ -9,11 +9,16 @@ export default class ChangesQueue extends React.Component{
         this.state = {
             changesLoaded: false
         }
+
+        this.socket = this.props.socket;
+        this.socket.on("changesUpdate", () => {
+            this.loadChanges();
+        })
     }
 
-    async componentDidMount() {
+    loadChanges() {
         const token = this.props.token;
-        this.fetchToAPI( BACKEND_IP + '/central/changes', {
+        return this.fetchToAPI( BACKEND_IP + '/central/changes', {
             method: 'GET',
             headers: {
                 Accept           : 'application/json',
@@ -42,6 +47,9 @@ export default class ChangesQueue extends React.Component{
             });
         });
     }
+    async componentDidMount() {
+        return this.loadChanges();
+    }
 
     fetchToAPI(ipString, options) {
         return fetch(ipString, options);
@@ -64,7 +72,9 @@ export default class ChangesQueue extends React.Component{
                         contentContainerStyle={{paddingBottom:20}}
                         renderItem={({item}) => 
                             // (<View style={{alignItems:"center"}}>
-                                <ChangeView change={item}/>
+                                <ChangeView 
+                                    change={item} 
+                                    onPressFn={this.props.onPressFn}/>
                             // </View>)
                         } 
                         keyExtractor={this.keyExtractor}

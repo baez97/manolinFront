@@ -9,6 +9,12 @@ const gradientProps = {
         end    : [0.65, 1],
         margin : LayoutStyle.verticalUnits10*3.5
     },
+    green : {
+        colors : ['#03cd46', '#03a73a'],
+        start  : [0.55, 0],
+        end    : [0.65, 1],
+        margin : LayoutStyle.verticalUnits10*3.5
+    },
     purple : {
         colors : ['#884ec5', '#3425af'],
         start  : [0.7, 0],
