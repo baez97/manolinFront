@@ -57,20 +57,13 @@ export default class TurnTable extends React.Component {
     }
 
     renderItem({ item }) {
+        var turnObjCol = [];
+        this.state.nurses.forEach( n => {
+            turnObjCol.push(n.turnWithDates[item]);
+        })
         return (
             <View style={{ justifyContent: 'space-between' }}>
-                <TurnColumn turnObjs={[
-                    this.state.nurses[0].turnWithDates[item],
-                    this.state.nurses[1].turnWithDates[item],
-                    this.state.nurses[2].turnWithDates[item],
-                    this.state.nurses[3].turnWithDates[item],
-                    this.state.nurses[4].turnWithDates[item],
-                    this.state.nurses[5].turnWithDates[item],
-                    this.state.nurses[6].turnWithDates[item],
-                    this.state.nurses[7].turnWithDates[item],
-                    this.state.nurses[8].turnWithDates[item],
-                    this.state.nurses[9].turnWithDates[item]
-                ]}/>
+                <TurnColumn turnObjs={ turnObjCol }/>
             </View>
         )
     }

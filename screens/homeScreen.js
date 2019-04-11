@@ -11,28 +11,44 @@ import AskChangeModal  from '../components/homeComponents/askChangeModal';
 import ConfirmModal    from '../components/homeComponents/confirmModal';
 import { BACKEND_IP }  from '../config';
 import layoutStyle from '../styles/layoutStyle';
+import AreYouSureModal from '../components/homeComponents/areYouSureModal';
 
 
 export default class HomeScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userLoaded: false,
-            error: false,
-            isModalVisible: false,
-            confirmDisplayed: false
+            userLoaded          : false,
+            error               : false,
+            isModalVisible      : false,
+
+            confirmDisplayed    : false,
+            confirmMessage      : "",
+
+            areYouSureDisplayed : false,
+            areYouSureMessage   : "",
+            areYouSureChange    : undefined,
         }
+
         this.token             = this.getNavigationParam("token");
         this.selectedTurn      = {};
-        this.selectTurn        = this.selectTurn.bind(this);
-        this.toggleModal       = this.toggleModal.bind(this);
-        this.addChange         = this.addChange.bind(this);
-        this.addFree           = this.addFree.bind(this);
-        this.closeConfirmModal = this.closeConfirmModal.bind(this);
+        this.bindMethods();
         this.socket            = SocketIOClient(BACKEND_IP);
         this.socket.on("turnsUpdate", () => {
             this.loadTurns();
         });
+    }
+
+    bindMethods() {
+        this.selectTurn         = this.selectTurn        .bind( this );
+        this.toggleModal        = this.toggleModal       .bind( this );
+        this.addChange          = this.addChange         .bind( this );
+        this.addFree            = this.addFree           .bind( this );
+        this.closeConfirmModal  = this.closeConfirmModal .bind( this );
+        this.showAreYouSureFree = this.showAreYouSureFree.bind( this );
+        this.acceptAreYouSure   = this.acceptAreYouSure  .bind( this );
+        this.hideAreYouSure     = this.hideAreYouSure    .bind( this );
+        this.goToChooseChange   = this.goToChooseChange  .bind( this );
     }
 
     loadTurns() {
@@ -81,7 +97,7 @@ export default class HomeScreen extends React.Component {
 
         this.socket.emit("insertFree", free);
         this.toggleModal();
-        this.showConfirmation();
+        this.showConfirmation("Petición enviada");
     }
 
     addChange({day, weekday, month, year, turn}) {
@@ -102,10 +118,74 @@ export default class HomeScreen extends React.Component {
         this.showConfirmation();
     }
 
-    showConfirmation() {
+    acceptFree(free) {
+        this.socket.emit("acceptFree", change, this.user.name);
+        this.showConfirmation();
+    }
+
+    showConfirmation(message) {
         this.setState({
-            confirmDisplayed: true
+            confirmDisplayed : true,
+            confirmMessage   : message
         })
+    }
+
+    showAreYouSureFree(change) {
+        const message = 
+            `${this.state.user.name}, quieres trabajar ` +
+            `el ${change.day} ${this.getTurnString(change.turn)} `+
+            `para que ${change.owner} pueda librar ese día?`;
+
+        this.setState({
+            areYouSureDisplayed : true,
+            areYouSureMessage   : message,
+            areYouSureChange    : change
+        });
+    }
+
+    acceptAreYouSure(change) {
+        this.socket.emit("changeAccepted", change, this.state.user.name);
+
+        this.hideAreYouSure()
+        this.showConfirmation("Cambio realizado");
+    }
+
+    hideAreYouSure() {
+        this.setState({
+            areYouSureDisplayed: false,
+            areYouSureMessage: "",
+            areYouSureChange: undefined
+        });
+    }
+
+    goToChooseChange(change) {
+        console.log("⛺️Going to choose change!");
+        console.log("🔰The change is ");
+        console.log(change);
+        console.log("🏠 The changer is ");
+        console.log(this.state.user.name);
+        this.props.navigation.navigate(
+            "ChooseChangeScreen",
+            {
+                change       : change,
+                changerNurse : this.state.user,
+                token        : this.token
+            });
+    }
+
+    getTurnString(character) {
+        switch(character) {
+            case 'M':
+                return "por la mañana";
+            case 'T':
+                return "por la tarde";
+            case 'N':
+                return "por la noche";
+            case 'L':
+                return "(LIBRE)";
+            case '-':
+                return "(SALIDA DE NOCHE)";
+        }
     }
 
     closeConfirmModal() {
@@ -137,15 +217,12 @@ export default class HomeScreen extends React.Component {
     }
 
     myChangesButtonPressed() {
-        this.showConfirmation();
+        this.showConfirmation("Has pulsado el botón de Mis Cambios");
     }
 
     contactsButtonPressed() {
         // NOT IMPLEMENTED YET
     }
-
-    
-
 
     render() {
         if ( this.state.error ) {
@@ -178,7 +255,11 @@ export default class HomeScreen extends React.Component {
                     </View>
 
                     <Text style={styles.labelText}>Peticiones de cambio</Text>
-                    <ChangesQueue socket={this.socket} token={this.token}/>
+                    <ChangesQueue 
+                        socket={this.socket} 
+                        token={this.token} 
+                        freeOnPress    = { this.showAreYouSureFree   }
+                        changeOnPress  = { this.goToChooseChange     } />
                     <AskChangeModal 
                         selectedTurn   = { this.selectedTurn }
                         toggleModal    = { this.toggleModal  }
@@ -187,7 +268,14 @@ export default class HomeScreen extends React.Component {
                         addChange      = { this.addChange    }/>
                     <ConfirmModal
                         visible        = { this.state.confirmDisplayed  } 
-                        closeModal     = { this.closeConfirmModal       }/>
+                        closeModal     = { this.closeConfirmModal       }
+                        text           = { this.state.confirmMessage    }/>
+                    <AreYouSureModal
+                        visible        = { this.state.areYouSureDisplayed }
+                        change         = { this.state.areYouSureChange    }
+                        text           = { this.state.areYouSureMessage   }
+                        closeModal     = { this.hideAreYouSure   }
+                        onPressFn      = { this.acceptAreYouSure } />
                 </View>
             )
         }

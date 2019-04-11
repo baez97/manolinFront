@@ -1,51 +1,55 @@
 import React from 'react';
 
 import { LinearGradient } from 'expo';
-import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import DateUtils from '../../dateUtils';
-const dateUtils = new DateUtils();
+const  dateUtils = new DateUtils();
 import LayoutStyle from '../../../styles/layoutStyle';
-import FreeBox from '../changes/freeBox';
-import ChangeBox from '../changes/changeBox';
 
-export default class ChangeView extends React.Component {
+export default class FreeBox extends React.Component {
     constructor(props) {
         super(props);
         this.handleLongPress = this.handleLongPress.bind(this);
     }
 
-    getType(change) {
-        const { type } = change;
-        if ( type === "change" )
-            return "Cambio";
-        else if ( type === "free" )
-            return "Librar";
-        return "";
+    getType() {
+        return "Cambio";
     }
 
     handleLongPress() {
-        this.props.onPressFn(this.props.change);
+        this.props.changeOnPress(this.props.change);
     }
 
     render() {
-        console.log(this.props.change.type);
-        if ( this.props.change.type === "free") {
-            return (
-                <FreeBox 
-                    change        = { this.props.change        }
-                    freeOnPress   = { this.props.freeOnPress   }
-                    changeOnPress = { this.props.changeOnPress } />
-            )
-        } else if ( this.props.change.type === "change" ) {
-            return (
-                <ChangeBox 
-                    change        = { this.props.change        }
-                    freeOnPress   = { this.props.freeOnPress   }
-                    changeOnPress = { this.props.changeOnPress } />
-            )
-        } else {
-            return null;
-        }
+        const change = this.props.change;
+
+        return (
+            <TouchableOpacity 
+                style       = { styles.container     } 
+                onLongPress = { this.handleLongPress }>
+                <LinearGradient
+                    style  = { styles.changeBox       }
+                    colors = { ['#884ec5', '#3425af'] }
+                    start  = { [0.7, 0] }
+                    end    = { [0.8, 1] }>
+                        <View>
+                            <Text style={ styles.primaryText }>
+                                { dateUtils.getDateString(change) }
+                            </Text>
+                            <View style={ styles.changeDataContainer }>
+                                <Text style={ styles.secondaryText }>
+                                    { change.owner }
+                                </Text>
+                                <Text style={ styles.secondaryText }>
+                                    { this.getType() }
+                                </Text>
+                            </View>
+                        </View>
+                        <Text style={ styles.turnText }>
+                            { change.turn }
+                        </Text>
+                </LinearGradient>
+            </TouchableOpacity>)
     }
 }
 
@@ -102,9 +106,4 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         marginTop: 8
     },
-
-    // changeImage: {
-    //     height: 100,
-    //     width: 100,
-    // }
 })

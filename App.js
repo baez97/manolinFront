@@ -1,7 +1,8 @@
 import React from 'react';
-import LoginScreen  from './screens/loginScreen';
-import HomeScreen   from './screens/homeScreen'; 
-import GlobalScreen from './screens/globalScreen';
+import LoginScreen        from './screens/loginScreen';
+import HomeScreen         from './screens/homeScreen'; 
+import GlobalScreen       from './screens/globalScreen';
+import ChooseChangeScreen from './screens/chooseChangeScreen'
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 
@@ -25,9 +26,10 @@ export default class App extends React.Component {
 }
 
 const AppNavigator = createStackNavigator({
-  LoginScreen  : { screen: LoginScreen  },
-  HomeScreen   : { screen: HomeScreen   },
-  GlobalScreen : { screen: GlobalScreen }
+  LoginScreen        : { screen: LoginScreen        },
+  HomeScreen         : { screen: HomeScreen         },
+  GlobalScreen       : { screen: GlobalScreen       },
+  ChooseChangeScreen : { screen: ChooseChangeScreen }
 }, {
   initialRouteName: "LoginScreen",
   headerMode: 'none',

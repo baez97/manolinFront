@@ -1,31 +1,38 @@
 import React from 'react';
-import { View, Image, StyleSheet, Text } from 'react-native';
 import Modal from 'react-native-modal';
+import { View, Text, StyleSheet } from 'react-native';
+import ModalButton from './buttons/modalButton';
 import LayoutStyle from '../../styles/layoutStyle'
-import ModalButton from './buttons/modalButton'
-import layoutStyle from '../../styles/layoutStyle';
-export default class ConfirmModal extends React.Component {
+
+export default class AreYouSureModal extends React.Component {
     constructor(props) {
         super(props);
+        this.handlePress = this.handlePress.bind(this);
+    }
+
+    handlePress() {
+        this.props.onPressFn(this.props.change);
     }
 
     render() {
         return (
             <Modal
                 isVisible         = { this.props.visible }
-                onBackDropPress   = { this.props.closeModal }>
+                onBackDropPress   = { () => this.props.closeModal }>
                 <View style={styles.modalBackground}>
                     <View style={styles.box}>
                         <Text style={styles.labelText}>
                             { this.props.text }
                         </Text>
-                        <Image 
-                            style={styles.confirmationImg}
-                            source={ require('../../assets/check.gif')} />
+                        <ModalButton 
+                            onPressFn = { this.handlePress }
+                            color     = "green"
+                            text      = "Confirmar"/>
+                        
                         <ModalButton 
                             onPressFn = { this.props.closeModal }
-                            color     = "green"
-                            text      = "Okey"/>
+                            color     = "blue"
+                            text      = "Cancelar"/>
                     </View>
                 </View>
             </Modal>
@@ -56,15 +63,9 @@ const styles = StyleSheet.create({
 
     labelText: {
         fontFamily: "montserrat-extra-bold",
-        color: "#03a73a",
+        color: "#2990f7",
         textAlign: "center",
         fontSize: LayoutStyle.hugeFontSize,
         marginBottom: LayoutStyle.verticalUnits10
     },
-
-    confirmationImg: {
-        height: layoutStyle.verticalUnits10 * 20,
-        width:  layoutStyle.horizontalUnits10 * 20
-    }
-
 });

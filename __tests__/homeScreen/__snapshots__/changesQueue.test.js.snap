@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ChangesQueue View Matches the Snapshot when changes are not loaded yet 1`] = `
-<Text>
-  Cargando cambios...
-</Text>
-`;
-
-exports[`ChangesQueue View Matches the Snapshot when there are no changes 1`] = `null`;

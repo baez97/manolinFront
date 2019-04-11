@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, FlatList, StyleSheet } from 'react-native';
 import { BACKEND_IP } from '../../../config';
 import ChangeView from './changeView';
+import layoutStyle from '../../../styles/layoutStyle';
 
 export default class ChangesQueue extends React.Component{
     constructor(props){
@@ -71,12 +72,11 @@ export default class ChangesQueue extends React.Component{
                         data={this.state.changes}
                         contentContainerStyle={{paddingBottom:20}}
                         renderItem={({item}) => 
-                            // (<View style={{alignItems:"center"}}>
-                                <ChangeView 
-                                    change={item} 
-                                    onPressFn={this.props.onPressFn}/>
-                            // </View>)
-                        } 
+                            <ChangeView 
+                                change        ={ item } 
+                                freeOnPress   ={ this.props.freeOnPress   }
+                                changeOnPress ={ this.props.changeOnPress }/>
+                        }
                         keyExtractor={this.keyExtractor}
                         />
                 </View>
@@ -88,9 +88,8 @@ export default class ChangesQueue extends React.Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // width: 420,
         justifyContent: 'flex-start',
         alignItems: 'center',
-        marginTop: 5,
+        marginTop: layoutStyle.verticalUnits10*0.5,
     }
 })
