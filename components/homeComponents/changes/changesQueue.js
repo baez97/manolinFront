@@ -34,11 +34,13 @@ export default class ChangesQueue extends React.Component{
                     changesLoaded: true,
                     changes: responseJson.result
                 });
+                this.props.onLoaded(responseJson.result);
             } else {
                 this.setState({
                     changesLoaded: true,
                     changes: []
                 });
+                this.props.onLoaded([]);
             }
         })
         .catch( err => {
@@ -46,6 +48,7 @@ export default class ChangesQueue extends React.Component{
                 changesLoaded: true,
                 changes: []
             });
+            this.props.onLoaded([]);
         });
     }
     async componentDidMount() {

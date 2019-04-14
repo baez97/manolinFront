@@ -6,10 +6,11 @@ import DateUtils from '../../dateUtils';
 const  dateUtils = new DateUtils();
 import LayoutStyle from '../../../styles/layoutStyle';
 
-export default class FreeBox extends React.Component {
+export default class ChangeBox extends React.Component {
     constructor(props) {
         super(props);
         this.handleLongPress = this.handleLongPress.bind(this);
+        this.getColors       = this.getColors.bind(this);
     }
 
     getType() {
@@ -20,6 +21,18 @@ export default class FreeBox extends React.Component {
         this.props.changeOnPress(this.props.change);
     }
 
+    getColors() {
+        return ['#884ec5', '#3425af']
+    }
+
+    getPrimaryFontColor() {
+        return 'white';
+    }
+
+    getSecondaryFontColor() {
+        return '#cfbcf9'
+    }
+
     render() {
         const change = this.props.change;
 
@@ -28,24 +41,36 @@ export default class FreeBox extends React.Component {
                 style       = { styles.container     } 
                 onLongPress = { this.handleLongPress }>
                 <LinearGradient
-                    style  = { styles.changeBox       }
-                    colors = { ['#884ec5', '#3425af'] }
+                    style  = { styles.changeBox }
+                    colors = { this.getColors() }
                     start  = { [0.7, 0] }
                     end    = { [0.8, 1] }>
                         <View>
-                            <Text style={ styles.primaryText }>
+                            <Text style={{
+                                ...styles.primaryText,
+                                color: this.getPrimaryFontColor() 
+                                }}>
                                 { dateUtils.getDateString(change) }
                             </Text>
                             <View style={ styles.changeDataContainer }>
-                                <Text style={ styles.secondaryText }>
+                                <Text style={{
+                                    ...styles.secondaryText, 
+                                    color: this.getSecondaryFontColor() 
+                                    }}>
                                     { change.owner }
                                 </Text>
-                                <Text style={ styles.secondaryText }>
+                                <Text style={{
+                                    ...styles.secondaryText, 
+                                    color: this.getSecondaryFontColor() 
+                                    }}>
                                     { this.getType() }
                                 </Text>
                             </View>
                         </View>
-                        <Text style={ styles.turnText }>
+                        <Text style={{
+                            ...styles.turnText, 
+                            // color: this.getFontColor() 
+                            }}>
                             { change.turn }
                         </Text>
                 </LinearGradient>

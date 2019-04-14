@@ -14,9 +14,11 @@ export default class ChooseChangeScreen extends React.Component {
         super(props);
         this.changerNurse = this.getNavigationParam("changerNurse");
         this.change       = this.getNavigationParam("change");
+        this.socket       = this.getNavigationParam("socket");
         this.bindMethods();
         this.state = {
             userLoaded: false,
+            selectedTurn: false,
             error: false,
             currentMonthIndex : new Date().getMonth(),
             isModalVisible: false,
@@ -27,10 +29,11 @@ export default class ChooseChangeScreen extends React.Component {
     }
 
     bindMethods() {
-        this.hideModal = this.hideModal.bind(this);
-        this.wantsToChange = this.wantsToChange.bind(this);
+        this.hideModal        = this.hideModal.bind(this);
+        this.wantsToChange    = this.wantsToChange.bind(this);
         this.showConfirmation = this.showConfirmation.bind(this);
         this.hideConfirmation = this.hideConfirmation.bind(this);
+        this.confirmChange    = this.confirmChange.bind(this);
     }
 
     fetchToAPI(urlString, options) {
@@ -85,13 +88,38 @@ export default class ChooseChangeScreen extends React.Component {
 
     wantsToChange(changerTurn) {
         const message =
-            `${this.changerNurse.name}, ¿quieres proponerle a `           +
+            `${this.changerNurse.name}, ¿quieres proponerle a `          +
             `${this.ownerNurse.name} que trabaje el ${changerTurn.day} ` +
             `${this.getTurnString(changerTurn)} a cambio de que tú `     +
             `trabajes el ${this.change.day} ${this.getTurnString(this.change)}?`;
 
-        
-        this.showModal(message);
+        this.showModal(message, changerTurn);
+    }
+
+    confirmChange(purposedTurn) {
+        purposedTurn = { ...purposedTurn,
+            type: "change",
+            owner: this.changerNurse.name,
+            accepted: false
+        };
+
+        this.socket.emit("insertPurposal", this.change, purposedTurn);
+        this.showConfirmation();
+    }
+
+    showModal(message, changerTurn) { 
+        this.setState({
+            isModalVisible : true,
+            modalMessage   : message,
+            selectedTurn   : changerTurn
+        });
+    }
+
+    hideModal() {
+        this.setState({
+            isModalVisible : false,
+            modalMessage   : ""
+        });
     }
 
     showConfirmation() {
@@ -107,27 +135,8 @@ export default class ChooseChangeScreen extends React.Component {
     }
 
     hideConfirmation() {
-        // this.setState({
-        //     isConfirmVisible: false,
-        //     confirmMessage: "",
-        // });
-
         this.props.navigation.navigate("HomeScreen", {
             token: this.getNavigationParam("token")
-        });
-    }
-
-    showModal(message) { 
-        this.setState({
-            isModalVisible : true,
-            modalMessage   : message
-        });
-    }
-
-    hideModal() {
-        this.setState({
-            isModalVisible : false,
-            modalMessage   : ""
         });
     }
 
@@ -171,10 +180,10 @@ export default class ChooseChangeScreen extends React.Component {
                 </View>
                 <AreYouSureModal
                     visible    = { this.state.isModalVisible }
-                    change     = { this.state.selectedChange }
+                    change     = { this.state.selectedTurn   }
                     text       = { this.state.modalMessage   }
                     closeModal = { this.hideModal            }
-                    onPressFn  = { this.showConfirmation     } />
+                    onPressFn  = { this.confirmChange        } />
                 <ConfirmModal
                     visible    = { this.state.isConfirmVisible }
                     closeModal = { this.hideConfirmation       }

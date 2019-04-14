@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import SocketIOClient from 'socket.io-client';
 
+import registerForPush from '../components/registerForPush';
 import GlobalButton    from '../components/homeComponents/buttons/globalButton';
 import MidYellowButton from '../components/homeComponents/buttons/midYellowButton';
 import MidBlueButton   from '../components/homeComponents/buttons/midBlueButton';
@@ -18,6 +19,7 @@ export default class HomeScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            changes             : undefined,
             userLoaded          : false,
             error               : false,
             isModalVisible      : false,
@@ -49,6 +51,7 @@ export default class HomeScreen extends React.Component {
         this.acceptAreYouSure   = this.acceptAreYouSure  .bind( this );
         this.hideAreYouSure     = this.hideAreYouSure    .bind( this );
         this.goToChooseChange   = this.goToChooseChange  .bind( this );
+        this.setChanges         = this.setChanges        .bind( this );
     }
 
     loadTurns() {
@@ -62,6 +65,10 @@ export default class HomeScreen extends React.Component {
         })
         .then(response => response.json())
         .then(user => {
+            if ( user.token == undefined ) {
+                registerForPush(user.name, this.socket)
+                .catch(() => {});
+            }
             this.setState({
                 user: user,
                 userLoaded: true
@@ -92,7 +99,7 @@ export default class HomeScreen extends React.Component {
             owner: this.state.user.name,
             type: "free",
             accepted: false,
-            purposes: [],
+            purposals: [],
         }
 
         this.socket.emit("insertFree", free);
@@ -110,17 +117,22 @@ export default class HomeScreen extends React.Component {
             owner: this.state.user.name,
             type: "change",
             accepted: false,
-            purposes: [],
+            purposals: [],
         }
 
         this.socket.emit("insertChange", change);
         this.toggleModal();
-        this.showConfirmation();
+        this.showConfirmation("Petición enviada");
     }
 
+    setChanges(changes) {
+        this.setState({
+            changes: changes
+        })
+    }
     acceptFree(free) {
         this.socket.emit("acceptFree", change, this.user.name);
-        this.showConfirmation();
+        this.showConfirmation("Cambio realizado");
     }
 
     showConfirmation(message) {
@@ -132,7 +144,7 @@ export default class HomeScreen extends React.Component {
 
     showAreYouSureFree(change) {
         const message = 
-            `${this.state.user.name}, quieres trabajar ` +
+            `${this.state.user.name}, ¿quieres trabajar ` +
             `el ${change.day} ${this.getTurnString(change.turn)} `+
             `para que ${change.owner} pueda librar ese día?`;
 
@@ -159,17 +171,13 @@ export default class HomeScreen extends React.Component {
     }
 
     goToChooseChange(change) {
-        console.log("⛺️Going to choose change!");
-        console.log("🔰The change is ");
-        console.log(change);
-        console.log("🏠 The changer is ");
-        console.log(this.state.user.name);
         this.props.navigation.navigate(
             "ChooseChangeScreen",
             {
                 change       : change,
                 changerNurse : this.state.user,
-                token        : this.token
+                token        : this.token,
+                socket       : this.socket 
             });
     }
 
@@ -217,7 +225,14 @@ export default class HomeScreen extends React.Component {
     }
 
     myChangesButtonPressed() {
-        this.showConfirmation("Has pulsado el botón de Mis Cambios");
+        if( this.state.changes != undefined )
+            this.props.navigation.navigate(
+                "MyChangesScreen", 
+                { changes: this.state.changes,
+                  name: this.state.user.name,
+                  socket: this.socket,
+                  token: this.token }
+            );
     }
 
     contactsButtonPressed() {
@@ -256,8 +271,9 @@ export default class HomeScreen extends React.Component {
 
                     <Text style={styles.labelText}>Peticiones de cambio</Text>
                     <ChangesQueue 
-                        socket={this.socket} 
-                        token={this.token} 
+                        socket  ={ this.socket } 
+                        token   ={ this.token  } 
+                        onLoaded       = { this.setChanges           }
                         freeOnPress    = { this.showAreYouSureFree   }
                         changeOnPress  = { this.goToChooseChange     } />
                     <AskChangeModal 

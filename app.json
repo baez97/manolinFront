@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "pipelineApp",
-    "description": "this is an app for testing CD in Play Store",
+    "name": "Manolin",
+    "description": "App for exchanging shifts",
     "android": {
-        "package": "com.front.manolin"
+        "package": "com.front.manolin",
+        "googleServicesFile": "./google-services.json"
     },
-    "slug": "pipelineApp",
+    "slug": "Manolin",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
