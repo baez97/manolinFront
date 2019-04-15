@@ -33,7 +33,6 @@ export default class GlobalButton extends React.Component {
 const styles = StyleSheet.create({
     globalButton: {
         paddingTop: LayoutStyle.verticalUnits10,
-        // paddingBottom: LayoutStyle.verticalUnits10,
         paddingLeft: LayoutStyle.horizontalUnits10,
         paddingRight: LayoutStyle.horizontalUnits10,
         borderRadius: LayoutStyle.borderRadius,

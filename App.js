@@ -4,6 +4,7 @@ import HomeScreen         from './screens/homeScreen';
 import GlobalScreen       from './screens/globalScreen';
 import ChooseChangeScreen from './screens/chooseChangeScreen';
 import MyChangesScreen    from './screens/myChangesScreen';
+import ContactsScreen     from './screens/contactsScreen';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 
@@ -31,7 +32,8 @@ const AppNavigator = createStackNavigator({
   HomeScreen         : { screen: HomeScreen         },
   GlobalScreen       : { screen: GlobalScreen       },
   ChooseChangeScreen : { screen: ChooseChangeScreen },
-  MyChangesScreen    : { screen: MyChangesScreen    }
+  MyChangesScreen    : { screen: MyChangesScreen    },
+  ContactsScreen     : { screen: ContactsScreen     }
 }, {
   initialRouteName: "LoginScreen",
   headerMode: 'none',

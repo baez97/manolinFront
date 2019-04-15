@@ -1,5 +1,4 @@
 import { Permissions, Notifications } from 'expo';
-import { BACKEND_IP } from '../config';
 
 async function registerPush(name, socket) {
     const { status: existingStatus } = await Permissions.getAsync(
@@ -26,11 +25,6 @@ async function registerPush(name, socket) {
 
     // POST the token to your backend server from where you can retrieve it to send push notifications.
     socket.emit("registerForPush", name, token)
-}
-
-function fetchToAPI(urlString, options) {
-    console.log(urlString);
-    return fetch(urlString, options);
 }
 
 module.exports = registerPush;

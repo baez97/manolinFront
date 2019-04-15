@@ -63,6 +63,15 @@ export default class ChangesQueue extends React.Component{
         return `${item._id}`;
     }
 
+    renderItem({item}) {
+        return (
+            <ChangeView 
+                change        ={ item } 
+                freeOnPress   ={ this.props.freeOnPress   }
+                changeOnPress ={ this.props.changeOnPress }/>
+        )
+    }
+
     render() {
         if ( ! this.state.changesLoaded ) {
             return <Text>Cargando cambios...</Text>
@@ -74,13 +83,8 @@ export default class ChangesQueue extends React.Component{
                     <FlatList 
                         data={this.state.changes}
                         contentContainerStyle={{paddingBottom:20}}
-                        renderItem={({item}) => 
-                            <ChangeView 
-                                change        ={ item } 
-                                freeOnPress   ={ this.props.freeOnPress   }
-                                changeOnPress ={ this.props.changeOnPress }/>
-                        }
-                        keyExtractor={this.keyExtractor}
+                        renderItem   = { this.renderItem   }
+                        keyExtractor = { this.keyExtractor }
                         />
                 </View>
             );

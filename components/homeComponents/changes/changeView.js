@@ -28,7 +28,6 @@ export default class ChangeView extends React.Component {
     }
 
     render() {
-        console.log(this.props.change.type);
         if ( this.props.change.type === "free") {
             return (
                 <FreeBox 

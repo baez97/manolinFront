@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Linking } from 'react-native';
 import SocketIOClient from 'socket.io-client';
 
 import registerForPush from '../components/registerForPush';
@@ -236,7 +236,10 @@ export default class HomeScreen extends React.Component {
     }
 
     contactsButtonPressed() {
-        // NOT IMPLEMENTED YET
+        this.props.navigation.navigate(
+            "ContactsScreen",
+            { token: this.token }
+        )
     }
 
     render() {

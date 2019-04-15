@@ -63,12 +63,23 @@ export default class PurposalsQueue extends React.Component {
         );
     }
 
+    renderEmptySection({section}) {
+        if ( section.data.length === 0 ) {
+            return (
+                <Text style={styles.emptySectionText}>
+                    No hay propuestas todavía
+                </Text>
+            );
+        }
+    }
+
     render() {
         if ( this.state.changes.length === 0 )
             return <Text style={styles.textLabel}>No hay propuestas todavía</Text>
         return (
             <SectionList
                 renderItem = { this.renderItem }
+                renderSectionFooter = { this.renderEmptySection }
                 contentContainerStyle={{paddingBottom:20}}
                 renderSectionHeader={({section: {title}}) => (
                     <Text style={styles.textLabel}>{title}</Text>
@@ -107,5 +118,13 @@ const styles = StyleSheet.create({
         color: '#3f2606',
         marginLeft: layoutStyle.horizontalUnits10,
         marginTop: layoutStyle.verticalUnits10*4
+    },
+
+    emptySectionText: {
+        fontFamily: 'montserrat-extra-bold',
+        fontSize: layoutStyle.tinyFontSize,
+        color: '#3f2606',
+        textAlign: "center",
+        marginTop: layoutStyle.verticalUnits10*2
     }
 })
