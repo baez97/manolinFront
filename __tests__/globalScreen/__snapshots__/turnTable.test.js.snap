@@ -95,6 +95,13 @@ exports[`TurnTable Rendering Renders each item correctly 1`] = `
           "weekday": 2,
           "year": 2019,
         },
+        Object {
+          "day": 1,
+          "month": 1,
+          "turn": "M",
+          "weekday": 2,
+          "year": 2019,
+        },
       ]
     }
   />

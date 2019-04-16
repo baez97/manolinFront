@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, FlatList, StyleSheet } from 'react-native';
-import { BACKEND_IP } from '../../../config';
+import fetchToAPI from '../../fetchToAPI';
 import ChangeView from './changeView';
 import layoutStyle from '../../../styles/layoutStyle';
 
@@ -14,12 +14,15 @@ export default class ChangesQueue extends React.Component{
         this.socket = this.props.socket;
         this.socket.on("changesUpdate", () => {
             this.loadChanges();
-        })
+        });
+
+        this.loadChanges = this.loadChanges.bind(this);
+        this.renderItem  = this.renderItem.bind(this);
     }
 
     loadChanges() {
         const token = this.props.token;
-        return this.fetchToAPI( BACKEND_IP + '/central/changes', {
+        return fetchToAPI( '/central/changes', {
             method: 'GET',
             headers: {
                 Accept           : 'application/json',
@@ -53,10 +56,6 @@ export default class ChangesQueue extends React.Component{
     }
     async componentDidMount() {
         return this.loadChanges();
-    }
-
-    fetchToAPI(ipString, options) {
-        return fetch(ipString, options);
     }
 
     keyExtractor(item) {

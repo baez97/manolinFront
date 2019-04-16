@@ -24,8 +24,9 @@ export default class AskChangeModal extends React.Component {
     render() {
         return (
             <Modal
-                isVisible={this.props.isModalVisible}
-                onBackdropPress={this.props.toggleModal}>
+                isVisible         = { this.props.isModalVisible }
+                onBackdropPress   = { this.props.toggleModal    }
+                onBackButtonPress = { this.props.toggleModal    }>
                 <View style={styles.modalBackground}>
                     <View style={styles.box}>
                         <Text style={styles.labelText}>

@@ -39,10 +39,10 @@ export default class ModalButton extends React.Component {
         return (
             <TouchableOpacity onPress={this.props.onPressFn}>
                 <LinearGradient
-                    style  ={ buttonStyle }
-                    colors ={ colors }
-                    start  ={ start  }
-                    end    ={ end    }>
+                    style  = { buttonStyle }
+                    colors = { colors }
+                    start  = { start  }
+                    end    = { end    }>
                     <Text style={ styles.buttonText }>
                         { this.props.text }
                     </Text>

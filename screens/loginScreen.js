@@ -3,12 +3,12 @@ import styles        from '../styles/loginBoxStyle';
 import PrimaryButton from '../components/loginComponents/primaryButtonComponent';
 import RoundedInput  from '../components/loginComponents/inputComponent';
 import deviceStorage from '../components/deviceStorage';
+import fetchToAPI from '../components/fetchToAPI';
 
 import { Text, View, KeyboardAvoidingView  } from 'react-native';
 import { LinearGradient, Font              } from 'expo';
 import { SCLAlert, SCLAlertButton          } from 'react-native-scl-alert';
 import { StackActions, NavigationActions   } from 'react-navigation';
-import { BACKEND_IP } from '../config';
 
 const FONT_PATH_MAINTYPO  = "../assets/fonts/Montserrat-ExtraBold.otf";
 const FONT_PATH_NAMETYPO  = "../assets/fonts/big_noodle_titling.ttf";
@@ -45,7 +45,7 @@ export default class LoginScreen extends React.Component {
 
         var savedToken;
 
-        this.fetchToAPI(BACKEND_IP + '/auth/login', {
+        fetchToAPI('/auth/login', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -106,7 +106,7 @@ export default class LoginScreen extends React.Component {
         .then( token => {
             if ( token ) {
                 savedToken = token;
-                return this.fetchToAPI(BACKEND_IP + '/auth/me', {
+                return fetchToAPI('/auth/me', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
@@ -132,10 +132,6 @@ export default class LoginScreen extends React.Component {
             // simply continue the execution as if the token
             // was not found
         });
-    }
-
-    fetchToAPI(ipString, options) {
-        return fetch(ipString, options);
     }
 
     goToHomeScreen(savedToken) {

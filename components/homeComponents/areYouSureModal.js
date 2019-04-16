@@ -18,7 +18,8 @@ export default class AreYouSureModal extends React.Component {
         return (
             <Modal
                 isVisible         = { this.props.visible }
-                onBackDropPress   = { () => this.props.closeModal }>
+                onBackDropPress   = { this.props.closeModal }
+                onBackButtonPress = { this.props.closeModal }>
                 <View style={styles.modalBackground}>
                     <View style={styles.box}>
                         <Text style={styles.labelText}>

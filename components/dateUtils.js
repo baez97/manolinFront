@@ -69,6 +69,21 @@ class DateUtils {
 
         return `${weekdayString} ${day} de ${monthString}`;
     }
+
+    getTurnString(character) {
+        switch(character) {
+            case 'M':
+                return "por la mañana";
+            case 'T':
+                return "por la tarde";
+            case 'N':
+                return "por la noche";
+            case 'L':
+                return "(LIBRE)";
+            case '-':
+                return "(SALIDA DE NOCHE)";
+        }
+    }
 }
 
 export default DateUtils;

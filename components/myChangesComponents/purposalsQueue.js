@@ -1,7 +1,9 @@
 import React from 'react';
 import PurposalView from './purposalView';
-import { View, Text, FlatList, SectionList, StyleSheet } from 'react-native';
-import layoutStyle from '../../styles/layoutStyle'
+import { Text, SectionList, StyleSheet } from 'react-native';
+import layoutStyle from '../../styles/layoutStyle';
+import DateUtils from '../dateUtils';
+const dateUtils = new DateUtils();
 
 export default class PurposalsQueue extends React.Component {
     constructor(props) {
@@ -9,7 +11,9 @@ export default class PurposalsQueue extends React.Component {
         this.renderItem = this.renderItem.bind(this);
         this.name = this.props.name;
         this.state = {
-            changes : this.props.changes.filter(c => {return c.owner===this.name})
+            changes : this.props.changes.filter(c => {
+                return c.owner===this.name && c.type==="change"
+            })
         }
 
         this.data = [];
@@ -25,26 +29,11 @@ export default class PurposalsQueue extends React.Component {
             }
         });
     };
-    
-    getTurnString(character) {
-        switch(character) {
-            case 'M':
-                return "por la mañana";
-            case 'T':
-                return "por la tarde";
-            case 'N':
-                return "por la noche";
-            case 'L':
-                return "(LIBRE)";
-            case '-':
-                return "(SALIDA DE NOCHE)";
-        }
-    }
 
     getTitle(change) {
         const title = 
             `Propuestas para el ${change.day} ` + 
-            `${this.getTurnString(change.turn)}`;
+            `${dateUtils.getTurnString(change.turn)}`;
         return title;
     }
 
@@ -63,6 +52,10 @@ export default class PurposalsQueue extends React.Component {
         );
     }
 
+    renderSectionHeader({section: {title}}) {
+        return <Text style={styles.textLabel}>{title}</Text>
+    }
+
     renderEmptySection({section}) {
         if ( section.data.length === 0 ) {
             return (
@@ -75,40 +68,22 @@ export default class PurposalsQueue extends React.Component {
 
     render() {
         if ( this.state.changes.length === 0 )
-            return <Text style={styles.textLabel}>No hay propuestas todavía</Text>
+            return (
+                <Text style={styles.textLabel}>
+                    No hay propuestas todavía
+                </Text>
+            )
         return (
             <SectionList
-                renderItem = { this.renderItem }
-                renderSectionFooter = { this.renderEmptySection }
-                contentContainerStyle={{paddingBottom:20}}
-                renderSectionHeader={({section: {title}}) => (
-                    <Text style={styles.textLabel}>{title}</Text>
-                )}
-                sections={this.data}
-                keyExtractor={(item, index) => index}
+                renderItem            = { this.renderItem          }
+                renderSectionFooter   = { this.renderEmptySection  }
+                contentContainerStyle = { { paddingBottom:20 }     }
+                renderSectionHeader   = { this.renderSectionHeader }
+                sections              = { this.data                }
+                keyExtractor          = { (item, index) => index   }
                 />
         )
     }
-    // render() {
-    //     if ( this.state.purposals.length === 0 )
-    //         return null;
-    //     else {
-    //         return (
-    //             <View style={styles.container}>
-    //                 <FlatList 
-    //                     data={this.state.purposals}
-    //                     contentContainerStyle={{paddingBottom:20}}
-    //                     renderItem={({item}) => 
-    //                         <PurposalView 
-    //                             change    = { item } 
-    //                             onPressFn   = { this.props.onPressFn }/>
-    //                         }
-    //                     keyExtractor={ this.keyExtractor }
-    //                     />
-    //             </View>
-    //         )
-    //     }
-    // }
 }
 
 const styles = StyleSheet.create({

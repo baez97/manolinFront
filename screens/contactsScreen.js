@@ -1,26 +1,48 @@
 import React from 'react';
 import ContactCard from '../components/contactsComponents/contactCard';
+import ContactModal from '../components/contactsComponents/contactModal';
 import { Text, View, StyleSheet, FlatList } from 'react-native';
 import layoutStyle from '../styles/layoutStyle';
-import { BACKEND_IP } from '../config';
+import fetchToAPI from '../components/fetchToAPI';
 
 export default class ContactsScreen extends React.Component {
     constructor(props) {
         super(props);
         this.token = this.props.navigation.getParam("token");
+        this.username = this.props.navigation.getParam("name");
         this.state = {
             loaded: false,
             error: false,
-            contacts: []
+            contacts: [],
+            isModalVisible: false,
+            modalContact: {}
         }
+        this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
+        this.renderItem = this.renderItem.bind(this);
     }
 
     componentDidMount() {
         this.loadContacts();
     }
 
+    showModal(contact) {
+        console.log(contact);
+        this.setState({
+            isModalVisible: true,
+            modalContact: contact
+        });
+    }
+
+    hideModal() {
+        this.setState({
+            isModalVisible: false,
+            modalContact: {}
+        });
+    }
+
     loadContacts() {
-        this.fetchToAPI("/central/contacts", {
+        fetchToAPI("/central/contacts", {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
@@ -30,7 +52,6 @@ export default class ContactsScreen extends React.Component {
         })
         .then(response => response.json())
         .then(contacts => {
-            console.log(contacts);
             if ( contacts.err )
                 throw contacts.err;
             this.setState({
@@ -45,21 +66,21 @@ export default class ContactsScreen extends React.Component {
         });
     };
 
-    fetchToAPI(urlString, options) {
-        return fetch(BACKEND_IP + urlString, options);
-    }
-
     keyExtractor(item) {
         return `${item._id}`;
     }
 
     renderItem({item}) {
-        return (
-            <ContactCard
-                contact   = { item }
-                onPressFn = { () => {console.log("🐙 Thanks for pressing")} }
-                />
-        )
+        if ( item.name === this.username ) {
+            return null
+        } else {
+            return (
+                <ContactCard
+                    contact   = { item }
+                    onPressFn = { this.showModal }
+                    />
+            )
+        } 
     }
 
     render() {
@@ -83,11 +104,16 @@ export default class ContactsScreen extends React.Component {
             <View style={styles.container}>
                 <Text style={styles.textLabel}>Contactos</Text>
                 <FlatList
-                    data = { this.state.contacts }
+                    data         = { this.state.contacts }
                     contentContainerStyle = { styles.listContainer }
-                    renderItem = { this.renderItem }
+                    renderItem   = { this.renderItem   }
                     keyExtractor = { this.keyExtractor }
                     />
+                <ContactModal
+                    isVisible = { this.state.isModalVisible }
+                    hideModal = { this.hideModal }
+                    contact   = { this.state.modalContact }
+                />
             </View>
         )
     }

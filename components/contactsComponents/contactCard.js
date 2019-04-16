@@ -7,15 +7,21 @@ export default class ContactCard extends React.Component {
     constructor(props) {
         super(props);
         this.handleLongPress = this.handleLongPress.bind(this);
+        this.handlePress     = this.handlePress.bind(this);
     }
 
     handleLongPress() {
         Linking.openURL("https://wa.me/34"+this.props.contact.phone);
     }
+
+    handlePress() {
+        this.props.onPressFn(this.props.contact);
+    }
+    
     render() {
         return (
             <TouchableOpacity 
-                onPress={this.props.onPressFn}
+                onPress={this.handlePress}
                 onLongPress={this.handleLongPress}>
                 <LinearGradient
                     style={styles.contactCard}

@@ -10,9 +10,12 @@ import TurnDeck        from '../components/homeComponents/turnDeck';
 import ChangesQueue    from '../components/homeComponents/changes/changesQueue';
 import AskChangeModal  from '../components/homeComponents/askChangeModal';
 import ConfirmModal    from '../components/homeComponents/confirmModal';
-import { BACKEND_IP }  from '../config';
+import fetchToAPI      from '../components/fetchToAPI';
+import { BACKEND_IP }  from '../config'
 import layoutStyle from '../styles/layoutStyle';
 import AreYouSureModal from '../components/homeComponents/areYouSureModal';
+import DateUtils       from '../components/dateUtils';
+const  dateUtils = new DateUtils();
 
 
 export default class HomeScreen extends React.Component {
@@ -55,7 +58,7 @@ export default class HomeScreen extends React.Component {
     }
 
     loadTurns() {
-        this.fetchToAPI('/auth/me', {
+        fetchToAPI('/auth/me', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -83,10 +86,6 @@ export default class HomeScreen extends React.Component {
 
     async componentDidMount() {
         return this.loadTurns();
-    }
-
-    fetchToAPI(urlString, options) {
-        return fetch(BACKEND_IP + urlString, options);
     }
 
     addFree({day, weekday, month, year, turn}) {
@@ -145,7 +144,7 @@ export default class HomeScreen extends React.Component {
     showAreYouSureFree(change) {
         const message = 
             `${this.state.user.name}, ¿quieres trabajar ` +
-            `el ${change.day} ${this.getTurnString(change.turn)} `+
+            `el ${change.day} ${dateUtils.getTurnString(change.turn)} `+
             `para que ${change.owner} pueda librar ese día?`;
 
         this.setState({
@@ -179,21 +178,6 @@ export default class HomeScreen extends React.Component {
                 token        : this.token,
                 socket       : this.socket 
             });
-    }
-
-    getTurnString(character) {
-        switch(character) {
-            case 'M':
-                return "por la mañana";
-            case 'T':
-                return "por la tarde";
-            case 'N':
-                return "por la noche";
-            case 'L':
-                return "(LIBRE)";
-            case '-':
-                return "(SALIDA DE NOCHE)";
-        }
     }
 
     closeConfirmModal() {
@@ -238,7 +222,8 @@ export default class HomeScreen extends React.Component {
     contactsButtonPressed() {
         this.props.navigation.navigate(
             "ContactsScreen",
-            { token: this.token }
+            { token: this.token,
+              name: this.state.user.name }
         )
     }
 

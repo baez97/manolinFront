@@ -1,9 +1,11 @@
 import React from 'react';
-import { BACKEND_IP } from '../config';
 import { View, Text, StyleSheet } from 'react-native';
+import fetchToAPI from '../components/fetchToAPI';
 import NameColumn from '../components/globalComponents/nameColumn'
 import TurnTable from '../components/globalComponents/turnTable'
 import layoutStyle from '../styles/layoutStyle';
+import DateUtils from '../components/dateUtils';
+const  months = new DateUtils().months;
 
 export default class GlobalScreen extends React.Component {
     constructor(props) {
@@ -17,7 +19,7 @@ export default class GlobalScreen extends React.Component {
 
     async componentDidMount() {
         const token = this.getNavigationParam("token");
-        return fetch(BACKEND_IP + '/central/nurses', {
+        return fetchToAPI('/central/nurses', {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
@@ -105,18 +107,3 @@ const styles = StyleSheet.create({
         marginTop: layoutStyle.verticalUnits10*3
     }
 });
-
-const months = [
-    "Enero",
-    "Febrero",
-    "Marzo",
-    "Abril",
-    "Mayo",
-    "Junio",
-    "Julio",
-    "Agosto",
-    "Septiembre",
-    "Octubre",
-    "Noviembre",
-    "Diciembre"
-]

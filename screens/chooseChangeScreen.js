@@ -1,13 +1,18 @@
 import React from 'react';
-import { BACKEND_IP } from '../config';
 import { View, Text, StyleSheet } from 'react-native';
-import NameColumn  from '../components/globalComponents/nameColumn'
-// import TurnTable   from '../components/globalComponents/turnTable'
-import PressableTurnTable from '../components/chooseChangeComponents/pressableTurnTable';
-import layoutStyle from '../styles/layoutStyle';
-import ChangeView from '../components/homeComponents/changes/changeView';
-import AreYouSureModal from '../components/homeComponents/areYouSureModal';
-import ConfirmModal from '../components/homeComponents/confirmModal';
+import NameColumn         from '../components/globalComponents/nameColumn'
+import fetchToAPI         from '../components/fetchToAPI';
+import layoutStyle        from '../styles/layoutStyle';
+import ConfirmModal       from '../components/homeComponents/confirmModal';
+import DateUtils          from '../components/dateUtils';
+import PressableTurnTable from 
+    '../components/chooseChangeComponents/pressableTurnTable';
+import ChangeView         from 
+    '../components/homeComponents/changes/changeView';
+import AreYouSureModal    from 
+    '../components/homeComponents/areYouSureModal';
+const  dateUtils = new DateUtils();
+const  months    = dateUtils.months;
 
 export default class ChooseChangeScreen extends React.Component {
     constructor(props) {
@@ -36,13 +41,9 @@ export default class ChooseChangeScreen extends React.Component {
         this.confirmChange    = this.confirmChange.bind(this);
     }
 
-    fetchToAPI(urlString, options) {
-        return fetch(BACKEND_IP + urlString, options);
-    }
-
     async componentDidMount() {
         const token = this.getNavigationParam("token");
-        this.fetchToAPI('/central/nurse/'+this.change.owner, {
+        fetchToAPI('/central/nurse/'+this.change.owner, {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
@@ -70,28 +71,13 @@ export default class ChooseChangeScreen extends React.Component {
         return this.props.navigation.getParam(key);
     }
 
-    getTurnString(turnObj) {
-        const character = turnObj.turn;
-        switch(character) {
-            case 'M':
-                return "por la mañana";
-            case 'T':
-                return "por la tarde";
-            case 'N':
-                return "por la noche";
-            case 'L':
-                return "(LIBRE)";
-            case '-':
-                return "(SALIDA DE NOCHE)";
-        }
-    }
-
     wantsToChange(changerTurn) {
         const message =
-            `${this.changerNurse.name}, ¿quieres proponerle a `          +
-            `${this.ownerNurse.name} que trabaje el ${changerTurn.day} ` +
-            `${this.getTurnString(changerTurn)} a cambio de que tú `     +
-            `trabajes el ${this.change.day} ${this.getTurnString(this.change)}?`;
+            `${this.changerNurse.name}, ¿quieres proponerle a `           +
+            `${this.ownerNurse.name} que trabaje el ${changerTurn.day} `  +
+            `${dateUtils.getTurnString(changerTurn)} a cambio de que tú ` +
+            `trabajes el ${this.change.day} `                             + 
+            `${dateUtils.getTurnString(this.change)}?`;
 
         this.showModal(message, changerTurn);
     }
@@ -127,10 +113,10 @@ export default class ChooseChangeScreen extends React.Component {
             `Propuesta enviada. A ver si ${this.ownerNurse.name} confirma`;
 
         this.setState({
-            isModalVisible: false,
-            modalMessage: "",
-            isConfirmVisible: true,
-            confirmMessage: confirmMessage
+            isModalVisible   : false,
+            modalMessage     : "",
+            isConfirmVisible : true,
+            confirmMessage   : confirmMessage
         })
     }
 
@@ -144,7 +130,9 @@ export default class ChooseChangeScreen extends React.Component {
         if ( this.state.error ) {
             return (
                 <View style={ styles.container }>
-                    <Text style={{ marginTop: 50 }}> Se ha producido un error </Text>
+                    <Text style={{ marginTop: 50 }}> 
+                        Se ha producido un error 
+                    </Text>
                 </View>
             )
         }
@@ -163,10 +151,13 @@ export default class ChooseChangeScreen extends React.Component {
                     change={this.change} 
                     changeOnPress={()=>{}}/>
                 <Text style={styles.titleText}>
-                    ¿Qué turno le propones a {this.ownerNurse.name} que haga a cambio?
+                    ¿Qué turno le propones a {this.ownerNurse.name} 
+                    que haga a cambio?
                 </Text>
                 { months[this.state.currentMonthIndex] != undefined ?
-                    ( <Text style={styles.monthText}>{months[this.state.currentMonthIndex]}</Text>)
+                    ( <Text style={styles.monthText}>
+                        {months[this.state.currentMonthIndex]}
+                      </Text>)
                     : ( <Text style={styles.monthText}>Turno</Text> )
                 }
                 <View style={styles.tableContainer}>
@@ -229,18 +220,3 @@ const styles = StyleSheet.create({
         marginTop: layoutStyle.verticalUnits10*5
     }
 });
-
-const months = [
-    "Enero",
-    "Febrero",
-    "Marzo",
-    "Abril",
-    "Mayo",
-    "Junio",
-    "Julio",
-    "Agosto",
-    "Septiembre",
-    "Octubre",
-    "Noviembre",
-    "Diciembre"
-]
