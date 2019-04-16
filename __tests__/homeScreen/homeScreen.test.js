@@ -263,22 +263,5 @@ describe("HomeScreen tests", () => {
             expect( rendered    ).toMatchSnapshot();
         });
 
-        // it("Shows 'Cargando cambios...' when the changes are not loaded", () => {
-        //     const expectedOutput = "Cargando cambios...";
-        //     const rendered = renderer.create(
-        //         <HomeScreen navigation={navigation}/>
-        //     )
-
-        //     const renderedObj = rendered.root._fiber.stateNode;
-        //     renderedObj.setState({
-        //         userLoaded: true,
-        //         user: mockedNurse
-        //     });
-
-        //     const loadingView = rendered.toJSON().children[4];
-        //     const loadingText = loadingView.children[0]
-        //     expect( loadingText       ).toBe(expectedOutput);
-        //     expect( rendered.toJSON() ).toMatchSnapshot();
-        // });
     });
 });

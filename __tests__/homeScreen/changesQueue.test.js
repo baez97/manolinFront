@@ -1,12 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import ChangesQueue from '../../components/homeComponents/changes/changesQueue';
+import fetchToAPI from '../../components/fetchToAPI';
+import mockedUsers from '../../components/__mocks__/mockedUsers';
 
 jest.unmock("react-native");
 jest.unmock("react");
 jest.unmock("react-test-renderer");
 jest.unmock("expo");
 jest.unmock("../../components/homeComponents/changes/changeView")
+jest.mock("socket.io-client");
+jest.mock("../../components/fetchToAPI");
 
 
 const simulateRenderItem = function(listContainer, item) {
@@ -25,19 +29,35 @@ const simulateSetState = function(reactObject, stateObj) {
 describe("ChangesQueue", () => {
     
     const mockedToken = "TOKEN";
-    const cQ = new ChangesQueue({token: mockedToken});
-    cQ.fetchToAPI = jest.fn();
+    const props = {
+        token: mockedToken,
+        socket: {
+            on: jest.fn((chain, callback) => {
+                callback()
+            }),
+            emit: jest.fn()
+        },
+        onLoaded: jest.fn()
+    };
+    
+    fetchToAPI.mockReturnValueOnce(
+        new Promise((res, rej) => {
+            res(mockedUsers[0])
+        })
+    );
+
+    const cQ = new ChangesQueue(props);
     cQ.setState   = jest.fn();
 
     describe("ComponentDidMount", () => {
 
         it("Calls to fetchToAPI", async() => {
-            cQ.fetchToAPI.mockReturnValueOnce(
+            fetchToAPI.mockReturnValueOnce(
                 new Promise((res, rej) => {
                     res({json: () => ({})})
                 }));
             await cQ.componentDidMount();
-            expect( cQ.fetchToAPI ).toBeCalled();
+            expect( fetchToAPI ).toBeCalled();
         });
 
         it("Sets the state correctly when there is not an error", async () => {
@@ -46,7 +66,7 @@ describe("ChangesQueue", () => {
                 changesLoaded: true,
                 changes: mockedResponse.result
             }
-            cQ.fetchToAPI.mockReturnValueOnce(
+            fetchToAPI.mockReturnValueOnce(
                 new Promise((res, rej) => {
                     res({json: () => (mockedResponse)})
                 }));
@@ -61,7 +81,7 @@ describe("ChangesQueue", () => {
                 changesLoaded: true,
                 changes: mockedResponse.result
             }
-            cQ.fetchToAPI.mockReturnValueOnce(
+            fetchToAPI.mockReturnValueOnce(
                 new Promise((res, rej) => {
                     res({json: () => (mockedResponse)})
                 }));
@@ -75,7 +95,7 @@ describe("ChangesQueue", () => {
                 changesLoaded: true,
                 changes: []
             }
-            cQ.fetchToAPI.mockReturnValueOnce(
+            fetchToAPI.mockReturnValueOnce(
                 new Promise((res, rej) => {
                     throw "ERR";
                 }));
@@ -87,7 +107,7 @@ describe("ChangesQueue", () => {
 
     describe("View", () => {
         it("Matches the Snapshot when changes are not loaded yet", () => {
-            const view = <ChangesQueue token={mockedToken} />
+            const view = <ChangesQueue token={mockedToken} socket={{on: jest.fn()}}/>
             const rendered = renderer.create(view);
             const renderedJson = rendered.toJSON();
 
@@ -95,7 +115,7 @@ describe("ChangesQueue", () => {
         });
 
         it("Matches the Snapshot when there are no changes", async () => {
-            const view     = <ChangesQueue token="TOKEN" />
+            const view     = <ChangesQueue token="TOKEN" socket={{on: jest.fn()}}/>
             const rendered = await renderer.create(view);
             const renderedObj = rendered.root._fiber.stateNode;
             renderedObj.setState({

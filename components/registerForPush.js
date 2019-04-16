@@ -19,7 +19,6 @@ async function registerPush(name, socket) {
     if (finalStatus !== 'granted') {
         return;
     }
-
     // Get the token that uniquely identifies this device
     let token = await Notifications.getExpoPushTokenAsync();
 

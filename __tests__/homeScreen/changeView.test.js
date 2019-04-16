@@ -9,9 +9,12 @@ jest.unmock("expo");
 
 describe("ChangeView", () => {
     describe("Functions", () => {
+        const mockedProps = {
+            onPressFn : jest.fn()
+        }
+
         const cV = new ChangeView();
         
-
         it("GetType returns Cambio when the type is change", () => {
             const mockedChange = {
                 owner: "Ana",
@@ -59,10 +62,15 @@ describe("ChangeView", () => {
             const actualOutput = cV.getType(mockedChange);
             expect( actualOutput ).toBe(expectedOutput);
         });
+
+        it("HandleLongPress works fine", () => {
+            cV.handleLongPress();
+            expect( mockedProps.handleLongPress ).toBeCalled();
+        })
     });
 
     describe("View", () => {
-        it("Matches the Snapshot", () => {
+        it("Matches the Snapshot when the type is 'change'", () => {
             const mockedChange = {
                 owner: "Ana",
                 day: 5,
@@ -71,6 +79,42 @@ describe("ChangeView", () => {
                 weekday: 1,
                 turn: "M",
                 type: "change"
+            };
+
+            const view         = <ChangeView change={mockedChange} />
+            const rendered     = renderer.create(view);
+            const renderedJson = rendered.toJSON();
+
+            expect( renderedJson ).toMatchSnapshot();
+        });
+
+        it("Matches the Snapshot when the type is 'free'", () => {
+            const mockedChange = {
+                owner: "Ana",
+                day: 5,
+                month: 2,
+                year: 2019,
+                weekday: 1,
+                turn: "M",
+                type: "free"
+            };
+
+            const view         = <ChangeView change={mockedChange} />
+            const rendered     = renderer.create(view);
+            const renderedJson = rendered.toJSON();
+
+            expect( renderedJson ).toMatchSnapshot();
+        });
+
+        it("Matches the Snapshot when the type is invalid", () => {
+            const mockedChange = {
+                owner: "Ana",
+                day: 5,
+                month: 2,
+                year: 2019,
+                weekday: 1,
+                turn: "M",
+                type: "INVALID_TYPE"
             };
 
             const view         = <ChangeView change={mockedChange} />

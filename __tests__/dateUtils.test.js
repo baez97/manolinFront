@@ -39,6 +39,26 @@ describe("DateUtils", () => {
             expect( actualOutput ).toBe(expectedOutput);
         });
 
+        describe("GetTurnString", () => {
+            it("Returns the correct value", () => {
+                const inputs = [ 'M', 'T', 'N', 'L', '-'];
+                const expectedOutputs = [
+                    "por la mañana",
+                    "por la tarde",
+                    "por la noche",
+                    "(LIBRE)",
+                    "(SALIDA DE NOCHE)"
+                ];
+
+                var actualOutput;
+
+                for ( let i = 0; i < 5; i++ ) {
+                    actualOutput = dateUtils.getTurnString(inputs[i]);
+                    expect( actualOutput ).toBe(expectedOutputs[i]);
+                }
+            });
+        });
+
         describe("GetMonthOfDayIndex", () => {
             it("Works fine when the day is at the middle of a month", () => {
                 const expectedMonth = 1;
