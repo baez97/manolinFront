@@ -54,6 +54,7 @@ export default class ChangesQueue extends React.Component{
             this.props.onLoaded([]);
         });
     }
+
     async componentDidMount() {
         return this.loadChanges();
     }
@@ -65,9 +66,9 @@ export default class ChangesQueue extends React.Component{
     renderItem({item}) {
         return (
             <ChangeView 
-                change        ={ item } 
-                freeOnPress   ={ this.props.freeOnPress   }
-                changeOnPress ={ this.props.changeOnPress }/>
+                change        = { item } 
+                freeOnPress   = { this.props.freeOnPress   }
+                changeOnPress = { this.props.changeOnPress }/>
         )
     }
 
@@ -75,7 +76,7 @@ export default class ChangesQueue extends React.Component{
         if ( ! this.state.changesLoaded ) {
             return <Text>Cargando cambios...</Text>
         } else if ( this.state.changes.length === 0 ) {
-            return null
+            return <View></View>
         } else {
             return (
                 <View style={styles.container}>

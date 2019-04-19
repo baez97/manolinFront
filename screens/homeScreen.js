@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Linking } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import SocketIOClient from 'socket.io-client';
+import { PulseIndicator } from 'react-native-indicators'
 
 import registerForPush from '../components/registerForPush';
 import GlobalButton    from '../components/homeComponents/buttons/globalButton';
@@ -45,20 +46,24 @@ export default class HomeScreen extends React.Component {
     }
 
     bindMethods() {
-        this.selectTurn         = this.selectTurn        .bind( this );
-        this.toggleModal        = this.toggleModal       .bind( this );
-        this.addChange          = this.addChange         .bind( this );
-        this.addFree            = this.addFree           .bind( this );
-        this.closeConfirmModal  = this.closeConfirmModal .bind( this );
-        this.showAreYouSureFree = this.showAreYouSureFree.bind( this );
-        this.acceptAreYouSure   = this.acceptAreYouSure  .bind( this );
-        this.hideAreYouSure     = this.hideAreYouSure    .bind( this );
-        this.goToChooseChange   = this.goToChooseChange  .bind( this );
-        this.setChanges         = this.setChanges        .bind( this );
+        this.selectTurn         = this.selectTurn         .bind( this );
+        this.toggleModal        = this.toggleModal        .bind( this );
+        this.addChange          = this.addChange          .bind( this );
+        this.addFree            = this.addFree            .bind( this );
+        this.closeConfirmModal  = this.closeConfirmModal  .bind( this );
+        this.showAreYouSureFree = this.showAreYouSureFree .bind( this );
+        this.acceptAreYouSure   = this.acceptAreYouSure   .bind( this );
+        this.hideAreYouSure     = this.hideAreYouSure     .bind( this );
+        this.goToChooseChange   = this.goToChooseChange   .bind( this );
+        this.setChanges         = this.setChanges         .bind( this );
+
+        this.globalButtonPressed    = this.globalButtonPressed   .bind( this );
+        this.myChangesButtonPressed = this.myChangesButtonPressed.bind( this );
+        this.contactsButtonPressed  = this.contactsButtonPressed .bind( this );
     }
 
     loadTurns() {
-        fetchToAPI('/auth/me', {
+        return fetchToAPI('/auth/me', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -130,7 +135,7 @@ export default class HomeScreen extends React.Component {
         })
     }
     acceptFree(free) {
-        this.socket.emit("acceptFree", change, this.user.name);
+        this.socket.emit("acceptFree", free, this.state.user.name);
         this.showConfirmation("Cambio realizado");
     }
 
@@ -230,14 +235,14 @@ export default class HomeScreen extends React.Component {
     render() {
         if ( this.state.error ) {
             return ( 
-                <View style={styles.container}>
-                    <Text> Se ha producido un error </Text>
+                <View style={styles.auxContainer}>
+                    <Text style={styles.loadingText}> Se ha producido un error </Text>
                 </View>
             )
         } else if ( !this.state.userLoaded ) {
             return (
-                <View style={styles.container}>
-                    <Text> Cargando... </Text>
+                <View style={styles.auxContainer}>
+                    <PulseIndicator size={layoutStyle.horizontalUnits10*15} color="#067bdb" />
                 </View>
             )
         } else {
@@ -245,16 +250,13 @@ export default class HomeScreen extends React.Component {
                 <View style={styles.container}>
                     <TurnDeck selectTurn={this.selectTurn} turnWithDates={this.state.user.turnWithDates}/>
 
-                    <GlobalButton text="VER TURNO GLOBAL" onPressFn={() => {
-                        this.globalButtonPressed();
-                    }}/>
+                    <GlobalButton text="VER TURNO GLOBAL" 
+                        onPressFn={ this.globalButtonPressed }/>
                     <View style={{ width: layoutStyle.maxWidth, flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <MidYellowButton text="MIS CAMBIOS" onPressFn={() => {
-                            this.myChangesButtonPressed();
-                        }}/>
-                        <MidBlueButton text="CONTACTOS" onPressFn={()=>{
-                            this.contactsButtonPressed();
-                        }}/>
+                        <MidYellowButton text="MIS CAMBIOS" 
+                            onPressFn={ this.myChangesButtonPressed }/>
+                        <MidBlueButton text="CONTACTOS" 
+                            onPressFn={ this.contactsButtonPressed  }/>
                     </View>
 
                     <Text style={styles.labelText}>Peticiones de cambio</Text>
@@ -296,6 +298,14 @@ const styles = StyleSheet.create({
         paddingTop:layoutStyle.verticalUnits10
     },
 
+    auxContainer: {
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "center",
+        backgroundColor: '#bee6ef',
+        paddingTop:layoutStyle.verticalUnits10
+    },
+
     labelText: {
         fontFamily: 'montserrat-extra-bold',
         fontSize: layoutStyle.primaryFontSize,
@@ -304,4 +314,11 @@ const styles = StyleSheet.create({
         width: layoutStyle.maxWidth,
         marginTop: layoutStyle.verticalUnits10*3
     },
+
+    loadingText: {
+        fontFamily: 'montserrat-extra-bold',
+        fontSize: layoutStyle.primaryFontSize,
+        color: '#3b2868',
+        textAlign: 'center',
+    }
 });

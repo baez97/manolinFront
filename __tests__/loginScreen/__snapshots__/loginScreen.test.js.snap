@@ -436,7 +436,16 @@ exports[`LoginScreen View Matches the Loading Snapshot 1`] = `
     }
   }
 >
-  <Text>
+  <Text
+    style={
+      Object {
+        "color": "#3b2868",
+        "fontSize": 38.95833442608516,
+        "fontWeight": "bold",
+        "textAlign": "center",
+      }
+    }
+  >
     Cargando...
   </Text>
 </View>

@@ -23,16 +23,24 @@ exports[`HomeScreen tests View Shows 'Se ha producido un error...' when the fetc
 <View
   style={
     Object {
-      "alignItems": "center",
       "backgroundColor": "#bee6ef",
       "flex": 1,
       "flexDirection": "column",
-      "justifyContent": "flex-start",
-      "paddingTop": 10,
+      "justifyContent": "center",
+      "paddingTop": 17.5,
     }
   }
 >
-  <Text>
+  <Text
+    style={
+      Object {
+        "color": "#3b2868",
+        "fontFamily": "montserrat-extra-bold",
+        "fontSize": 38.95833442608516,
+        "textAlign": "center",
+      }
+    }
+  >
      Se ha producido un error 
   </Text>
 </View>

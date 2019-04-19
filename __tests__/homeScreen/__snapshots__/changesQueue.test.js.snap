@@ -6,4 +6,4 @@ exports[`ChangesQueue View Matches the Snapshot when changes are not loaded yet 
 </Text>
 `;
 
-exports[`ChangesQueue View Matches the Snapshot when there are no changes 1`] = `null`;
+exports[`ChangesQueue View Matches the Snapshot when there are no changes 1`] = `<View />`;

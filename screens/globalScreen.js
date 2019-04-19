@@ -4,6 +4,7 @@ import fetchToAPI from '../components/fetchToAPI';
 import NameColumn from '../components/globalComponents/nameColumn'
 import TurnTable from '../components/globalComponents/turnTable'
 import layoutStyle from '../styles/layoutStyle';
+import { PulseIndicator } from 'react-native-indicators';
 import DateUtils from '../components/dateUtils';
 const  months = new DateUtils().months;
 
@@ -57,7 +58,7 @@ export default class GlobalScreen extends React.Component {
         if ( ! this.state.usersLoaded ) {
             return ( 
                 <View style={styles.container}>
-                    <Text> Cargando... </Text>
+                    <PulseIndicator size={layoutStyle.horizontalUnits10*15} color="#067bdb" />
                 </View>
             )
         }

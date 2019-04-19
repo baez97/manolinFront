@@ -28,12 +28,6 @@ export default StyleSheet.create({
     },
 
     label: {
-        // marginBottom: 10,
-        // marginTop: 20,
-        // marginLeft: 10,
-        // fontFamily: 'montserrat-extra-bold',
-        // color: 'white',
-        // fontSize: 20,
         marginBottom: LayoutStyle.verticalUnits10,
         marginTop: LayoutStyle.verticalUnits10*2,
         marginLeft: LayoutStyle.horizontalUnits10,
@@ -42,12 +36,14 @@ export default StyleSheet.create({
         fontSize: LayoutStyle.smallFontSize
     },
 
+    loadingText: {
+        fontSize: LayoutStyle.primaryFontSize,
+        fontWeight: "bold",
+        color: '#3b2868',
+        textAlign: 'center',
+    },
+
     blueBox: {
-        // padding: 20,
-        // paddingTop: 8,
-        // paddingBottom: 8,
-        // borderRadius: 20,
-        // elevation: 3
         paddingRight  : LayoutStyle.horizontalUnits10*2,
         paddingLeft   : LayoutStyle.horizontalUnits10*2,
         paddingTop    : LayoutStyle.verticalUnits10*0.8,
@@ -57,13 +53,6 @@ export default StyleSheet.create({
     },
 
     loginButton: {
-        // padding: 20,
-        // borderRadius: 20,
-        // marginLeft: 40,
-        // marginRight: 40,
-        // marginTop: 30,
-        // marginBottom: 20,
-        // elevation: 3,
         paddingTop    : LayoutStyle.verticalUnits10*2,
         paddingBottom : LayoutStyle.verticalUnits10*2,
         paddingRight  : LayoutStyle.horizontalUnits10*2,

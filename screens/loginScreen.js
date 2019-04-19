@@ -30,7 +30,7 @@ export default class LoginScreen extends React.Component {
             'montserrat-extra-bold' : require(FONT_PATH_MAINTYPO),
             'big-noodle-titling'    : require(FONT_PATH_NAMETYPO),
         });
-        await this.checkToken();
+        // await this.checkToken();
 
         this.setState({ fontLoaded: true });
     }
@@ -71,7 +71,6 @@ export default class LoginScreen extends React.Component {
                     title   : "Contraseña incorrecta", 
                     message : "La contraseña que has introducido no es correcta"
                 });
-                throw "The password is not correct";
             }
 
             token = responseJson.token;
@@ -91,11 +90,19 @@ export default class LoginScreen extends React.Component {
         })
 
         .catch( err => {
-            // Any login error will be shown to the user with an Alert.
-            this.showError({
-                title: "Ha habido un error",
-                message: err.message
-            });
+            console.log(err);
+            if ( err.message === "Network request failed" ) {
+                this.showError({
+                    title: "Ha habido un error",
+                    message: "No hay Internet"
+                });
+            } else {
+                // Any login error will be shown to the user with an Alert.
+                this.showError({
+                    title: "Ha habido un error",
+                    message: err
+                });
+            }
         });
     }
 
@@ -221,7 +228,7 @@ export default class LoginScreen extends React.Component {
         } else {
             return (
                 <View style={styles.container}>
-                    <Text>Cargando...</Text>
+                    <Text style={styles.loadingText}>Cargando...</Text>
                 </View>
             )
         }

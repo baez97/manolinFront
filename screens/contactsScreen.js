@@ -2,6 +2,7 @@ import React from 'react';
 import ContactCard from '../components/contactsComponents/contactCard';
 import ContactModal from '../components/contactsComponents/contactModal';
 import { Text, View, StyleSheet, FlatList } from 'react-native';
+import { PulseIndicator } from 'react-native-indicators';
 import layoutStyle from '../styles/layoutStyle';
 import fetchToAPI from '../components/fetchToAPI';
 
@@ -95,7 +96,7 @@ export default class ContactsScreen extends React.Component {
         if ( ! this.state.loaded ) {
             return (
                 <View style={styles.container}>
-                    <Text>Cargando...</Text>
+                    <PulseIndicator size={layoutStyle.horizontalUnits10*15} color="#067bdb" />
                 </View>
             );
         }

@@ -1,9 +1,8 @@
 const socket = {
-    on: jest.fn((chain, callback) => {
-        callback()
-    })
+    on: jest.fn((chain, callback) => {}),
+    emit: jest.fn()
 }
 
-export default function SocketIOClient () {
+export default jest.fn(function SocketIOClient () {
     return socket;
-}
+})
