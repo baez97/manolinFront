@@ -10,6 +10,7 @@ jest.unmock('react');
 jest.unmock("react-test-renderer");
 jest.unmock('expo');
 jest.mock('../../components/dateUtils');
+jest.useFakeTimers();
 
 describe("GlobalScreen tests", () => {
     
@@ -85,14 +86,11 @@ describe("GlobalScreen tests", () => {
             expect( rendered    ).toMatchSnapshot();
         });
 
-        it("Shows 'Cargando...' when the turns are not loaded", () => {
+        it("Shows Loading animation when the turns are not loaded", () => {
             const rendered = renderer.create(
                 <GlobalScreen />
             ).toJSON();
 
-            const loadingView = rendered.children[0];
-            const loadingText = loadingView.children[0];
-            expect( loadingText ).toBe(" Cargando... ");
             expect( rendered    ).toMatchSnapshot();
         });
 

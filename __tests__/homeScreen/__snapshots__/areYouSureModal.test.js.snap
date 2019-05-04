@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AreYouSureModal Matches the Snapshot 1`] = `
+<Modal
+  animationType="none"
+  hardwareAccelerated={false}
+  hideModalContentWhileAnimating={false}
+  onModalHide={[Function]}
+  onModalWillHide={[Function]}
+  onModalWillShow={[Function]}
+  onRequestClose={[Function]}
+  scrollOffset={0}
+  scrollOffsetMax={0}
+  scrollTo={null}
+  supportedOrientations={
+    Array [
+      "portrait",
+      "landscape",
+    ]
+  }
+  swipeThreshold={100}
+  transparent={true}
+  visible={true}
+>
+  <View
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "black",
+        "bottom": 0,
+        "height": 1334,
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "width": 750,
+      }
+    }
+  />
+  <View
+    hideModalContentWhileAnimating={false}
+    onModalHide={[Function]}
+    onModalWillHide={[Function]}
+    onModalWillShow={[Function]}
+    pointerEvents="box-none"
+    scrollOffset={0}
+    scrollOffsetMax={0}
+    scrollTo={null}
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "center",
+        "margin": 37.5,
+        "transform": Array [
+          Object {
+            "translateY": 1334,
+          },
+        ],
+      }
+    }
+    supportedOrientations={
+      Array [
+        "portrait",
+        "landscape",
+      ]
+    }
+    swipeThreshold={100}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "column",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "white",
+            "borderRadius": 35.5,
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "paddingBottom": 43.75,
+            "paddingLeft": 26.25,
+            "paddingRight": 26.25,
+            "paddingTop": 26.25,
+            "width": 602,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#2990f7",
+              "fontFamily": "montserrat-extra-bold",
+              "fontSize": 40.7291678090925,
+              "marginBottom": 17.5,
+              "textAlign": "center",
+            }
+          }
+        >
+          ModalText
+        </Text>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <ExponentLinearGradient
+            colors={
+              Array [
+                4278439238,
+                4278429498,
+              ]
+            }
+            endPoint={
+              Array [
+                0.65,
+                1,
+              ]
+            }
+            startPoint={
+              Array [
+                0.55,
+                0,
+              ]
+            }
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": 35.5,
+                "elevation": 15,
+                "height": 141.5,
+                "justifyContent": "center",
+                "marginTop": 61.25,
+                "width": 442.5,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "white",
+                  "fontFamily": "montserrat-extra-bold",
+                  "fontSize": 38.95833442608516,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Confirmar
+            </Text>
+          </ExponentLinearGradient>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <ExponentLinearGradient
+            colors={
+              Array [
+                4279286482,
+                4278481116,
+              ]
+            }
+            endPoint={
+              Array [
+                0.65,
+                1,
+              ]
+            }
+            startPoint={
+              Array [
+                0.55,
+                0,
+              ]
+            }
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": 35.5,
+                "elevation": 15,
+                "height": 141.5,
+                "justifyContent": "center",
+                "marginTop": 61.25,
+                "width": 442.5,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "white",
+                  "fontFamily": "montserrat-extra-bold",
+                  "fontSize": 38.95833442608516,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Cancelar
+            </Text>
+          </ExponentLinearGradient>
+        </View>
+      </View>
+    </View>
+  </View>
+</Modal>
+`;

@@ -64,7 +64,7 @@ class DateUtils {
         }
     }
 
-    getTurnString(character) {
+    getTurnString = jest.fn((character) => {
         switch(character) {
             case 'M':
                 return "por la mañana";
@@ -77,7 +77,7 @@ class DateUtils {
             case '-':
                 return "(SALIDA DE NOCHE)";
         }
-    }
+    });
 
     indexOfToday = this.getIndexOfToday();
 }

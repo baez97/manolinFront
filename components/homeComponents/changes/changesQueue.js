@@ -8,7 +8,8 @@ export default class ChangesQueue extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            changesLoaded: false
+            changesLoaded: false,
+            changes: []
         }
 
         this.socket = this.props.socket;
@@ -22,7 +23,7 @@ export default class ChangesQueue extends React.Component{
 
     loadChanges() {
         const token = this.props.token;
-        return fetchToAPI( '/central/changes', {
+        return fetchToAPI( '/central/changes/' + this.props.group, {
             method: 'GET',
             headers: {
                 Accept           : 'application/json',

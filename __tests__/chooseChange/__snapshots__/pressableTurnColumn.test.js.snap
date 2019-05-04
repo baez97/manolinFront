@@ -1,0 +1,724 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "width": 88.5,
+      }
+    }
+  >
+    <ExponentLinearGradient
+      colors={
+        Array [
+          4279017174,
+          4278481116,
+        ]
+      }
+      endPoint={
+        Array [
+          0,
+          1,
+        ]
+      }
+      startPoint={
+        Array [
+          0,
+          0,
+        ]
+      }
+      style={
+        Object {
+          "height": 52.5,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 35.416667660079604,
+            "textAlign": "center",
+          }
+        }
+      >
+        1
+      </Text>
+    </ExponentLinearGradient>
+    <ExponentLinearGradient
+      colors={
+        Array [
+          4289914618,
+          4285250006,
+        ]
+      }
+      endPoint={
+        Array [
+          0,
+          1,
+        ]
+      }
+      startPoint={
+        Array [
+          0,
+          0,
+        ]
+      }
+      style={
+        Object {
+          "borderLeftColor": "#c5c9cc",
+          "borderRightColor": "#c5c9cc",
+          "borderRightWidth": 0.5,
+          "paddingBottom": 17.5,
+          "paddingLeft": 17.5,
+          "paddingRight": 17.5,
+          "paddingTop": 17.5,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+    </ExponentLinearGradient>
+  </View>
+</View>
+`;
+
+exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary day 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "width": 88.5,
+      }
+    }
+  >
+    <ExponentLinearGradient
+      colors={
+        Array [
+          4279017174,
+          4278481116,
+        ]
+      }
+      endPoint={
+        Array [
+          0,
+          1,
+        ]
+      }
+      startPoint={
+        Array [
+          0,
+          0,
+        ]
+      }
+      style={
+        Object {
+          "height": 52.5,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 35.416667660079604,
+            "textAlign": "center",
+          }
+        }
+      >
+        25
+      </Text>
+    </ExponentLinearGradient>
+    <ExponentLinearGradient
+      colors={
+        Array [
+          4294572537,
+          4291742924,
+        ]
+      }
+      endPoint={
+        Array [
+          0,
+          1,
+        ]
+      }
+      startPoint={
+        Array [
+          0,
+          0,
+        ]
+      }
+      style={
+        Object {
+          "borderLeftColor": "#c5c9cc",
+          "borderRightColor": "#c5c9cc",
+          "borderRightWidth": 0.5,
+          "paddingBottom": 17.5,
+          "paddingLeft": 17.5,
+          "paddingRight": 17.5,
+          "paddingTop": 17.5,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+    </ExponentLinearGradient>
+  </View>
+</View>
+`;
+
+exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "width": 88.5,
+      }
+    }
+  >
+    <ExponentLinearGradient
+      colors={
+        Array [
+          4279017174,
+          4278481116,
+        ]
+      }
+      endPoint={
+        Array [
+          0,
+          1,
+        ]
+      }
+      startPoint={
+        Array [
+          0,
+          0,
+        ]
+      }
+      style={
+        Object {
+          "height": 52.5,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 35.416667660079604,
+            "textAlign": "center",
+          }
+        }
+      >
+        26
+      </Text>
+    </ExponentLinearGradient>
+    <ExponentLinearGradient
+      colors={
+        Array [
+          4294572537,
+          4291742924,
+        ]
+      }
+      endPoint={
+        Array [
+          0,
+          1,
+        ]
+      }
+      startPoint={
+        Array [
+          0,
+          0,
+        ]
+      }
+      style={
+        Object {
+          "borderLeftColor": "#c5c9cc",
+          "borderRightColor": "#c5c9cc",
+          "borderRightWidth": 0.5,
+          "paddingBottom": 17.5,
+          "paddingLeft": 17.5,
+          "paddingRight": 17.5,
+          "paddingTop": 17.5,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#056ec9",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#056ec9",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#056ec9",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#056ec9",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#056ec9",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#056ec9",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#056ec9",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#056ec9",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#056ec9",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#056ec9",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#056ec9",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 40.7291678090925,
+            "paddingBottom": 28,
+            "textAlign": "center",
+          }
+        }
+      >
+        M
+      </Text>
+    </ExponentLinearGradient>
+  </View>
+</View>
+`;

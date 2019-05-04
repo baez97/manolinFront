@@ -4,18 +4,102 @@ exports[`HomeScreen tests View Shows 'Cargando...' when the user is not loaded 1
 <View
   style={
     Object {
-      "alignItems": "center",
       "backgroundColor": "#bee6ef",
       "flex": 1,
       "flexDirection": "column",
-      "justifyContent": "flex-start",
+      "justifyContent": "center",
       "paddingTop": 17.5,
     }
   }
 >
-  <Text>
-     Cargando... 
-  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      animating={true}
+      animationDuration={1200}
+      animationEasing={[Function]}
+      color="#067bdb"
+      interaction={true}
+      renderComponent={[Function]}
+      style={
+        Object {
+          "height": 262.5,
+          "width": 262.5,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#067bdb",
+              "borderRadius": 131.25,
+              "height": 262.5,
+              "opacity": 0.5,
+              "transform": Array [
+                Object {
+                  "scale": 0.4,
+                },
+              ],
+              "width": 262.5,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#067bdb",
+              "borderRadius": 131.25,
+              "height": 262.5,
+              "opacity": 1,
+              "transform": Array [
+                Object {
+                  "scale": 0.4,
+                },
+              ],
+              "width": 262.5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
 </View>
 `;
 

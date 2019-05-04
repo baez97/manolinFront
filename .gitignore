@@ -8,3 +8,4 @@ npm-debug.*
 my-release-key.keystore
 pipelineApp.jks
 google-services.json
+app.apk

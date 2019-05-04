@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactCard View Matches the Snapshot 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <ExponentLinearGradient
+    colors={
+      Array [
+        4294967295,
+        4293848814,
+      ]
+    }
+    endPoint={
+      Array [
+        0.65,
+        1,
+      ]
+    }
+    startPoint={
+      Array [
+        0.55,
+        0,
+      ]
+    }
+    style={
+      Object {
+        "borderRadius": 35.5,
+        "elevation": 5,
+        "flexDirection": "row",
+        "height": 169.79999999999998,
+        "justifyContent": "space-between",
+        "marginTop": 17.5,
+        "paddingRight": 17.5,
+        "width": 641.25,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "column",
+          "justifyContent": "space-evenly",
+          "paddingBottom": 8.75,
+          "paddingLeft": 52.5,
+          "paddingTop": 8.75,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#1b7128",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 38.95833442608516,
+            "textAlign": "left",
+          }
+        }
+      >
+        CONTACT_NAME
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#2db842",
+            "fontFamily": "montserrat-extra-bold",
+            "fontSize": 31.87500089407465,
+            "textAlign": "left",
+          }
+        }
+      >
+        CONTACT_PHONE
+      </Text>
+    </View>
+    <Image
+      resizeMode="contain"
+      source={1}
+      style={
+        Object {
+          "height": 177,
+          "width": 177,
+        }
+      }
+    />
+  </ExponentLinearGradient>
+</View>
+`;

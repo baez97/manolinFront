@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WhatsButton View Matches the Snapshot 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <ExponentLinearGradient
+    colors={
+      Array [
+        4278439238,
+        4278429498,
+      ]
+    }
+    endPoint={
+      Array [
+        0.65,
+        1,
+      ]
+    }
+    startPoint={
+      Array [
+        0.55,
+        0,
+      ]
+    }
+    style={
+      Object {
+        "alignItems": "center",
+        "borderRadius": 35.5,
+        "elevation": 15,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginTop": 35,
+        "paddingBottom": 17.5,
+        "paddingLeft": 35,
+        "paddingRight": 35,
+        "paddingTop": 17.5,
+        "width": 531,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontFamily": "montserrat-extra-bold",
+          "fontSize": 38.95833442608516,
+          "textAlign": "center",
+        }
+      }
+    >
+      WhatsApp
+    </Text>
+    <Image
+      resizeMode="contain"
+      source={1}
+      style={
+        Object {
+          "height": 140,
+          "width": 140,
+        }
+      }
+    />
+  </ExponentLinearGradient>
+</View>
+`;

@@ -353,7 +353,23 @@
 <a name='L305'></a><a href='#L305'>305</a>
 <a name='L306'></a><a href='#L306'>306</a>
 <a name='L307'></a><a href='#L307'>307</a>
-<a name='L308'></a><a href='#L308'>308</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -370,7 +386,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -642,7 +659,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -661,8 +693,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { StyleSheet, Text, View, Linking } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import SocketIOClient from 'socket.io-client';
+import { PulseIndicator } from 'react-native-indicators'
 &nbsp;
 import registerForPush from '../components/registerForPush';
 import GlobalButton    from '../components/homeComponents/buttons/globalButton';
@@ -896,14 +929,14 @@ export default class HomeScreen extends React.Component {
     render() {
         if ( this.state.error ) {
             return ( 
-                &lt;View style={styles.container}&gt;
-                    &lt;Text&gt; Se ha producido un error &lt;/Text&gt;
+                &lt;View style={styles.auxContainer}&gt;
+                    &lt;Text style={styles.loadingText}&gt; Se ha producido un error &lt;/Text&gt;
                 &lt;/View&gt;
             )
         } else if ( !this.state.userLoaded ) {
             return (
-                &lt;View style={styles.container}&gt;
-                    &lt;Text&gt; Cargando... &lt;/Text&gt;
+                &lt;View style={styles.auxContainer}&gt;
+                    &lt;PulseIndicator size={layoutStyle.horizontalUnits10*15} color="#067bdb" /&gt;
                 &lt;/View&gt;
             )
         } else {
@@ -959,6 +992,14 @@ const styles = StyleSheet.create({
         paddingTop:layoutStyle.verticalUnits10
     },
 &nbsp;
+    auxContainer: {
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "center",
+        backgroundColor: '#bee6ef',
+        paddingTop:layoutStyle.verticalUnits10
+    },
+&nbsp;
     labelText: {
         fontFamily: 'montserrat-extra-bold',
         fontSize: layoutStyle.primaryFontSize,
@@ -967,13 +1008,20 @@ const styles = StyleSheet.create({
         width: layoutStyle.maxWidth,
         marginTop: layoutStyle.verticalUnits10*3
     },
+&nbsp;
+    loadingText: {
+        fontFamily: 'montserrat-extra-bold',
+        fontSize: layoutStyle.primaryFontSize,
+        color: '#3b2868',
+        textAlign: 'center',
+    }
 });</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Apr 17 2019 13:07:42 GMT+0200 (hora de verano de Europa central)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Apr 20 2019 18:33:24 GMT+0200 (hora de verano de Europa central)
 </div>
 </div>
 <script src="../../prettify.js"></script>

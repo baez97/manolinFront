@@ -37,7 +37,7 @@ export default class PurposalsQueue extends React.Component {
         return title;
     }
 
-    keyExtractor(item) {
+    keyExtractor(item, index) {
         return `${item._id}`;
     }
 
@@ -80,7 +80,7 @@ export default class PurposalsQueue extends React.Component {
                 contentContainerStyle = { { paddingBottom:20 }     }
                 renderSectionHeader   = { this.renderSectionHeader }
                 sections              = { this.data                }
-                keyExtractor          = { (item, index) => index   }
+                keyExtractor          = { this.keyExtractor        }
                 />
         )
     }

@@ -4,9 +4,12 @@ import LoginScreen from '../../screens/loginScreen';
 import { Font } from 'expo';
 import deviceStorage from '../../components/deviceStorage';
 import { StackActions } from 'react-navigation';
+import fetchToAPI from '../../components/fetchToAPI';
 
 
 jest.mock('../../components/deviceStorage')
+jest.mock('../../components/fetchToAPI');
+jest.unmock("react-navigation")
 jest.unmock("react-native")
 jest.unmock('react')
 jest.unmock("react-test-renderer")
@@ -243,16 +246,16 @@ describe("LoginScreen", () => {
         });
 
         describe("CheckToken", () => {
-            it("Calls to loadJWT", () => {
-                deviceStorage.loadJWT.mockReturnValueOnce(
-                    new Promise((res, rej) => res(false))
-                );
+            it("Calls to loadJWT", async () => {
+                // deviceStorage.loadJWT.mockReturnValueOnce(
+                //     new Promise((res, rej) => res(false))
+                // );
                 const l = new LoginScreen();
-                l.checkToken();
+                await l.checkToken();
                 expect( deviceStorage.loadJWT ).toBeCalled();
             });
 
-            it("Does not navigate to homeScreen if the token is not found", () => {
+            it("Does not navigate to homeScreen if the token is not found", async () => {
                 const mockedFn = jest.fn();
 
                 deviceStorage.loadJWT.mockReturnValueOnce(
@@ -261,11 +264,11 @@ describe("LoginScreen", () => {
 
                 const l = new LoginScreen();
                 l.goToHomeScreen = mockedFn;
-                l.checkToken();
+                await l.checkToken();
                 expect( mockedFn ).not.toBeCalled();
             });
 
-            it("Does not navigate to HomeScreen it the token is not valid", () => {
+            it("Does not navigate to HomeScreen it the token is not valid", async () => {
                 const mockedFn = jest.fn();
 
                 const l = new LoginScreen();
@@ -277,7 +280,7 @@ describe("LoginScreen", () => {
                     }));
 
                 l.goToHomeScreen = mockedFn;
-                l.checkToken();
+                await l.checkToken();
                 expect( mockedFn ).not.toBeCalled();
             });
 
@@ -285,11 +288,15 @@ describe("LoginScreen", () => {
                 const mockedFn = jest.fn(() => {called = true});
                 const l = new LoginScreen();
 
-                l.fetchToAPI = jest.fn();
-                l.fetchToAPI.mockReturnValueOnce(
+                deviceStorage.loadJWT.mockReturnValueOnce(
+                    new Promise((res, rej) => res("Token"))
+                );
+
+                fetchToAPI.mockReturnValueOnce(
                     new Promise((res, rej) => {
                         res({json: () => ({name:"HOLA"})})
                     }));
+
                 l.goToHomeScreen = mockedFn;
                 await l.checkToken();
                 expect( mockedFn ).toBeCalled();
@@ -321,7 +328,6 @@ describe("LoginScreen", () => {
                 password: "B"
             }
             l.goToHomeScreen = jest.fn();
-            l.fetchToAPI = jest.fn()
 
             it("Does nothing when testInput returns false", async () => {
                 const l2 = new LoginScreen();
@@ -333,7 +339,6 @@ describe("LoginScreen", () => {
                 await l2.loginPressed();
 
                 expect( l2.showError  ).not.toBeCalled();
-                expect( l2.fetchToAPI ).not.toBeCalled();
             });
 
             it("Shows an error if the username is not correct", async () => {
@@ -343,7 +348,7 @@ describe("LoginScreen", () => {
                 };
 
                 l.showError = jest.fn();
-                l.fetchToAPI.mockReturnValueOnce(
+                fetchToAPI.mockReturnValueOnce(
                     new Promise((res, rej) => {
                         res({ json: () => ({ userError: true }) })
                     })
@@ -362,7 +367,7 @@ describe("LoginScreen", () => {
                 };
 
                 l.showError = jest.fn();
-                l.fetchToAPI.mockReturnValueOnce(
+                fetchToAPI.mockReturnValueOnce(
                     new Promise((res, rej) => {
                         res({ json: () => ({passwordError: true }) })
                     })
@@ -374,9 +379,34 @@ describe("LoginScreen", () => {
                 expect(l.showError).toBeCalledWith(expectedArgs);
             });
 
+            it("Shows an error if there is no connection", async () => {
+                var logScr = new LoginScreen();
+                logScr.state = {
+                    username: "A",
+                    password: "B"
+                };
+                
+                const expectedArgs = {
+                    title: "Ha habido un error",
+                    message: "No hay Internet"
+                };
+
+                logScr.showError = jest.fn();
+                fetchToAPI.mockReturnValueOnce(
+                    new Promise((res, rej) => {
+                        throw { message: "Network request failed" }
+                    })
+                );
+
+                await logScr.loginPressed();
+
+                expect(logScr.showError).toBeCalled();
+                expect(logScr.showError).toBeCalledWith(expectedArgs);
+            })
+
             it("Saves the token if everything went well", async () => {
                 const mockedToken = "TOKEN"
-                l.fetchToAPI.mockReturnValueOnce(
+                fetchToAPI.mockReturnValueOnce(
                     new Promise((res, rej) => {
                         res({ json: () => ({ 
                             userError: false,
@@ -396,7 +426,7 @@ describe("LoginScreen", () => {
 
             it("Calls to GoHomeScreen if everything went well", async () => {
                 const mockedToken = "TOKEN"
-                l.fetchToAPI.mockReturnValueOnce(
+                fetchToAPI.mockReturnValueOnce(
                     new Promise((res, rej) => {
                         res({ json: () => ({ 
                             userError: false,

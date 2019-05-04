@@ -21,7 +21,7 @@ describe("AreYouSureModal", () => {
 
     it("Matches the Snapshot", () => {
         const rendered = renderer.create(
-            <AreYouSureModal visible={true} text={ModalText} />
+            <AreYouSureModal visible={true} text="ModalText" />
         ).toJSON();
 
         expect(rendered).toMatchSnapshot();

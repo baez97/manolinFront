@@ -20,7 +20,7 @@ export default class GlobalScreen extends React.Component {
 
     async componentDidMount() {
         const token = this.getNavigationParam("token");
-        return fetchToAPI('/central/nurses', {
+        return fetchToAPI('/central/nurses/' + this.props.navigation.getParam("group"), {
             method: 'GET',
             headers: {
                 Accept: 'application/json',

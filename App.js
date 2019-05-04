@@ -1,13 +1,13 @@
-import React from 'react';
-import LoginScreen from './screens/loginScreen';
-import HomeScreen from './screens/homeScreen';
-import GlobalScreen from './screens/globalScreen';
+import React              from 'react';
+import LoginScreen        from './screens/loginScreen';
+import HomeScreen         from './screens/homeScreen';
+import GlobalScreen       from './screens/globalScreen';
 import ChooseChangeScreen from './screens/chooseChangeScreen';
-import MyChangesScreen from './screens/myChangesScreen';
-import ContactsScreen from './screens/contactsScreen';
-import deviceStorage from './components/deviceStorage';
-import { Font } from 'expo';
-import fetchToAPI from './components/fetchToAPI'
+import MyChangesScreen    from './screens/myChangesScreen';
+import ContactsScreen     from './screens/contactsScreen';
+import deviceStorage      from './components/deviceStorage';
+import { Font }           from 'expo';
+import fetchToAPI         from './components/fetchToAPI'
 
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
@@ -44,7 +44,7 @@ export default class App extends React.Component {
     async checkToken() {
         var savedToken;
 
-        deviceStorage.loadJWT()        
+        return deviceStorage.loadJWT()        
         .then( token => {
             if ( token ) {
                 savedToken = token;
@@ -64,12 +64,18 @@ export default class App extends React.Component {
         .then(response => response.json())
 
         .then(responseJSON => {
-            if (responseJSON.name != undefined) {
+
+            if ( responseJSON.auth ===  false )
+                throw responseJSON.message;
+
+            if ( responseJSON.name != undefined ) {
                 this.initialRouteName = "HomeScreen";
                 this.savedToken = savedToken;
                 this.setState({
                     tokenLoaded: true
                 });
+            } else {
+                throw "Error inesperado";
             }
         })
 

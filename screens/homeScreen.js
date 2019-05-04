@@ -101,9 +101,11 @@ export default class HomeScreen extends React.Component {
             year,
             turn,
             owner: this.state.user.name,
+            owner_id: this.state.user._id,
             type: "free",
             accepted: false,
             purposals: [],
+            group: this.state.user.group
         }
 
         this.socket.emit("insertFree", free);
@@ -119,9 +121,11 @@ export default class HomeScreen extends React.Component {
             year,
             turn,
             owner: this.state.user.name,
+            owner_id: this.state.user._id,
             type: "change",
             accepted: false,
             purposals: [],
+            group: this.state.user.group
         }
 
         this.socket.emit("insertChange", change);
@@ -209,7 +213,8 @@ export default class HomeScreen extends React.Component {
     globalButtonPressed() {
         this.props.navigation.navigate(
             "GlobalScreen", 
-            {token: this.token}
+            {token: this.token,
+             group: this.state.user.group}
         );
     }
 
@@ -261,8 +266,9 @@ export default class HomeScreen extends React.Component {
 
                     <Text style={styles.labelText}>Peticiones de cambio</Text>
                     <ChangesQueue 
-                        socket  ={ this.socket } 
-                        token   ={ this.token  } 
+                        socket  = { this.socket } 
+                        token   = { this.token  }
+                        group   = { this.state.user.group }
                         onLoaded       = { this.setChanges           }
                         freeOnPress    = { this.showAreYouSureFree   }
                         changeOnPress  = { this.goToChooseChange     } />

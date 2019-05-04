@@ -480,9 +480,6 @@ describe("HomeScreen tests", () => {
                 <HomeScreen navigation={navigation}/>
             ).toJSON();
 
-            const loadingView = rendered.children[0];
-            const loadingText = loadingView.children[0];
-            expect( loadingText ).toBe(" Cargando... ");
             expect( rendered    ).toMatchSnapshot();
         });
     });

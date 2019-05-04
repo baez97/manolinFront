@@ -10,10 +10,10 @@ jest.unmock("expo");
 describe("ChangeView", () => {
     describe("Functions", () => {
         const mockedProps = {
-            onPressFn : jest.fn()
+            handleLongPress : jest.fn()
         }
 
-        const cV = new ChangeView();
+        const cV = new ChangeView({onPressFn: mockedProps.handleLongPress});
         
         it("GetType returns Cambio when the type is change", () => {
             const mockedChange = {

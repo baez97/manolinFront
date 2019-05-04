@@ -43,7 +43,7 @@ export default class ChooseChangeScreen extends React.Component {
 
     async componentDidMount() {
         const token = this.getNavigationParam("token");
-        fetchToAPI('/central/nurse/'+this.change.owner, {
+        fetchToAPI('/central/nurseById/'+this.change.owner_id, {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
@@ -75,9 +75,9 @@ export default class ChooseChangeScreen extends React.Component {
         const message =
             `${this.changerNurse.name}, ¿quieres proponerle a `           +
             `${this.ownerNurse.name} que trabaje el ${changerTurn.day} `  +
-            `${dateUtils.getTurnString(changerTurn)} a cambio de que tú ` +
+            `${dateUtils.getTurnString(changerTurn.turn)} a cambio de que tú ` +
             `trabajes el ${this.change.day} `                             + 
-            `${dateUtils.getTurnString(this.change)}?`;
+            `${dateUtils.getTurnString(this.change.turn)}?`;
 
         this.showModal(message, changerTurn);
     }
@@ -145,14 +145,15 @@ export default class ChooseChangeScreen extends React.Component {
             )
         }
 
+        const message = `¿Qué turno le propones a ${this.ownerNurse.name} `+
+                        `que haga a cambio?`
         return  (
             <View style={styles.container}>
                 <ChangeView
                     change={this.change} 
                     changeOnPress={()=>{}}/>
                 <Text style={styles.titleText}>
-                    ¿Qué turno le propones a {this.ownerNurse.name} 
-                    que haga a cambio?
+                    {message}
                 </Text>
                 { months[this.state.currentMonthIndex] != undefined ?
                     ( <Text style={styles.monthText}>

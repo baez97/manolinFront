@@ -9,7 +9,6 @@ import { Text, View, KeyboardAvoidingView  } from 'react-native';
 import { LinearGradient, Font              } from 'expo';
 import { SCLAlert, SCLAlertButton          } from 'react-native-scl-alert';
 import { StackActions, NavigationActions   } from 'react-navigation';
-
 const FONT_PATH_MAINTYPO  = "../assets/fonts/Montserrat-ExtraBold.otf";
 const FONT_PATH_NAMETYPO  = "../assets/fonts/big_noodle_titling.ttf";
 
@@ -23,6 +22,7 @@ export default class LoginScreen extends React.Component {
             errorTitle: "", 
             errorMessage: "", 
             fontLoaded: false };
+        this.showError = this.showError.bind(this);
     }
 
     async componentDidMount() {
@@ -45,7 +45,7 @@ export default class LoginScreen extends React.Component {
 
         var savedToken;
 
-        fetchToAPI('/auth/login', {
+        return fetchToAPI('/auth/login', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -90,7 +90,6 @@ export default class LoginScreen extends React.Component {
         })
 
         .catch( err => {
-            console.log(err);
             if ( err.message === "Network request failed" ) {
                 this.showError({
                     title: "Ha habido un error",

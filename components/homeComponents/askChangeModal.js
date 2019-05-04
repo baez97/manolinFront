@@ -44,15 +44,6 @@ export default class AskChangeModal extends React.Component {
                             onPressFn = { this.props.toggleModal }
                             color     = "blue"
                             text      = "Cancelar"/>
-                        {/* <TouchableOpacity 
-                            style={{
-                                width: 300, 
-                                height:100, 
-                                backgroundColor:'black'
-                            }} 
-                            onPress={this.props.toggleModal}>
-                            <Text style={{color:"white"}}>Hide!</Text>
-                        </TouchableOpacity> */}
                     </View>
                 </View>
             </Modal>

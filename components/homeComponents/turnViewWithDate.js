@@ -25,7 +25,7 @@ export default class TurnViewWithDate extends React.Component {
     }
 
     dayPressed() {
-        this.props.selectTurn({...this.state});
+        this.props.selectTurn(this.props.turnObject);
     } 
 
     render() {
