@@ -1,6 +1,5 @@
 import ContactButton from './contactButton';
 import LayoutStyle from '../../styles/layoutStyle';
-import { Linking } from 'react-native';
 
 export default class PhoneButton extends ContactButton {
     constructor(props) {

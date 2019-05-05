@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelpButton View Matches the Snapshot 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <ExponentLinearGradient
+    colors={
+      Array [
+        4294967295,
+        4294111986,
+      ]
+    }
+    endPoint={
+      Array [
+        0.65,
+        1,
+      ]
+    }
+    startPoint={
+      Array [
+        0.55,
+        0,
+      ]
+    }
+    style={
+      Object {
+        "alignItems": "center",
+        "borderRadius": 53.25,
+        "elevation": 3,
+        "height": 84.89999999999999,
+        "justifyContent": "center",
+        "paddingLeft": 52.5,
+        "paddingRight": 52.5,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#23538a",
+          "fontFamily": "montserrat-extra-bold",
+          "fontSize": 25.50000071525972,
+        }
+      }
+    >
+      TEXT
+    </Text>
+  </ExponentLinearGradient>
+</View>
+`;

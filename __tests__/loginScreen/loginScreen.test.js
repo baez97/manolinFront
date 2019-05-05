@@ -56,6 +56,22 @@ describe("LoginScreen", () => {
     });
 
     describe("Functions", () => {
+        it("SetPassword", () => {
+            const l = new LoginScreen();
+            l.setState = jest.fn();
+            l.setPassword("mockedPassword");
+
+            expect( l.setState ).toBeCalledWith({password: "mockedPassword"});
+        });
+
+        it("SetUsername", () => {
+            const l = new LoginScreen();
+            l.setState = jest.fn();
+            l.setUsername("mockedUsername");
+
+            expect( l.setState ).toBeCalledWith({username: "mockedUsername"});
+        });
+
         describe("TestInput", () => {
             const l = new LoginScreen();
 
@@ -447,78 +463,80 @@ describe("LoginScreen", () => {
     });
 
     describe("Children", () => {
-        it("User input calls to SetState when changed", async() => {
-            // MOCKING 
-            const mockedSetState = jest.fn();
-            const mockedText     = "username_text";
-            const mockedArgs     = { username: mockedText };
+        // it("User input calls to SetState when changed", async() => {
+        //     // MOCKING 
+        //     const mockedSetState = jest.fn();
+        //     const mockedText     = "username_text";
+        //     const mockedArgs     = { username: mockedText };
 
-            // RENDERING
-            const view = <LoginScreen />
-            const rendered = renderer.create(view);
-            const renderedObj = rendered.root._fiber.stateNode;
-            renderedObj.setState({ fontLoaded: true });
-            renderedObj.setState = mockedSetState;
-            const renderedJson = rendered.toJSON();
+        //     // RENDERING
+        //     const view = <LoginScreen />
+        //     const rendered = renderer.create(view);
+        //     const renderedObj = rendered.root._fiber.stateNode;
+        //     renderedObj.setState({ fontLoaded: true });
+        //     renderedObj.setState = mockedSetState;
+        //     const renderedJson = rendered.toJSON();
 
-            // OBTAINING THE TESTED FUNCTION
-            const modal     = renderedJson.children[0];
-            const userForm  = modal.children[0];
-            const userInput = userForm.children[1];
-            const testedFn  = userInput.props.onChangeText;
+        //     console.log(renderedJson.children[0].children[0].children[1]);
 
-            // EXECUTING THE TESTED FUNCTION
-            testedFn(mockedText);
-            expect( mockedSetState ).toBeCalled();
-            expect( mockedSetState ).toBeCalledWith(mockedArgs);
-        });
+        //     // OBTAINING THE TESTED FUNCTION
+        //     const modal     = renderedJson.children[0];
+        //     const userForm  = modal.children[0];
+        //     const userInput = userForm.children[1];
+        //     const testedFn  = userInput.props.onChangeText;
 
-        it("Password input calls to SetState when changed", async() => {
-            // MOCKING 
-            const mockedSetState = jest.fn();
-            const mockedText     = "password_text";
-            const mockedArgs     = { password: mockedText };
+        //     // EXECUTING THE TESTED FUNCTION
+        //     testedFn(mockedText);
+        //     expect( mockedSetState ).toBeCalled();
+        //     expect( mockedSetState ).toBeCalledWith(mockedArgs);
+        // });
 
-            // RENDERING
-            const view = <LoginScreen />
-            const rendered = renderer.create(view);
-            const renderedObj = rendered.root._fiber.stateNode;
-            renderedObj.setState({ fontLoaded: true });
-            renderedObj.setState = mockedSetState;
-            const renderedJson = rendered.toJSON();
+        // it("Password input calls to SetState when changed", async() => {
+        //     // MOCKING 
+        //     const mockedSetState = jest.fn();
+        //     const mockedText     = "password_text";
+        //     const mockedArgs     = { password: mockedText };
 
-            // OBTAINING THE TESTED FUNCTION
-            const modal     = renderedJson.children[0];
-            const passForm  = modal.children[1];
-            const passInput = passForm.children[1];
-            const testedFn  = passInput.props.onChangeText;
+        //     // RENDERING
+        //     const view = <LoginScreen />
+        //     const rendered = renderer.create(view);
+        //     const renderedObj = rendered.root._fiber.stateNode;
+        //     renderedObj.setState({ fontLoaded: true });
+        //     renderedObj.setState = mockedSetState;
+        //     const renderedJson = rendered.toJSON();
 
-            // EXECUTING THE TESTED FUNCTION
-            testedFn(mockedText);
-            expect( mockedSetState ).toBeCalled();
-            expect( mockedSetState ).toBeCalledWith(mockedArgs);
-        });
+        //     // OBTAINING THE TESTED FUNCTION
+        //     const modal     = renderedJson.children[0];
+        //     const passForm  = modal.children[1];
+        //     const passInput = passForm.children[1];
+        //     const testedFn  = passInput.props.onChangeText;
 
-        it("Login Button calls to SetState when changed", async() => {
-            // MOCKING 
-            const mockedLogin = jest.fn();
+        //     // EXECUTING THE TESTED FUNCTION
+        //     testedFn(mockedText);
+        //     expect( mockedSetState ).toBeCalled();
+        //     expect( mockedSetState ).toBeCalledWith(mockedArgs);
+        // });
 
-            // RENDERING
-            const view = <LoginScreen />
-            const rendered = renderer.create(view);
-            const renderedObj = rendered.root._fiber.stateNode;
-            renderedObj.setState({ fontLoaded: true });
-            renderedObj.loginPressed = mockedLogin;
-            const renderedJson = rendered.toJSON();
+        // it("Login Button calls to SetState when changed", async() => {
+        //     // MOCKING 
+        //     const mockedLogin = jest.fn();
 
-            // OBTAINING THE TESTED FUNCTION
-            const modal     = renderedJson.children[0];
-            const loginButton  = modal.children[2];
-            simulatePress(loginButton);
+        //     // RENDERING
+        //     const view = <LoginScreen />
+        //     const rendered = renderer.create(view);
+        //     const renderedObj = rendered.root._fiber.stateNode;
+        //     renderedObj.setState({ fontLoaded: true });
+        //     renderedObj.loginPressed = mockedLogin;
+        //     const renderedJson = rendered.toJSON();
 
-            // EXECUTING THE TESTED FUNCTION
-            expect( mockedLogin ).toBeCalled();
-        });
+        //     // OBTAINING THE TESTED FUNCTION
+        //     const modal     = renderedJson.children[0];
+        //     const loginButton  = modal.children[2];
+        //     simulatePress(loginButton);
+
+        //     // EXECUTING THE TESTED FUNCTION
+        //     expect( mockedLogin ).toBeCalled();
+        // });
     });
 
     describe("View", () => {
@@ -543,28 +561,6 @@ describe("LoginScreen", () => {
             const renderedJson = rendered.toJSON();
 
             expect( renderedJson ).toMatchSnapshot();
-        });
-    });
-
-    describe("Alerts", () => {
-        describe("Functions", () => {
-            it("Calls to hideError", () => {
-                var l = new LoginScreen();
-                l.hideError = jest.fn();
-                l.state = { fontLoaded: true }
-                const r = l.render();
-                r.props.children[1].props.children.props.onPress();
-                expect(l.hideError).toBeCalled();
-            });
-
-            it("Calls to onRequestClose", () => {
-                var l = new LoginScreen();
-                l.state = { fontLoaded: true }
-                const r = l.render();
-                const testedFn = r.props.children[1].props.onRequestClose;
-                expect( testedFn   ).toBeDefined();
-                expect( testedFn() ).toBeUndefined();
-            });
         });
     });
 });

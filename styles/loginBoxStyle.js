@@ -6,7 +6,7 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: '#bee6ef',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         paddingTop: LayoutStyle.verticalUnits10*2,
     },
 
@@ -49,7 +49,7 @@ export default StyleSheet.create({
         paddingTop    : LayoutStyle.verticalUnits10*0.8,
         paddingBottom : LayoutStyle.verticalUnits10*0.8,
         borderRadius  : LayoutStyle.borderRadius,
-        elevation     : 3
+        elevation     : 3,
     },
 
     loginButton: {
@@ -70,5 +70,11 @@ export default StyleSheet.create({
         fontSize: LayoutStyle.primaryFontSize,
         color: 'white',
         textAlign: 'center'
+    },
+
+    image: {
+        width: LayoutStyle.imageWidth,
+        height: LayoutStyle.imageHeight,
+        marginBottom: LayoutStyle.verticalUnits10*2
     }
 });

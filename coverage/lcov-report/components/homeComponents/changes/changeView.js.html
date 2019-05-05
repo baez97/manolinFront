@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">12.5% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>16/16</span>
+        <span class='fraction'>2/16</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>8/8</span>
+        <span class='fraction'>0/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">12.5% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>16/16</span>
+        <span class='fraction'>2/16</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -166,40 +166,40 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -273,41 +273,41 @@ import FreeBox from '../changes/freeBox';
 import ChangeBox from '../changes/changeBox';
 &nbsp;
 export default class ChangeView extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleLongPress = this.handleLongPress.bind(this);
+<span class="fstat-no" title="function not covered" >    co</span>nstructor(props) {
+<span class="cstat-no" title="statement not covered" >        super(props);</span>
+<span class="cstat-no" title="statement not covered" >        this.handleLongPress = this.handleLongPress.bind(this);</span>
     }
 &nbsp;
-    getType(change) {
-        const { type } = change;
-        if ( type === "change" )
-            return "Cambio";
-        else if ( type === "free" )
-            return "Librar";
-        return "";
+<span class="fstat-no" title="function not covered" >    ge</span>tType(change) {
+        const { type } = <span class="cstat-no" title="statement not covered" >change;</span>
+<span class="cstat-no" title="statement not covered" >        if ( type === "change" )</span>
+<span class="cstat-no" title="statement not covered" >            return "Cambio";</span>
+        else <span class="cstat-no" title="statement not covered" >if ( type === "free" )</span>
+<span class="cstat-no" title="statement not covered" >            return "Librar";</span>
+<span class="cstat-no" title="statement not covered" >        return "";</span>
     }
 &nbsp;
-    handleLongPress() {
-        this.props.onPressFn(this.props.change);
+<span class="fstat-no" title="function not covered" >    ha</span>ndleLongPress() {
+<span class="cstat-no" title="statement not covered" >        this.props.onPressFn(this.props.change);</span>
     }
 &nbsp;
-    render() {
-        if ( this.props.change.type === "free") {
-            return (
+<span class="fstat-no" title="function not covered" >    re</span>nder() {
+<span class="cstat-no" title="statement not covered" >        if ( this.props.change.type === "free") {</span>
+<span class="cstat-no" title="statement not covered" >            return (</span>
                 &lt;FreeBox 
                     change        = { this.props.change        }
                     freeOnPress   = { this.props.freeOnPress   }
                     changeOnPress = { this.props.changeOnPress } /&gt;
             )
-        } else if ( this.props.change.type === "change" ) {
-            return (
+        } else <span class="cstat-no" title="statement not covered" >if ( this.props.change.type === "change" ) {</span>
+<span class="cstat-no" title="statement not covered" >            return (</span>
                 &lt;ChangeBox 
                     change        = { this.props.change        }
                     freeOnPress   = { this.props.freeOnPress   }
                     changeOnPress = { this.props.changeOnPress } /&gt;
             )
         } else {
-            return null;
+<span class="cstat-no" title="statement not covered" >            return null;</span>
         }
     }
 }
@@ -376,7 +376,7 @@ const styles = StyleSheet.create({
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Apr 16 2019 18:54:54 GMT+0200 (hora de verano de Europa central)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun May 05 2019 12:20:33 GMT+0200 (hora de verano de Europa central)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

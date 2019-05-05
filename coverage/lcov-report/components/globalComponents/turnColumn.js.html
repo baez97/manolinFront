@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">82.61% </span>
+        <span class="strong">17.39% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>19/23</span>
+        <span class='fraction'>4/23</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">70% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>7/10</span>
+        <span class='fraction'>0/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/5</span>
+        <span class='fraction'>0/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">81.82% </span>
+        <span class="strong">18.18% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>18/22</span>
+        <span class='fraction'>4/22</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -176,36 +176,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">33x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">33x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">33x</span>
-<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -296,37 +296,37 @@ const  dateUtils = new DateUtils();
 import LayoutStyles from '../../styles/layoutStyle'
 &nbsp;
 export default class TurnColumn extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {...this.props.turnObjs[0]};
+<span class="fstat-no" title="function not covered" >    co</span>nstructor(props) {
+<span class="cstat-no" title="statement not covered" >        super(props);</span>
+<span class="cstat-no" title="statement not covered" >        this.state = {...this.props.turnObjs[0]};</span>
     }
 &nbsp;
-    isToday() {
-        <span class="missing-if-branch" title="if path not taken" >I</span>if ( this.state.year  != todayObj.year  )
+<span class="fstat-no" title="function not covered" >    is</span>Today() {
+<span class="cstat-no" title="statement not covered" >        if ( this.state.year  != todayObj.year  )</span>
 <span class="cstat-no" title="statement not covered" >            return false;</span>
-        if ( this.state.month != todayObj.month )
-            return false;
-        if ( this.state.day   != todayObj.day   )
-            return false;
-        return true;
+<span class="cstat-no" title="statement not covered" >        if ( this.state.month != todayObj.month )</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+<span class="cstat-no" title="statement not covered" >        if ( this.state.day   != todayObj.day   )</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
     }
 &nbsp;
-    isWeekend() {
-        return this.state.weekday &gt; 5;
+<span class="fstat-no" title="function not covered" >    is</span>Weekend() {
+<span class="cstat-no" title="statement not covered" >        return this.state.weekday &gt; 5;</span>
     }
 &nbsp;
-    getTurnsView() {
-        var turnsView = [];
+<span class="fstat-no" title="function not covered" >    ge</span>tTurnsView() {
+        var turnsView = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
-        for ( let i = 0; i &lt; this.props.turnObjs.length; i++ ) {
-            const { turn } = this.props.turnObjs[i];
-            turnsView.push(
+<span class="cstat-no" title="statement not covered" >        for ( let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; this.props.turnObjs.length; i++ ) {</span>
+            const { turn } = <span class="cstat-no" title="statement not covered" >this.props.turnObjs[i];</span>
+<span class="cstat-no" title="statement not covered" >            turnsView.push(</span>
             &lt;Text key={i} style={ this.isToday() ? styles.todayTurnText: styles.turnText }&gt;
                 { turn }
             &lt;/Text&gt;)
         }
 &nbsp;
-        return turnsView;
+<span class="cstat-no" title="statement not covered" >        return turnsView;</span>
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    re</span>nder() {
@@ -415,7 +415,7 @@ const styles = StyleSheet.create({
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Apr 20 2019 15:24:18 GMT+0200 (hora de verano de Europa central)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun May 05 2019 12:20:33 GMT+0200 (hora de verano de Europa central)
 </div>
 </div>
 <script src="../../prettify.js"></script>

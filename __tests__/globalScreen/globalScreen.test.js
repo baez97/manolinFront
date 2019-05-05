@@ -2,96 +2,73 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import GlobalScreen from '../../screens/globalScreen';
 import fetchMock from 'fetch-mock';
+import fetchToAPI from '../../components/fetchToAPI';
 import mockedNurse from '../../mockedData/mockedNurse';
-import { BACKEND_IP } from '../../config';
 
 jest.unmock("react-native");
 jest.unmock('react');
 jest.unmock("react-test-renderer");
 jest.unmock('expo');
 jest.mock('../../components/dateUtils');
+jest.mock('../../components/fetchToAPI');
 jest.useFakeTimers();
 
 describe("GlobalScreen tests", () => {
     
     describe("ComponentDidMount", () => {
-
         it("Calls to fetch", async () => {
-            const mockedToken = "VALUE";
-            const expectedOptions = { 
-                method: 'GET',
-                headers:
-                { Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                    'x-access-token': mockedToken } 
-                }
-            fetchMock.get(BACKEND_IP + '/central/nurses', JSON.stringify([ mockedNurse, mockedNurse ]));
-
-            const navigation = {
-                getParam: jest.fn(key => mockedToken)
-            }
-
-            renderer.create(
-                <GlobalScreen navigation={navigation}/>
+            const mockedToken = "TOKEN";
+            fetchToAPI.mockReturnValueOnce(
+                new Promise((res, rej) => {
+                    return res({
+                        json: () => ([mockedNurse, mockedNurse]) 
+                    })
+                })
             );
 
-            expect( fetchMock.lastOptions() ).toEqual(expectedOptions); 
+            const gS = new GlobalScreen({navigation: {getParam: jest.fn(() => mockedToken)}});
+
+            gS.setState = jest.fn();
+            await gS.componentDidMount();
+            expect(fetchToAPI).toBeCalled();
+            expect(gS.setState).toBeCalled();
         });
 
-        it("Catches a fetch error", async () => {
-            const mockedToken = "VALUE";
-            fetchMock.get(BACKEND_IP + '/central/nurses', 
-                new Promise((res, rej) => rej("ERROR")),
-                { overwriteRoutes: true });
+        it("Catches a fetch error", async() => {
+            const mockedNavigation = {
+                getParam: jest.fn(() => "TOKEN")
+            };
 
-            const navigation = {
-                getParam: jest.fn( key => mockedToken ),
-                navigate: jest.fn( name => {} )
-            }
+            const gS = new GlobalScreen({navigation: mockedNavigation});
+            fetchToAPI.mockReturnValueOnce( new Promise((res, rej) => {
+                rej("ERR");
+            }));
 
-            const rendered = renderer.create(
-                <GlobalScreen navigation={navigation}/>
-            );
-
-            await rendered.root._fiber.stateNode.componentDidMount()
-
-            const renderedObj = rendered.root._fiber.stateNode;
-            expect( renderedObj.state.error ).toBe(true);
+            gS.setState = jest.fn();
+            await gS.componentDidMount();
+            
+            expect( gS.setState ).toBeCalled();
+            expect( gS.setState ).toBeCalledWith({error: true});
         });
     });
 
     describe("View", () => {
-        it("Shows 'Se ha producido un error...' when the fetch failed", async () => {
-            
-            fetchMock.get(BACKEND_IP + '/central/nurses', 
-                new Promise((res, rej) => rej("ERROR")),
-                { overwriteRoutes: true });
+        it("Shows 'Se ha producido un error' when the fetch failed", () => {
+            const gS = new GlobalScreen({navigation: {getParam: jest.fn(() => mockedToken)}});
+            gS.state = { error: true }
+            const view = gS.render();
+            const errorText = view.props.children.props.children;
 
-            const mockedToken = "VALUE";
-
-            const navigation = {
-                getParam: jest.fn( key => mockedToken ),
-                navigate: jest.fn( name => {} )
-            }
-
-            const rendered = renderer.create(
-                <GlobalScreen navigation={navigation}/>
-            );
-
-            await rendered.root._fiber.stateNode.componentDidMount()
-
-            const loadingView = rendered.toJSON().children[0];
-            const loadingText = loadingView.children[0];
-            expect( loadingText ).toBe(" Se ha producido un error ");
-            expect( rendered    ).toMatchSnapshot();
+            expect( errorText ).toBe(" Se ha producido un error ");
         });
 
         it("Shows Loading animation when the turns are not loaded", () => {
-            const rendered = renderer.create(
-                <GlobalScreen />
-            ).toJSON();
+            const gS = new GlobalScreen({navigation: {getParam: jest.fn(() => mockedToken)}});
+            gS.state = { usersLoaded: false }
+            const view = gS.render();
+            const animationView = view.props.children;
 
-            expect( rendered    ).toMatchSnapshot();
+            expect(animationView.props.animationEasing).toBeDefined();
         });
 
         it("Shows everything when the turns are loaded", () => {

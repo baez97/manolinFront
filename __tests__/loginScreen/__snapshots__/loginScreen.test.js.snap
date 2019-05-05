@@ -2,123 +2,276 @@
 
 exports[`LoginScreen View Matches the Loaded Snapshot 1`] = `
 <View
-  onLayout={[Function]}
   style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#bee6ef",
-        "flex": 1,
-        "justifyContent": "center",
-        "paddingTop": 35,
-      },
-      Object {
-        "paddingBottom": 0,
-      },
-    ]
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#bee6ef",
+      "flex": 1,
+      "justifyContent": "space-around",
+      "paddingTop": 35,
+    }
   }
 >
-  <ExponentLinearGradient
-    colors={
-      Array [
-        4279286482,
-        4280714724,
-      ]
-    }
-    endPoint={
-      Array [
-        1,
-        1,
-      ]
-    }
-    startPoint={
-      Array [
-        0,
-        0,
-      ]
-    }
+  <View
+    onLayout={[Function]}
+  >
+    <View
+      style={
+        Object {
+          "bottom": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 177,
+              "marginBottom": 35,
+              "width": 177,
+            }
+          }
+        />
+      </View>
+      <ExponentLinearGradient
+        colors={
+          Array [
+            4279286482,
+            4280714724,
+          ]
+        }
+        endPoint={
+          Array [
+            1,
+            1,
+          ]
+        }
+        startPoint={
+          Array [
+            0,
+            0,
+          ]
+        }
+        style={
+          Object {
+            "borderRadius": 35.5,
+            "elevation": 3,
+            "paddingBottom": 14,
+            "paddingLeft": 35,
+            "paddingRight": 35,
+            "paddingTop": 14,
+          }
+        }
+      >
+        <View>
+          <Text
+            style={
+              Object {
+                "color": "white",
+                "fontFamily": "montserrat-extra-bold",
+                "fontSize": 35.416667660079604,
+                "marginBottom": 17.5,
+                "marginLeft": 17.5,
+                "marginTop": 35,
+              }
+            }
+          >
+            Usuario
+          </Text>
+          <TextInput
+            allowFontScaling={true}
+            onChangeText={[Function]}
+            secureTextEntry={false}
+            style={
+              Object {
+                "backgroundColor": "white",
+                "borderRadius": 35.5,
+                "color": "black",
+                "fontFamily": "montserrat-extra-bold",
+                "fontSize": 35.416667660079604,
+                "paddingBottom": 35,
+                "paddingLeft": 35,
+                "paddingRight": 35,
+                "paddingTop": 35,
+                "width": 637.5,
+              }
+            }
+            underlineColorAndroid="transparent"
+          />
+        </View>
+        <View>
+          <Text
+            style={
+              Object {
+                "color": "white",
+                "fontFamily": "montserrat-extra-bold",
+                "fontSize": 35.416667660079604,
+                "marginBottom": 17.5,
+                "marginLeft": 17.5,
+                "marginTop": 35,
+              }
+            }
+          >
+            Contraseña
+          </Text>
+          <TextInput
+            allowFontScaling={true}
+            onChangeText={[Function]}
+            secureTextEntry={true}
+            style={
+              Object {
+                "backgroundColor": "white",
+                "borderRadius": 35.5,
+                "color": "black",
+                "fontFamily": "montserrat-extra-bold",
+                "fontSize": 35.416667660079604,
+                "paddingBottom": 35,
+                "paddingLeft": 35,
+                "paddingRight": 35,
+                "paddingTop": 35,
+                "width": 637.5,
+              }
+            }
+            underlineColorAndroid="transparent"
+          />
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <ExponentLinearGradient
+            colors={
+              Array [
+                4278481116,
+                4280505226,
+              ]
+            }
+            endPoint={
+              Array [
+                1,
+                1,
+              ]
+            }
+            startPoint={
+              Array [
+                0,
+                0,
+              ]
+            }
+            style={
+              Object {
+                "borderRadius": 20,
+                "elevation": 3,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginRight": 40,
+                "marginTop": 30,
+                "padding": 20,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "white",
+                  "fontFamily": "montserrat-extra-bold",
+                  "fontSize": 35.416667660079604,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Iniciar sesión
+            </Text>
+          </ExponentLinearGradient>
+        </View>
+      </ExponentLinearGradient>
+    </View>
+  </View>
+  <View
     style={
       Object {
-        "borderRadius": 35.5,
-        "elevation": 3,
-        "paddingBottom": 14,
-        "paddingLeft": 35,
-        "paddingRight": 35,
-        "paddingTop": 14,
+        "height": 212.5,
+        "justifyContent": "space-around",
+        "marginTop": 35,
       }
     }
   >
-    <View>
-      <Text
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <ExponentLinearGradient
+        colors={
+          Array [
+            4294967295,
+            4294111986,
+          ]
+        }
+        endPoint={
+          Array [
+            0.65,
+            1,
+          ]
+        }
+        startPoint={
+          Array [
+            0.55,
+            0,
+          ]
+        }
         style={
           Object {
-            "color": "white",
-            "fontFamily": "montserrat-extra-bold",
-            "fontSize": 35.416667660079604,
-            "marginBottom": 17.5,
-            "marginLeft": 17.5,
-            "marginTop": 35,
+            "alignItems": "center",
+            "borderRadius": 53.25,
+            "elevation": 3,
+            "height": 84.89999999999999,
+            "justifyContent": "center",
+            "paddingLeft": 52.5,
+            "paddingRight": 52.5,
           }
         }
       >
-        Usuario
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        secureTextEntry={false}
-        style={
-          Object {
-            "backgroundColor": "white",
-            "borderRadius": 35.5,
-            "color": "black",
-            "fontFamily": "montserrat-extra-bold",
-            "fontSize": 35.416667660079604,
-            "paddingBottom": 35,
-            "paddingLeft": 35,
-            "paddingRight": 35,
-            "paddingTop": 35,
-            "width": 637.5,
+        <Text
+          style={
+            Object {
+              "color": "#23538a",
+              "fontFamily": "montserrat-extra-bold",
+              "fontSize": 25.50000071525972,
+            }
           }
-        }
-        underlineColorAndroid="transparent"
-      />
-    </View>
-    <View>
-      <Text
-        style={
-          Object {
-            "color": "white",
-            "fontFamily": "montserrat-extra-bold",
-            "fontSize": 35.416667660079604,
-            "marginBottom": 17.5,
-            "marginLeft": 17.5,
-            "marginTop": 35,
-          }
-        }
-      >
-        Contraseña
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        secureTextEntry={true}
-        style={
-          Object {
-            "backgroundColor": "white",
-            "borderRadius": 35.5,
-            "color": "black",
-            "fontFamily": "montserrat-extra-bold",
-            "fontSize": 35.416667660079604,
-            "paddingBottom": 35,
-            "paddingLeft": 35,
-            "paddingRight": 35,
-            "paddingTop": 35,
-            "width": 637.5,
-          }
-        }
-        underlineColorAndroid="transparent"
-      />
+        >
+          No tengo cuenta
+        </Text>
+      </ExponentLinearGradient>
     </View>
     <View
       accessible={true}
@@ -138,49 +291,48 @@ exports[`LoginScreen View Matches the Loaded Snapshot 1`] = `
       <ExponentLinearGradient
         colors={
           Array [
-            4278481116,
-            4280505226,
+            4294967295,
+            4294111986,
           ]
         }
         endPoint={
           Array [
-            1,
+            0.65,
             1,
           ]
         }
         startPoint={
           Array [
-            0,
+            0.55,
             0,
           ]
         }
         style={
           Object {
-            "borderRadius": 20,
+            "alignItems": "center",
+            "borderRadius": 53.25,
             "elevation": 3,
-            "marginBottom": 20,
-            "marginLeft": 40,
-            "marginRight": 40,
-            "marginTop": 30,
-            "padding": 20,
+            "height": 84.89999999999999,
+            "justifyContent": "center",
+            "paddingLeft": 52.5,
+            "paddingRight": 52.5,
           }
         }
       >
         <Text
           style={
             Object {
-              "color": "white",
+              "color": "#23538a",
               "fontFamily": "montserrat-extra-bold",
-              "fontSize": 35.416667660079604,
-              "textAlign": "center",
+              "fontSize": 25.50000071525972,
             }
           }
         >
-          Iniciar sesión
+          Ayuda
         </Text>
       </ExponentLinearGradient>
     </View>
-  </ExponentLinearGradient>
+  </View>
   <Modal
     animationType="fade"
     hardwareAccelerated={false}
@@ -431,7 +583,7 @@ exports[`LoginScreen View Matches the Loading Snapshot 1`] = `
       "alignItems": "center",
       "backgroundColor": "#bee6ef",
       "flex": 1,
-      "justifyContent": "center",
+      "justifyContent": "space-around",
       "paddingTop": 35,
     }
   }

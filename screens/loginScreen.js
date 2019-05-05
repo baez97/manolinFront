@@ -1,16 +1,20 @@
 import React         from 'react';
 import styles        from '../styles/loginBoxStyle';
 import PrimaryButton from '../components/loginComponents/primaryButtonComponent';
+import HelpButton    from '../components/helpButton';
 import RoundedInput  from '../components/loginComponents/inputComponent';
 import deviceStorage from '../components/deviceStorage';
-import fetchToAPI from '../components/fetchToAPI';
+import fetchToAPI    from '../components/fetchToAPI';
 
-import { Text, View, KeyboardAvoidingView  } from 'react-native';
+import { Text, View, Image, KeyboardAvoidingView } from 'react-native';
 import { LinearGradient, Font              } from 'expo';
 import { SCLAlert, SCLAlertButton          } from 'react-native-scl-alert';
 import { StackActions, NavigationActions   } from 'react-navigation';
+import layoutStyle from '../styles/layoutStyle';
 const FONT_PATH_MAINTYPO  = "../assets/fonts/Montserrat-ExtraBold.otf";
 const FONT_PATH_NAMETYPO  = "../assets/fonts/big_noodle_titling.ttf";
+
+// const FAQ_URL = "https://baezsoriano97.wixsite.com/manolin/soporte";
 
 export default class LoginScreen extends React.Component {
 
@@ -22,7 +26,11 @@ export default class LoginScreen extends React.Component {
             errorTitle: "", 
             errorMessage: "", 
             fontLoaded: false };
-        this.showError = this.showError.bind(this);
+        this.showError    = this.showError.bind(this);
+        this.hideError    = this.hideError.bind(this);
+        this.setUsername  = this.setUsername.bind(this);
+        this.setPassword  = this.setPassword.bind(this);
+        this.loginPressed = this.loginPressed.bind(this);
     }
 
     async componentDidMount() {
@@ -176,11 +184,23 @@ export default class LoginScreen extends React.Component {
         return true;
     }
 
+    setUsername(input) {
+        this.setState({username: input});
+    }
+
+    setPassword(input) {
+        this.setState({password: input});
+    }
+
     render() {
         if (this.state.fontLoaded) {
             return (
-                <KeyboardAvoidingView style={ styles.container } 
-                    behavior="padding">
+            <View style={ styles.container }>
+                <KeyboardAvoidingView 
+                    behavior="position">
+                    <View style={{alignItems: "center"}}>
+                        <Image source={require('../assets/icon.png')} style={styles.image} />
+                    </View>
 
                     <LinearGradient colors={['#10bad2', '#2685e4']} 
                         style = {{ justifyContent: 'center' }}
@@ -190,39 +210,46 @@ export default class LoginScreen extends React.Component {
 
                         <RoundedInput text   = "Usuario"
                             secureTextEntry  = { false }
-                            onChangeFunction = { inputText => { 
-                                this.setState({ username: inputText }) 
-                            }} />
+                            onChangeFunction = { this.setUsername }
+                            />
 
                         <RoundedInput text   = "Contraseña"
                             secureTextEntry  = { true }
-                            onChangeFunction = { inputText => { 
-                                this.setState({ password: inputText }) 
-                            }} />
+                            onChangeFunction = { this.setPassword } 
+                            />
 
                         <PrimaryButton text = "Iniciar sesión"
-                            onPressFunction = { () => { 
-                                this.loginPressed() 
-                            }} />
+                            onPressFunction = { this.loginPressed }/>
 
                     </LinearGradient>
 
-                    <SCLAlert
-                        them     = { this.state.errorType    }
-                        show     = { this.state.error        }
-                        title    = { this.state.errorTitle   }
-                        subtitle = { this.state.errorMessage }
-                        onRequestClose = { () => {} }
-                        cancellable    = { true     }>
-
-                        <SCLAlertButton 
-                            theme   = { this.state.errorType       } 
-                            onPress = { () => { this.hideError() } }>
-                            Vale
-                        </SCLAlertButton>
-
-                    </SCLAlert>
                 </KeyboardAvoidingView>
+                <View style={{
+                    height: layoutStyle.globalHeight, 
+                    justifyContent: "space-around", 
+                    marginTop: layoutStyle.verticalUnits10*2}
+                    }>
+                    <HelpButton text="No tengo cuenta"/>
+                    <HelpButton text="Ayuda"/>
+                </View>
+
+                <SCLAlert
+                    them     = { this.state.errorType    }
+                    show     = { this.state.error        }
+                    title    = { this.state.errorTitle   }
+                    subtitle = { this.state.errorMessage }
+                    onRequestClose = { () => {} }
+                    cancellable    = { true     }>
+
+                    <SCLAlertButton 
+                        theme   = { this.state.errorType } 
+                        onPress = { this.hideError       }>
+                        Vale
+                    </SCLAlertButton>
+
+                </SCLAlert>
+            </View>
+            
             )
         } else {
             return (

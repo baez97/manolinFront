@@ -39,11 +39,12 @@ export default class ChooseChangeScreen extends React.Component {
         this.showConfirmation = this.showConfirmation.bind(this);
         this.hideConfirmation = this.hideConfirmation.bind(this);
         this.confirmChange    = this.confirmChange.bind(this);
+        this.setMonth         = this.setMonth.bind(this);
     }
 
     async componentDidMount() {
         const token = this.getNavigationParam("token");
-        fetchToAPI('/central/nurseById/'+this.change.owner_id, {
+        return fetchToAPI('/central/nurseById/'+this.change.owner_id, {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
@@ -126,6 +127,10 @@ export default class ChooseChangeScreen extends React.Component {
         });
     }
 
+    setMonth(monthIndex) {
+        this.setState({currentMonthIndex: monthIndex})
+    }
+
     render() {
         if ( this.state.error ) {
             return (
@@ -140,7 +145,9 @@ export default class ChooseChangeScreen extends React.Component {
         if ( ! this.state.userLoaded ) {
             return ( 
                 <View style={styles.container}>
-                    <Text style={{ marginTop: 50 }}> Cargando... </Text>
+                    <Text style={{ marginTop: 50 }}>
+                        Cargando...
+                    </Text>
                 </View>
             )
         }
@@ -166,9 +173,7 @@ export default class ChooseChangeScreen extends React.Component {
                     <PressableTurnTable  
                         nurses    = { this.state.nurses  }
                         onPressFn = { this.wantsToChange }
-                        setMonth  = { (monthIndex) => {
-                            this.setState({currentMonthIndex: monthIndex})
-                        }}/>
+                        setMonth  = { this.setMonth      }/>
                 </View>
                 <AreYouSureModal
                     visible    = { this.state.isModalVisible }
