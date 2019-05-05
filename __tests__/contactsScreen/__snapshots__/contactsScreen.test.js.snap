@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactsScreen View Matches the Snapshot when contacts were loaded 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#bee6ef",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+      "paddingTop": 70,
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "fontFamily": "montserrat-extra-bold",
+        "fontSize": 38.95833442608516,
+        "textAlign": "center",
+      }
+    }
+  >
+    Contactos
+  </Component>
+  <FlatList
+    contentContainerStyle={
+      Object {
+        "paddingBottom": 70,
+        "paddingLeft": 35,
+        "paddingRight": 35,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "name": "Ana",
+          "phone": "MOCKED_PHONE_1",
+        },
+        Object {
+          "name": "María",
+          "phone": "MOCKED_PHONE_2",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReachedThreshold={2}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />
+  <ContactModal
+    hideModal={[Function]}
+  />
+</Component>
+`;
+
+exports[`ContactsScreen View Matches the Snapshot when it is loading 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#bee6ef",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+      "paddingTop": 70,
+    }
+  }
+>
+  <PulseIndicator
+    animationEasing={[Function]}
+    color="#067bdb"
+    size={262.5}
+  />
+</Component>
+`;
+
+exports[`ContactsScreen View Matches the Snapshot when there is an error 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#bee6ef",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+      "paddingTop": 70,
+    }
+  }
+>
+  <Component>
+    Se ha producido un error
+  </Component>
+</Component>
+`;

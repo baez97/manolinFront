@@ -28,7 +28,6 @@ export default class ContactsScreen extends React.Component {
     }
 
     showModal(contact) {
-        console.log(contact);
         this.setState({
             isModalVisible: true,
             modalContact: contact
@@ -43,7 +42,7 @@ export default class ContactsScreen extends React.Component {
     }
 
     loadContacts() {
-        fetchToAPI("/central/contacts", {
+        return fetchToAPI("/central/contacts", {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
