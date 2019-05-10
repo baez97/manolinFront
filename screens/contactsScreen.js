@@ -11,6 +11,7 @@ export default class ContactsScreen extends React.Component {
         super(props);
         this.token = this.props.navigation.getParam("token");
         this.username = this.props.navigation.getParam("name");
+        this.group = this.props.navigation.getParam("group");
         this.state = {
             loaded: false,
             error: false,
@@ -42,7 +43,7 @@ export default class ContactsScreen extends React.Component {
     }
 
     loadContacts() {
-        return fetchToAPI("/central/contacts", {
+        return fetchToAPI("/central/contacts/" + this.group, {
             method: 'GET',
             headers: {
                 Accept: 'application/json',

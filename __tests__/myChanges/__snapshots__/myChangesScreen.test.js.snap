@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyChangesScreen View Matches the Snapshot 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#bee6ef",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+      "paddingTop": 35,
+    }
+  }
+>
+  <PurposalsQueue
+    onPressFn={[Function]}
+  />
+  <AreYouSureModal
+    closeModal={[Function]}
+    onPressFn={[Function]}
+    text=""
+    visible={false}
+  />
+  <ConfirmModal
+    closeModal={[Function]}
+    text=""
+    visible={false}
+  />
+</Component>
+`;

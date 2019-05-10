@@ -131,6 +131,10 @@ export default class ChooseChangeScreen extends React.Component {
         this.setState({currentMonthIndex: monthIndex})
     }
 
+    doNothing() {
+
+    }
+
     render() {
         if ( this.state.error ) {
             return (
@@ -158,7 +162,7 @@ export default class ChooseChangeScreen extends React.Component {
             <View style={styles.container}>
                 <ChangeView
                     change={this.change} 
-                    changeOnPress={()=>{}}/>
+                    changeOnPress={this.doNothing}/>
                 <Text style={styles.titleText}>
                     {message}
                 </Text>

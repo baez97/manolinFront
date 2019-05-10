@@ -30,9 +30,9 @@
         <span class='fraction'>22/22</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">95.24% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>20/21</span>
+        <span class='fraction'>21/21</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -334,7 +334,12 @@
 <a name='L286'></a><a href='#L286'>286</a>
 <a name='L287'></a><a href='#L287'>287</a>
 <a name='L288'></a><a href='#L288'>288</a>
-<a name='L289'></a><a href='#L289'>289</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -355,18 +360,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -529,9 +534,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -697,7 +707,7 @@ export default class LoginScreen extends React.Component {
                     title   : "Usuario incorrecto", 
                     message : "La usuario que has introducido no es correcto"
                 });
-                throw "The username is not correct";
+                throw "El usuario no es correcto";
             } else if ( responseJson.passwordError ) {
                 this.showError({
                     title   : "Contraseña incorrecta", 
@@ -816,6 +826,12 @@ export default class LoginScreen extends React.Component {
         this.setState({password: input});
     }
 &nbsp;
+    doNothing() {
+        // THIS FUNCTION SHOULD NOT DO ANYTHING
+        // It is just for fulfilling required methods
+        // of components as SCAlert
+    }
+&nbsp;
     render() {
         if (this.state.fontLoaded) {
             return (
@@ -862,7 +878,7 @@ export default class LoginScreen extends React.Component {
                     show     = { this.state.error        }
                     title    = { this.state.errorTitle   }
                     subtitle = { this.state.errorMessage }
-                    onRequestClose = { <span class="fstat-no" title="function not covered" >()</span> =&gt; {} }
+                    onRequestClose = { this.doNothing    }
                     cancellable    = { true     }&gt;
 &nbsp;
                     &lt;SCLAlertButton 
@@ -870,7 +886,6 @@ export default class LoginScreen extends React.Component {
                         onPress = { this.hideError       }&gt;
                         Vale
                     &lt;/SCLAlertButton&gt;
-&nbsp;
                 &lt;/SCLAlert&gt;
             &lt;/View&gt;
             
@@ -916,7 +931,7 @@ export default class LoginScreen extends React.Component {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun May 05 2019 18:58:54 GMT+0200 (hora de verano de Europa central)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri May 10 2019 18:58:46 GMT+0200 (hora de verano de Europa central)
 </div>
 </div>
 <script src="../../prettify.js"></script>

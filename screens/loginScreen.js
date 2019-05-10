@@ -73,7 +73,7 @@ export default class LoginScreen extends React.Component {
                     title   : "Usuario incorrecto", 
                     message : "La usuario que has introducido no es correcto"
                 });
-                throw "The username is not correct";
+                throw "El usuario no es correcto";
             } else if ( responseJson.passwordError ) {
                 this.showError({
                     title   : "Contraseña incorrecta", 
@@ -192,6 +192,12 @@ export default class LoginScreen extends React.Component {
         this.setState({password: input});
     }
 
+    doNothing() {
+        // THIS FUNCTION SHOULD NOT DO ANYTHING
+        // It is just for fulfilling required methods
+        // of components as SCAlert
+    }
+
     render() {
         if (this.state.fontLoaded) {
             return (
@@ -238,7 +244,7 @@ export default class LoginScreen extends React.Component {
                     show     = { this.state.error        }
                     title    = { this.state.errorTitle   }
                     subtitle = { this.state.errorMessage }
-                    onRequestClose = { () => {} }
+                    onRequestClose = { this.doNothing    }
                     cancellable    = { true     }>
 
                     <SCLAlertButton 
@@ -246,7 +252,6 @@ export default class LoginScreen extends React.Component {
                         onPress = { this.hideError       }>
                         Vale
                     </SCLAlertButton>
-
                 </SCLAlert>
             </View>
             

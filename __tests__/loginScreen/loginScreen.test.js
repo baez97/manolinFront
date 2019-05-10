@@ -72,6 +72,15 @@ describe("LoginScreen", () => {
             expect( l.setState ).toBeCalledWith({username: "mockedUsername"});
         });
 
+        it("DoNothing does nothing", () => {
+            const l = new LoginScreen();
+            l.setState = jest.fn();
+
+            l.doNothing();
+
+            expect( l.setState ).not.toBeCalled();
+        })
+
         describe("TestInput", () => {
             const l = new LoginScreen();
 

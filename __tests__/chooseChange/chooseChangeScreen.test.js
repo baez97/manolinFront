@@ -239,6 +239,21 @@ describe("ChooseChangeScreen", () => {
                 { currentMonthIndex: "MOCKED_MONTH" }
             );
         });
+
+        it("DoNothing does nothing", () => {
+            const mockedProps = {
+                navigation: {
+                    getParam: jest.fn(() => "MOCKED_TOKEN"),
+                }
+            };
+
+            const CCScreen = new ChooseChangeScreen(mockedProps);
+            CCScreen.setState = jest.fn();
+
+            CCScreen.doNothing();
+
+            expect( CCScreen.setState ).not.toBeCalled();
+        });
     });
 
     describe("View", () => {

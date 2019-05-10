@@ -232,8 +232,9 @@ export default class HomeScreen extends React.Component {
     contactsButtonPressed() {
         this.props.navigation.navigate(
             "ContactsScreen",
-            { token: this.token,
-              name: this.state.user.name }
+            { token : this.token,
+              name  : this.state.user.name,
+              group : this.state.user.group }
         )
     }
 
