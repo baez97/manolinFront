@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { ScrollView, View, Text, StyleSheet } from 'react-native';
 import fetchToAPI from '../components/fetchToAPI';
 import NameColumn from '../components/globalComponents/nameColumn'
 import TurnTable from '../components/globalComponents/turnTable'
@@ -64,7 +64,7 @@ export default class GlobalScreen extends React.Component {
         }
 
         return  (
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
                 { months[this.state.currentMonthIndex] != undefined ?
                     ( <Text style={styles.monthText}>{`Turno de ${months[this.state.currentMonthIndex]}`}</Text>)
                     : ( <Text style={styles.monthText}>Turno</Text> )
@@ -76,7 +76,7 @@ export default class GlobalScreen extends React.Component {
                             this.setState({currentMonthIndex: monthIndex})
                         }}/>
                 </View>
-            </View>
+            </ScrollView>
         )
     }
 }

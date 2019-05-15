@@ -4,7 +4,7 @@
     "description": "App for exchanging shifts",
     "android": {
         "package": "com.front.manolin",
-        "googleServicesFile": "./google-services.json"
+        "googleServicesFile": "../google-services.json"
     },
     "slug": "Manolin",
     "privacy": "public",
