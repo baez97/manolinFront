@@ -64,7 +64,7 @@ export default class GlobalScreen extends React.Component {
         }
 
         return  (
-            <ScrollView style={styles.container}>
+            <ScrollView contentContainerStyle={styles.container}>
                 { months[this.state.currentMonthIndex] != undefined ?
                     ( <Text style={styles.monthText}>{`Turno de ${months[this.state.currentMonthIndex]}`}</Text>)
                     : ( <Text style={styles.monthText}>Turno</Text> )
