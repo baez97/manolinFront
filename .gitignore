@@ -7,5 +7,7 @@ npm-debug.*
 *.mobileprovision
 my-release-key.keystore
 pipelineApp.jks
+pipelineApp.jks.bak
+Manolin.jks.bak
 google-services.json
 app.apk

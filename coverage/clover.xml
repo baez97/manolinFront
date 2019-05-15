@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1557507527321" clover="3.2.0">
-  <project timestamp="1557507527321" name="All files">
+<coverage generated="1557825161261" clover="3.2.0">
+  <project timestamp="1557825161261" name="All files">
     <metrics statements="573" coveredstatements="573" conditionals="139" coveredconditionals="139" methods="240" coveredmethods="240" elements="952" coveredelements="952" complexity="0" loc="573" ncloc="573" packages="15" files="50" classes="50"/>
     <package name="pipelineApp">
       <metrics statements="31" coveredstatements="31" conditionals="10" coveredconditionals="10" methods="8" coveredmethods="8"/>
@@ -39,7 +39,7 @@
       </file>
       <file name="config.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/config.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
       </file>
     </package>
     <package name="pipelineApp.assets">
