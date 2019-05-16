@@ -30,8 +30,9 @@ export default class GlobalScreen extends React.Component {
         })
         .then( response => response.json() )
         .then( nurses => {
+            const nursesWithoutSuper = nurses.filter( n => n.name != "Supervisora" );
             this.setState({
-                nurses: nurses,
+                nurses: nursesWithoutSuper,
                 usersLoaded: true
             });
         })

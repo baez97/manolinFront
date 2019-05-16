@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1558027652174" clover="3.2.0">
-  <project timestamp="1558027652174" name="All files">
-    <metrics statements="573" coveredstatements="573" conditionals="139" coveredconditionals="139" methods="240" coveredmethods="240" elements="952" coveredelements="952" complexity="0" loc="573" ncloc="573" packages="15" files="50" classes="50"/>
+<coverage generated="1558028106728" clover="3.2.0">
+  <project timestamp="1558028106728" name="All files">
+    <metrics statements="574" coveredstatements="574" conditionals="139" coveredconditionals="139" methods="241" coveredmethods="241" elements="954" coveredelements="954" complexity="0" loc="574" ncloc="574" packages="15" files="50" classes="50"/>
     <package name="pipelineApp">
       <metrics statements="31" coveredstatements="31" conditionals="10" coveredconditionals="10" methods="8" coveredmethods="8"/>
       <file name="App.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/App.js">
@@ -518,7 +518,7 @@
       </file>
     </package>
     <package name="pipelineApp.screens">
-      <metrics statements="220" coveredstatements="220" conditionals="50" coveredconditionals="50" methods="91" coveredmethods="91"/>
+      <metrics statements="221" coveredstatements="221" conditionals="50" coveredconditionals="50" methods="92" coveredmethods="92"/>
       <file name="chooseChangeScreen.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/screens/chooseChangeScreen.js">
         <metrics statements="39" coveredstatements="39" conditionals="6" coveredconditionals="6" methods="16" coveredmethods="16"/>
         <line num="14" count="2" type="stmt"/>
@@ -592,23 +592,24 @@
         <line num="123" count="2" type="stmt"/>
       </file>
       <file name="globalScreen.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/screens/globalScreen.js">
-        <metrics statements="16" coveredstatements="16" conditionals="6" coveredconditionals="6" methods="8" coveredmethods="8"/>
+        <metrics statements="17" coveredstatements="17" conditionals="6" coveredconditionals="6" methods="9" coveredmethods="9"/>
         <line num="9" count="2" type="stmt"/>
         <line num="13" count="6" type="stmt"/>
         <line num="14" count="6" type="stmt"/>
         <line num="22" count="2" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
-        <line num="50" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="58" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="59" count="1" type="stmt"/>
-        <line num="66" count="2" type="stmt"/>
-        <line num="76" count="1" type="stmt"/>
-        <line num="84" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="51" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="59" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="85" count="2" type="stmt"/>
       </file>
       <file name="homeScreen.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/screens/homeScreen.js">
         <metrics statements="63" coveredstatements="63" conditionals="8" coveredconditionals="8" methods="26" coveredmethods="26"/>
