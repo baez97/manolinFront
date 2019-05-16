@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1558028106728" clover="3.2.0">
-  <project timestamp="1558028106728" name="All files">
+<coverage generated="1558029367141" clover="3.2.0">
+  <project timestamp="1558029367141" name="All files">
     <metrics statements="574" coveredstatements="574" conditionals="139" coveredconditionals="139" methods="241" coveredmethods="241" elements="954" coveredelements="954" complexity="0" loc="574" ncloc="574" packages="15" files="50" classes="50"/>
     <package name="pipelineApp">
       <metrics statements="31" coveredstatements="31" conditionals="10" coveredconditionals="10" methods="8" coveredmethods="8"/>
