@@ -18,7 +18,7 @@ export default class GlobalButton extends React.Component {
                 colors={['#10bad2', '#2990f7']}
                 start={[0.55, 0]}
                 end={[0.65, 1]}>
-                <Text style={styles.buttonText}>
+                <Text style={styles.buttonText} allowFontScaling={false}>
                     {this.props.text}
                 </Text>
                 <Image 

@@ -29,10 +29,10 @@ export default class ContactCard extends React.Component {
                     start={[0.55, 0]}
                     end={[0.65, 1]}>
                     <View style={styles.column}>
-                        <Text style={styles.buttonText}>
+                        <Text style={styles.buttonText} allowFontScaling={false}>
                             {this.props.contact.name}
                         </Text>
-                        <Text style={styles.phoneText}>
+                        <Text style={styles.phoneText} allowFontScaling={false}>
                             {this.props.contact.phone}
                         </Text>
                     </View>

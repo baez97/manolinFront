@@ -51,6 +51,7 @@ exports[`GlobalButton Renders correctly 1`] = `
     }
   >
     <Text
+      allowFontScaling={false}
       style={
         Object {
           "color": "white",
@@ -123,6 +124,7 @@ exports[`MidBlueButton Renders correctly 1`] = `
     }
   >
     <Text
+      allowFontScaling={false}
       style={
         Object {
           "color": "white",
@@ -184,6 +186,7 @@ exports[`MidYellowButton Renders correctly 1`] = `
     }
   >
     <Text
+      allowFontScaling={false}
       style={
         Object {
           "color": "#3f2606",

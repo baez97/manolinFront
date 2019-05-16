@@ -9,7 +9,7 @@ export default class RoundedInput extends React.Component {
     render() {
         return (
             <View>
-              <Text style={styles.label}>{this.props.text}</Text>
+              <Text style={styles.label} allowFontScaling={false}>{this.props.text}</Text>
               <TextInput style={styles.userInput} onChangeText={(text) => this.props.onChangeFunction(text)}
                 secureTextEntry={this.props.secureTextEntry}></TextInput>
             </View>

@@ -72,6 +72,7 @@ exports[`LoginScreen View Matches the Loaded Snapshot 1`] = `
       >
         <View>
           <Text
+            allowFontScaling={false}
             style={
               Object {
                 "color": "white",
@@ -108,6 +109,7 @@ exports[`LoginScreen View Matches the Loaded Snapshot 1`] = `
         </View>
         <View>
           <Text
+            allowFontScaling={false}
             style={
               Object {
                 "color": "white",
@@ -189,6 +191,7 @@ exports[`LoginScreen View Matches the Loaded Snapshot 1`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",
@@ -261,6 +264,7 @@ exports[`LoginScreen View Matches the Loaded Snapshot 1`] = `
         }
       >
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#23538a",
@@ -320,6 +324,7 @@ exports[`LoginScreen View Matches the Loaded Snapshot 1`] = `
         }
       >
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#23538a",
@@ -589,6 +594,7 @@ exports[`LoginScreen View Matches the Loading Snapshot 1`] = `
   }
 >
   <Text
+    allowFontScaling={false}
     style={
       Object {
         "color": "#3b2868",

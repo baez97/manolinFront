@@ -48,6 +48,7 @@ exports[`PrimaryButton Renders correctly 1`] = `
     }
   >
     <Text
+      allowFontScaling={false}
       style={
         Object {
           "color": "white",
@@ -64,6 +65,7 @@ exports[`PrimaryButton Renders correctly 1`] = `
 exports[`Rounded Input Renders correctly 1`] = `
 <View>
   <Text
+    allowFontScaling={false}
     style={
       Object {
         "color": "white",

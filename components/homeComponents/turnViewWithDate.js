@@ -38,7 +38,7 @@ export default class TurnViewWithDate extends React.Component {
                     style={ styles.dayBar }
                     start={[0, 0]}
                     end={[0, 1]}>
-                    <Text style={styles.dayText}>
+                    <Text style={styles.dayText} allowFontScaling={false}>
                         { `${weekDays[weekday-1]} ${day}` }
                     </Text>
                  </LinearGradient>
@@ -48,7 +48,7 @@ export default class TurnViewWithDate extends React.Component {
                     style={styles.turnBar}
                     start={[0, 0]}
                     end={[0, 1]}>
-                    <Text style={ this.isToday() ? styles.todayTurnText: styles.turnText}>
+                    <Text style={ this.isToday() ? styles.todayTurnText: styles.turnText} allowFontScaling={false}>
                         { turn }
                     </Text>
                  </LinearGradient>

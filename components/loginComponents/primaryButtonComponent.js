@@ -17,7 +17,7 @@ export default class PrimaryButton extends React.Component{
           colors={['#0470dc', '#23538a']} 
           start={[0, 0]} 
           end={[1, 1]}>
-          <Text style={styles.buttonText}>
+          <Text allowFontScaling={false} style={styles.buttonText}>
             {this.props.text}
           </Text>
         </LinearGradient>

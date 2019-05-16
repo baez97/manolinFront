@@ -9,6 +9,7 @@ exports[`TurnDeck Renders correctly 1`] = `
   }
 >
   <Text
+    allowFontScaling={false}
     style={
       Object {
         "color": "#332554",

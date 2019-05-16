@@ -242,7 +242,7 @@ export default class HomeScreen extends React.Component {
         if ( this.state.error ) {
             return ( 
                 <View style={styles.auxContainer}>
-                    <Text style={styles.loadingText}> Se ha producido un error </Text>
+                    <Text style={styles.loadingText} allowFontScaling={false}> Se ha producido un error </Text>
                 </View>
             )
         } else if ( !this.state.userLoaded ) {
@@ -265,7 +265,7 @@ export default class HomeScreen extends React.Component {
                             onPressFn={ this.contactsButtonPressed  }/>
                     </View>
 
-                    <Text style={styles.labelText}>Peticiones de cambio</Text>
+                    <Text style={styles.labelText} allowFontScaling={false}>Peticiones de cambio</Text>
                     <ChangesQueue 
                         socket  = { this.socket } 
                         token   = { this.token  }

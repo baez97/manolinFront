@@ -15,7 +15,7 @@ export default class NameColumn extends React.Component {
             <View style={styles.container}>
                 <FlatList
                     data={this.state.names}
-                    renderItem={({item}) => <Text style={styles.nameText}>{item}</Text>}
+                    renderItem={({item}) => <Text style={styles.nameText} allowFontScaling={false}>{item}</Text>}
                     keyExtractor={item => item}>
                 </FlatList>
             </View>
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     nameText: {
         fontFamily: 'big-noodle-titling',
         fontSize: LayoutStyle.bigFontSize,
-        paddingBottom: LayoutStyle.verticalUnits10 * 1.5,
+        paddingBottom: LayoutStyle.verticalUnits10 * 1,
     },
 
     container: {

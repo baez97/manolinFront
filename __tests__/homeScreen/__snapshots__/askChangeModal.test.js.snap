@@ -100,6 +100,7 @@ exports[`AskChangeModal View Matches the Snapshot when it is not visible 1`] = `
         }
       >
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#0470dc",
@@ -159,6 +160,7 @@ exports[`AskChangeModal View Matches the Snapshot when it is not visible 1`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",
@@ -219,6 +221,7 @@ exports[`AskChangeModal View Matches the Snapshot when it is not visible 1`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",
@@ -279,6 +282,7 @@ exports[`AskChangeModal View Matches the Snapshot when it is not visible 1`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",
@@ -398,6 +402,7 @@ exports[`AskChangeModal View Matches the Snapshot when it is visible 1`] = `
         }
       >
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#0470dc",
@@ -457,6 +462,7 @@ exports[`AskChangeModal View Matches the Snapshot when it is visible 1`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",
@@ -517,6 +523,7 @@ exports[`AskChangeModal View Matches the Snapshot when it is visible 1`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",
@@ -577,6 +584,7 @@ exports[`AskChangeModal View Matches the Snapshot when it is visible 1`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",

@@ -44,6 +44,7 @@ exports[`TurnViewWithDate renders correctly 1`] = `
     }
   >
     <Text
+      allowFontScaling={false}
       style={
         Object {
           "color": "white",
@@ -86,6 +87,7 @@ exports[`TurnViewWithDate renders correctly 1`] = `
     }
   >
     <Text
+      allowFontScaling={false}
       style={
         Object {
           "color": "black",

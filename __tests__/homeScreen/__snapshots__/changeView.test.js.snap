@@ -58,6 +58,7 @@ exports[`ChangeView View Matches the Snapshot when the type is 'change' 1`] = `
   >
     <View>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "white",
@@ -79,6 +80,7 @@ exports[`ChangeView View Matches the Snapshot when the type is 'change' 1`] = `
         }
       >
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#cfbcf9",
@@ -92,6 +94,7 @@ exports[`ChangeView View Matches the Snapshot when the type is 'change' 1`] = `
           Ana
         </Text>
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#cfbcf9",
@@ -107,6 +110,7 @@ exports[`ChangeView View Matches the Snapshot when the type is 'change' 1`] = `
       </View>
     </View>
     <Text
+      allowFontScaling={false}
       style={
         Object {
           "color": "white",
@@ -181,6 +185,7 @@ exports[`ChangeView View Matches the Snapshot when the type is 'free' 1`] = `
   >
     <View>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "white",
@@ -202,6 +207,7 @@ exports[`ChangeView View Matches the Snapshot when the type is 'free' 1`] = `
         }
       >
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#cfbcf9",
@@ -215,6 +221,7 @@ exports[`ChangeView View Matches the Snapshot when the type is 'free' 1`] = `
           Ana
         </Text>
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#cfbcf9",
@@ -230,6 +237,7 @@ exports[`ChangeView View Matches the Snapshot when the type is 'free' 1`] = `
       </View>
     </View>
     <Text
+      allowFontScaling={false}
       style={
         Object {
           "color": "white",

@@ -100,6 +100,7 @@ exports[`AreYouSureModal Matches the Snapshot 1`] = `
         }
       >
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#2990f7",
@@ -159,6 +160,7 @@ exports[`AreYouSureModal Matches the Snapshot 1`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",
@@ -219,6 +221,7 @@ exports[`AreYouSureModal Matches the Snapshot 1`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",

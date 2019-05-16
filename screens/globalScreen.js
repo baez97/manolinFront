@@ -50,7 +50,7 @@ export default class GlobalScreen extends React.Component {
         if ( this.state.error ) {
             return (
                 <View style={styles.container}>
-                    <Text> Se ha producido un error </Text>
+                    <Text allowFontScaling={false}> Se ha producido un error </Text>
                 </View>
             )
         }
@@ -66,8 +66,8 @@ export default class GlobalScreen extends React.Component {
         return  (
             <ScrollView contentContainerStyle={styles.container}>
                 { months[this.state.currentMonthIndex] != undefined ?
-                    ( <Text style={styles.monthText}>{`Turno de ${months[this.state.currentMonthIndex]}`}</Text>)
-                    : ( <Text style={styles.monthText}>Turno</Text> )
+                    ( <Text allowFontScaling={false} style={styles.monthText}>{`Turno de ${months[this.state.currentMonthIndex]}`}</Text>)
+                    : ( <Text allowFontScaling={false} style={styles.monthText}>Turno</Text> )
                 }
                 <View style={styles.tableContainer}>
                     <NameColumn nurses={this.state.nurses}/>

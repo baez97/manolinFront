@@ -10,3 +10,18 @@ exports[`NameColumn tests Matches the Snapshot 1`] = `
   }
 />
 `;
+
+exports[`NameColumn tests RenderItem method works properly in the FlatList 1`] = `
+<Component
+  allowFontScaling={false}
+  style={
+    Object {
+      "fontFamily": "big-noodle-titling",
+      "fontSize": 30,
+      "paddingBottom": 10,
+    }
+  }
+>
+  Ana
+</Component>
+`;

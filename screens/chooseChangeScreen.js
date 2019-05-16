@@ -139,7 +139,7 @@ export default class ChooseChangeScreen extends React.Component {
         if ( this.state.error ) {
             return (
                 <View style={ styles.container }>
-                    <Text style={{ marginTop: 50 }}> 
+                    <Text style={{ marginTop: 50 }} allowFontScaling={false}> 
                         Se ha producido un error 
                     </Text>
                 </View>
@@ -149,7 +149,7 @@ export default class ChooseChangeScreen extends React.Component {
         if ( ! this.state.userLoaded ) {
             return ( 
                 <View style={styles.container}>
-                    <Text style={{ marginTop: 50 }}>
+                    <Text style={{ marginTop: 50 }} allowFontScaling={false}>
                         Cargando...
                     </Text>
                 </View>
@@ -163,14 +163,14 @@ export default class ChooseChangeScreen extends React.Component {
                 <ChangeView
                     change={this.change} 
                     changeOnPress={this.doNothing}/>
-                <Text style={styles.titleText}>
+                <Text style={styles.titleText} allowFontScaling={false}>
                     {message}
                 </Text>
                 { months[this.state.currentMonthIndex] != undefined ?
-                    ( <Text style={styles.monthText}>
+                    ( <Text style={styles.monthText} allowFontScaling={false}>
                         {months[this.state.currentMonthIndex]}
                       </Text>)
-                    : ( <Text style={styles.monthText}>Turno</Text> )
+                    : ( <Text style={styles.monthText} allowFontScaling={false}>Turno</Text> )
                 }
                 <View style={styles.tableContainer}>
                     <NameColumn nurses={this.state.nurses}/>

@@ -17,7 +17,7 @@ export default class ConfirmModal extends React.Component {
                 onBackButtonPress = { this.props.closeModal }>
                 <View style={styles.modalBackground}>
                     <View style={styles.box}>
-                        <Text style={styles.labelText}>
+                        <Text style={styles.labelText} allowFontScaling={false}>
                             { this.props.text }
                         </Text>
                         <Image 

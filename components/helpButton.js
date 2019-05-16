@@ -15,7 +15,7 @@ export default class HelpButton extends React.Component {
                         colors = { ["#fff", "#f2f2f2"] }
                         start  = { [0.55, 0] }
                         end    = { [0.65, 1] }>
-                        <Text style={ styles.textStyle }>
+                        <Text style={ styles.textStyle } allowFontScaling={false}>
                             { this.props.text }
                         </Text>
                     </LinearGradient>

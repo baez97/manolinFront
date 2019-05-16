@@ -14,6 +14,7 @@ exports[`GlobalScreen tests View Shows everything when the turns are loaded 1`] 
   }
 >
   <Component
+    allowFontScaling={false}
     style={
       Object {
         "color": "#332554",

@@ -48,13 +48,14 @@ describe("NameColumn tests", () => {
 
     it("RenderItem method works properly in the FlatList", () => {
         // EXPECTED OUTPUT
-        const expectedView = 
-            ( <Text style={{
-                fontFamily: 'big-noodle-titling',
-                fontSize: 30,
-                paddingBottom: 15,}}>
-                { mockedNurse.name }
-            </Text> );
+        // const expectedView = 
+        //     ( <Text style={{
+        //         allowFontScaling={false},
+        //         fontFamily: 'big-noodle-titling',
+        //         fontSize: 30,
+        //         paddingBottom: 10,}}>
+        //         { mockedNurse.name }
+        //     </Text> );
 
         // RENDERING
         const nC       = new NameColumn({ nurses });
@@ -65,6 +66,7 @@ describe("NameColumn tests", () => {
         const actualView = list.props.renderItem({item: mockedNurse.name});
 
         // ASSERTION
-        expect( actualView ).toEqual(expectedView);
+        // expect( actualView ).toEqual(expectedView);
+        expect( actualView ).toMatchSnapshot();
     })
 });

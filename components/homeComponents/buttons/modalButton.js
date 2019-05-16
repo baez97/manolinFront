@@ -43,7 +43,7 @@ export default class ModalButton extends React.Component {
                     colors = { colors }
                     start  = { start  }
                     end    = { end    }>
-                    <Text style={ styles.buttonText }>
+                    <Text style={ styles.buttonText } allowFontScaling={false}>
                         { this.props.text }
                     </Text>
                 </LinearGradient>

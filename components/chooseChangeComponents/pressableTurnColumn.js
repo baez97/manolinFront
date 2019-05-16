@@ -29,7 +29,7 @@ export default class PressableTurnColumn extends TurnColumn {
                         style={ styles.dayBar }
                         start={[0, 0]}
                         end={[0, 1]}>
-                        <Text style={styles.dayText}>
+                        <Text style={styles.dayText} allowFontScaling={false}>
                             { `${day}` }
                         </Text>
                     </LinearGradient>

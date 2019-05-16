@@ -52,6 +52,7 @@ exports[`WhatsButton View Matches the Snapshot 1`] = `
     }
   >
     <Text
+      allowFontScaling={false}
       style={
         Object {
           "color": "white",

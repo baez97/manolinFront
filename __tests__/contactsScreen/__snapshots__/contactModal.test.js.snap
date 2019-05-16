@@ -100,6 +100,7 @@ exports[`ContactModal View Matches the Snapshot when is not visible 1`] = `
         }
       >
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#1b7128",
@@ -113,6 +114,7 @@ exports[`ContactModal View Matches the Snapshot when is not visible 1`] = `
           CONTACT_NAME
         </Text>
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#2db842",
@@ -175,6 +177,7 @@ exports[`ContactModal View Matches the Snapshot when is not visible 1`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",
@@ -249,6 +252,7 @@ exports[`ContactModal View Matches the Snapshot when is not visible 1`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",
@@ -378,6 +382,7 @@ exports[`ContactModal View Matches the Snapshot when is not visible 2`] = `
         }
       >
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#1b7128",
@@ -391,6 +396,7 @@ exports[`ContactModal View Matches the Snapshot when is not visible 2`] = `
           CONTACT_NAME
         </Text>
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#2db842",
@@ -453,6 +459,7 @@ exports[`ContactModal View Matches the Snapshot when is not visible 2`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",
@@ -527,6 +534,7 @@ exports[`ContactModal View Matches the Snapshot when is not visible 2`] = `
             }
           >
             <Text
+              allowFontScaling={false}
               style={
                 Object {
                   "color": "white",

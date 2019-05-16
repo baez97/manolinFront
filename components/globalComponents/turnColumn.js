@@ -31,7 +31,7 @@ export default class TurnColumn extends React.Component {
         for ( let i = 0; i < this.props.turnObjs.length; i++ ) {
             const { turn } = this.props.turnObjs[i];
             turnsView.push(
-            <Text key={i} style={ this.isToday() ? styles.todayTurnText: styles.turnText }>
+            <Text key={i} style={ this.isToday() ? styles.todayTurnText: styles.turnText } allowFontScaling={false}>
                 { turn }
             </Text>)
         }
@@ -50,7 +50,7 @@ export default class TurnColumn extends React.Component {
                     style={ styles.dayBar }
                     start={[0, 0]}
                     end={[0, 1]}>
-                    <Text style={styles.dayText}>
+                    <Text style={styles.dayText} allowFontScaling={false}>
                         { `${day}` }
                     </Text>
                  </LinearGradient>
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         fontSize: LayoutStyles.hugeFontSize,
         color: 'black',
         textAlign: 'center',
-        paddingBottom: LayoutStyles.verticalUnits10*1.6
+        paddingBottom: LayoutStyles.verticalUnits10*1.1
     },
 
     todayTurnText: {
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
         color: 'black',
         textAlign: 'center',
         color: '#056ec9',
-        paddingBottom: LayoutStyles.verticalUnits10*1.6
+        paddingBottom: LayoutStyles.verticalUnits10*1.1
     },
 
     turnBar: {

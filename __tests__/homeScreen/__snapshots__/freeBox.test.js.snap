@@ -58,6 +58,7 @@ exports[`ChangeBox View Matches the Snapshot 1`] = `
   >
     <View>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "white",
@@ -79,6 +80,7 @@ exports[`ChangeBox View Matches the Snapshot 1`] = `
         }
       >
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#cfbcf9",
@@ -92,6 +94,7 @@ exports[`ChangeBox View Matches the Snapshot 1`] = `
           Ana
         </Text>
         <Text
+          allowFontScaling={false}
           style={
             Object {
               "color": "#cfbcf9",
@@ -107,6 +110,7 @@ exports[`ChangeBox View Matches the Snapshot 1`] = `
       </View>
     </View>
     <Text
+      allowFontScaling={false}
       style={
         Object {
           "color": "white",

@@ -65,7 +65,7 @@ export default class ContactButton extends React.Component {
                     colors = { this.getColors() }
                     start  = { [0.55, 0] }
                     end    = { [0.65, 1] }>
-                    <Text style={ this.getTextStyle() }>
+                    <Text style={ this.getTextStyle() } allowFontScaling={false}>
                         { this.text }
                     </Text>
                     <Image 

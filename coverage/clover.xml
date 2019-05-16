@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1557918919485" clover="3.2.0">
-  <project timestamp="1557918919485" name="All files">
+<coverage generated="1558027652174" clover="3.2.0">
+  <project timestamp="1558027652174" name="All files">
     <metrics statements="573" coveredstatements="573" conditionals="139" coveredconditionals="139" methods="240" coveredmethods="240" elements="952" coveredelements="952" complexity="0" loc="573" ncloc="573" packages="15" files="50" classes="50"/>
     <package name="pipelineApp">
       <metrics statements="31" coveredstatements="31" conditionals="10" coveredconditionals="10" methods="8" coveredmethods="8"/>
@@ -401,7 +401,7 @@
         <line num="33" count="8" type="stmt"/>
         <line num="37" count="4" type="stmt"/>
         <line num="39" count="4" type="stmt"/>
-        <line num="81" count="9" type="stmt"/>
+        <line num="85" count="9" type="stmt"/>
       </file>
       <file name="changeView.js" path="/Users/josemanuelbaezsoriano/Desktop/Manolin/pipeline/pipelineApp/components/homeComponents/changes/changeView.js">
         <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>

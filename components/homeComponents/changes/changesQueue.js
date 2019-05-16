@@ -75,7 +75,7 @@ export default class ChangesQueue extends React.Component{
 
     render() {
         if ( ! this.state.changesLoaded ) {
-            return <Text>Cargando cambios...</Text>
+            return <Text allowFontScaling={false}>Cargando cambios...</Text>
         } else if ( this.state.changes.length === 0 ) {
             return <View></View>
         } else {

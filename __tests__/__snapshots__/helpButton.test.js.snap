@@ -48,6 +48,7 @@ exports[`HelpButton View Matches the Snapshot 1`] = `
     }
   >
     <Text
+      allowFontScaling={false}
       style={
         Object {
           "color": "#23538a",

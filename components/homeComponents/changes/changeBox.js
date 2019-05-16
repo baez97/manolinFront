@@ -49,20 +49,23 @@ export default class ChangeBox extends React.Component {
                             <Text style={{
                                 ...styles.primaryText,
                                 color: this.getPrimaryFontColor() 
-                                }}>
+                                }}
+                                allowFontScaling={false}>
                                 { dateUtils.getDateString(change) }
                             </Text>
                             <View style={ styles.changeDataContainer }>
                                 <Text style={{
                                     ...styles.secondaryText, 
                                     color: this.getSecondaryFontColor() 
-                                    }}>
+                                    }}
+                                    allowFontScaling={false}>
                                     { change.owner }
                                 </Text>
                                 <Text style={{
                                     ...styles.secondaryText, 
                                     color: this.getSecondaryFontColor() 
-                                    }}>
+                                    }}
+                                    allowFontScaling={false}>
                                     { this.getType() }
                                 </Text>
                             </View>
@@ -70,7 +73,8 @@ export default class ChangeBox extends React.Component {
                         <Text style={{
                             ...styles.turnText, 
                             // color: this.getFontColor() 
-                            }}>
+                            }}
+                            allowFontScaling={false}>
                             { change.turn }
                         </Text>
                 </LinearGradient>

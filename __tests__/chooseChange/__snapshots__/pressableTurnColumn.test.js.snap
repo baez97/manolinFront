@@ -50,6 +50,7 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "white",
@@ -94,12 +95,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -107,12 +109,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -120,12 +123,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -133,12 +137,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -146,12 +151,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -159,12 +165,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -172,12 +179,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -185,12 +193,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -198,12 +207,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -211,12 +221,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -224,12 +235,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is a weekend day 
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -291,6 +303,7 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary da
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "white",
@@ -335,12 +348,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary da
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -348,12 +362,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary da
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -361,12 +376,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary da
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -374,12 +390,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary da
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -387,12 +404,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary da
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -400,12 +418,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary da
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -413,12 +432,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary da
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -426,12 +446,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary da
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -439,12 +460,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary da
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -452,12 +474,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary da
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -465,12 +488,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is an ordinary da
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "black",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -532,6 +556,7 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "white",
@@ -576,12 +601,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#056ec9",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -589,12 +615,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#056ec9",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -602,12 +629,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#056ec9",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -615,12 +643,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#056ec9",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -628,12 +657,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#056ec9",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -641,12 +671,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#056ec9",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -654,12 +685,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#056ec9",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -667,12 +699,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#056ec9",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -680,12 +713,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#056ec9",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -693,12 +727,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#056ec9",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }
@@ -706,12 +741,13 @@ exports[`PressableTurnColumn View Matches the Snapshot when it is today 1`] = `
         M
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#056ec9",
             "fontFamily": "montserrat-extra-bold",
             "fontSize": 40.7291678090925,
-            "paddingBottom": 28,
+            "paddingBottom": 19.25,
             "textAlign": "center",
           }
         }

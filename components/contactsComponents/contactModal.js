@@ -18,10 +18,10 @@ export default class ContactModal extends React.Component {
                 onBackButtonPress = { this.props.hideModal }>
                 <View style = { styles.modalBackground }>
                     <View style = { styles.box }>
-                        <Text style = { styles.nameText }>
+                        <Text style = { styles.nameText } allowFontScaling={false}>
                             { this.props.contact.name  }
                         </Text>
-                        <Text style = { styles.phoneText }>
+                        <Text style = { styles.phoneText } allowFontScaling={false}>
                             { this.props.contact.phone  }
                         </Text>
                         <PhoneButton 

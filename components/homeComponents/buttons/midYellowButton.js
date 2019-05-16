@@ -17,7 +17,7 @@ export default class MidYellowButton extends React.Component {
                 colors={['#ffcc33', '#f2994a']}
                 start={[0.55, 0]}
                 end={[0.65, 1]}>
-                <Text style={styles.buttonText}>
+                <Text style={styles.buttonText} allowFontScaling={false} allowFontScaling={false}>
                     {this.props.text}
                 </Text>
             </LinearGradient>

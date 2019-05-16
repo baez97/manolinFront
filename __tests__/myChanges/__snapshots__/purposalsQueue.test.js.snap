@@ -2,6 +2,7 @@
 
 exports[`PurposalsQueue View Matches the Snapshot when there are no purposals 1`] = `
 <Text
+  allowFontScaling={false}
   style={
     Object {
       "color": "#3f2606",

@@ -60,6 +60,7 @@ exports[`ContactCard View Matches the Snapshot 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#1b7128",
@@ -72,6 +73,7 @@ exports[`ContactCard View Matches the Snapshot 1`] = `
         CONTACT_NAME
       </Text>
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#2db842",

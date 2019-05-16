@@ -116,6 +116,7 @@ exports[`HomeScreen tests View Shows 'Se ha producido un error...' when the fetc
   }
 >
   <Text
+    allowFontScaling={false}
     style={
       Object {
         "color": "#3b2868",

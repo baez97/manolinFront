@@ -14,6 +14,7 @@ exports[`ContactsScreen View Matches the Snapshot when contacts were loaded 1`] 
   }
 >
   <Component
+    allowFontScaling={false}
     style={
       Object {
         "fontFamily": "montserrat-extra-bold",
@@ -96,7 +97,9 @@ exports[`ContactsScreen View Matches the Snapshot when there is an error 1`] = `
     }
   }
 >
-  <Component>
+  <Component
+    allowFontScaling={false}
+  >
     Se ha producido un error
   </Component>
 </Component>

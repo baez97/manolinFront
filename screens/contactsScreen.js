@@ -88,7 +88,7 @@ export default class ContactsScreen extends React.Component {
         if ( this.state.error ) {
             return (
                 <View style={styles.container}>
-                    <Text>Se ha producido un error</Text>
+                    <Text allowFontScaling={false}>Se ha producido un error</Text>
                 </View>
             );
         }
@@ -103,7 +103,7 @@ export default class ContactsScreen extends React.Component {
 
         return (
             <View style={styles.container}>
-                <Text style={styles.textLabel}>Contactos</Text>
+                <Text style={styles.textLabel} allowFontScaling={false}>Contactos</Text>
                 <FlatList
                     data         = { this.state.contacts }
                     contentContainerStyle = { styles.listContainer }

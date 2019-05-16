@@ -47,10 +47,10 @@ export default class TurnDeck extends React.Component {
         return (
             <View style={{ alignItems: 'center' }}>
                 { dateUtils.months[this.state.currentMonthIndex] != undefined ?
-                    ( <Text style={styles.monthText}>
+                    ( <Text style={styles.monthText} allowFontScaling={false}>
                         {`Mi turno de ${dateUtils.months[this.state.currentMonthIndex]}`}
                       </Text>)
-                    : ( <Text style={styles.monthText}>Mi turno</Text> )
+                    : ( <Text style={styles.monthText} allowFontScaling={false}>Mi turno</Text> )
                 }
                 <View style={styles.deck} onLayout={() => this.onLayout()}>
                     <FlatList

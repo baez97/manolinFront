@@ -53,13 +53,13 @@ export default class PurposalsQueue extends React.Component {
     }
 
     renderSectionHeader({section: {title}}) {
-        return <Text style={styles.textLabel}>{title}</Text>
+        return <Text style={styles.textLabel} allowFontScaling={false}>{title}</Text>
     }
 
     renderEmptySection({section}) {
         if ( section.data.length === 0 ) {
             return (
-                <Text style={styles.emptySectionText}>
+                <Text style={styles.emptySectionText} allowFontScaling={false}>
                     No hay propuestas todavía
                 </Text>
             );
@@ -69,7 +69,7 @@ export default class PurposalsQueue extends React.Component {
     render() {
         if ( this.state.changes.length === 0 )
             return (
-                <Text style={styles.textLabel}>
+                <Text style={styles.textLabel} allowFontScaling={false}>
                     No hay propuestas todavía
                 </Text>
             )

@@ -29,7 +29,7 @@ export default class AskChangeModal extends React.Component {
                 onBackButtonPress = { this.props.toggleModal    }>
                 <View style={styles.modalBackground}>
                     <View style={styles.box}>
-                        <Text style={styles.labelText}>
+                        <Text style={styles.labelText} allowFontScaling={false}>
                             { dateUtils.getDateString(this.props.selectedTurn) }
                         </Text>
                         <ModalButton 

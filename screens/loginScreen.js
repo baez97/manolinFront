@@ -259,7 +259,7 @@ export default class LoginScreen extends React.Component {
         } else {
             return (
                 <View style={styles.container}>
-                    <Text style={styles.loadingText}>Cargando...</Text>
+                    <Text style={styles.loadingText} allowFontScaling={false}>Cargando...</Text>
                 </View>
             )
         }
